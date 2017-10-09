@@ -1,0 +1,543 @@
+\chapter{GENERALITES} % (fold)
+\label{cha:generalites}
+
+\section{Grenailles sur les groupes}
+\subsection{Groupe et Sous-Groupe} % (fold)
+\label{sub:groupe_et_sous_groupe}
+
+% subsection groupe_et_sous_groupe (end)
+Soit $G$ un ensemble non vide ($G\neq\varnothing$).
+\begin{definition}
+On dit que $G$ est un \textsc{Groupe} si:
+\begin{enumerate}
+\item associative 
+\item élimant neutre
+\item symétrique
+\end{enumerate}
+\end{definition}
+
+Si commutative -- abelian. Groupes: $(R, +)$, $(S_n, \circ)$, etc.
+
+Soit $H$ un sons-ensemble de $G$.
+\begin{definition}
+	$H$ est un \textsc{Sous-Groupe} de $G$ si:
+	\begin{enumerate}
+		\item $H\neq\emptyset$
+		\item $\forall x,\ y \in H:\ xy^{-1}\in H$
+	\end{enumerate}
+	On notera $H < G$.
+\end{definition}
+
+Si $x\in G$, alors le sous-groupe \emph{engendré} par $x$ est le plus petit sous-groupe de $G$ contenant $x$. Notée $\expval{x}$. Si $G$ est \emph{fini} ($\Leftrightarrow$ cardinal $G$ est fini $\Leftrightarrow$ $\#G<\infty$). \colorwave[red]{Sont \textsc{Ordre} de $G$ est tout montant éléments.} L'ordre d'un groupe G se note $\ord(G)$, $|G|$ ou $\#G$.
+
+Si  $x\in G$, l'ordre de $x$ est $G$ plus petit entier $n\geq 1$ que $x^n = e$. On le note $\ord(x)$. Order $x$ est $ord(x)\overset{def}{=}|\langle x\rangle|$. En particulier, $\ord(x)=|\expval{x}|$.
+
+\begin{examplebox}
+	$S_3$.
+\end{examplebox}
+
+\subsection{La classe d'équivalence} % (fold)
+\label{sub:la_classe_d_equivalance}
+
+% subsection la_classe_d_equivalance (end)
+
+\begin{definition}
+	Soint $G$ un groupe et $H$ -- un sous-groupe de $G$. On définit sur $G$ la \textsc{Relation d'Équivalence} dite à gauche modulo $H$. Pour $x,\ y\in G$: 
+	\[ \color{red} x\equiv_g y\ mod\ H \mbox{ sii } x^{-1}y\in H \]
+	\vspace{-8mm}
+\end{definition}
+
+Si $x\in G$ la classe d'équivalence de $x$ pour cette relation dite \textsc{Classe à Gauche Modulo $H$} est:
+\begin{align*}	
+\bar{x} & =\{y\in G\ |\ y\equiv_g x\  mod\ H\}=\{y\in G\ |\ y^{-1}x\in H\}=\{xh\ |\ \exists h\in H\}\\
+ & =xH
+\end{align*} 
+
+\begin{remark}
+	Les class d'équivalence constituée une \underline{partition} de $G$.
+	\includegraphics[width=0.25\textwidth]{ce}
+	L'ensembe les classes d'équivalence est appelé \textsc{Ensemble Quotient}, et est noté:
+	$$ \color{red}\left(	\faktor{G}{H}	\right)_g$$
+\end{remark}
+
+On definit unne autre \underline{relation d'equivalence} sur $G$, dite \underline{à droite modulo $H$} le pour $x, y\in G$, $x\equiv_dy$ ssi $xy^{-1}\in H$. Pour $x\in G$ la classe de $x$ pour cette relation est: $Hx=\{hx,\ h\in h\}$ -- appelé \underline{classe à droite de $x$ modulo $H$}.
+
+Si $G$ est un groupe fini et si $H$ est sous-groupe de $G$ alors l'aplication pour $x\in G$ fixé $f_x:\ \begin{array}{rcl}H &\rightarrow & xH\\ h &\mapsto & xh\end{array}$ est une bijection.
+
+On en déduit que toutes les classes à gauches $xH$ ont même cardinal, à povoir $|H|$ (Le même pour le classe à droite).
+
+Comme $G$ est la reunion disjointe des $xH$, pour $x$ dècrivant un systeme de représentants des classes, on en déduit:
+
+\begin{theorem}
+	Soint $G$ un groupe fini et $H$ un sous-groupe de $G$.
+	Alors: $|H|$ divise $|G|$.
+	Et on a: $\#\left(\faktor{G}{H}\right)=\frac{|G|}{|H|}$.	
+\end{theorem}
+
+L'entier $[G:H]=\#\left(\faktor{G}{H}\right)$ s'appelé \underline{l'indice de $H$ dans $G$}. En particulier, l'ordre d'un élément divise l'ordre du groupe. 
+
+
+Application canonique:
+
+\begin{IEEEeqnarray*}{rCl}
+\pi :\ G & \overset{\mbox{\tiny surjection}}{\rightarrow} & \frac{|G|}{|H|}_g \mbox{ -- est surjet} \\
+x & \mapsto & \underbrace{xH}_{\bar{x}}
+\end{IEEEeqnarray*}
+
+$xH,\ yH\in \left(\faktor{G}{H}\right)_g$. Alors
+
+
+\begin{IEEEeqnarray*}{rCl}
+	xH\cdot yH & = & (xy)H\\
+	\pi(xy) & = & \pi(x)\pi(y)\\
+	\bar x\bar y & = & \bar{xy}.
+\end{IEEEeqnarray*}
+
+On souhaite même l'ensemble quotient de la structure de groupe qui fasse de la surjection canonique $\pi$ un porphisme de groupe.
+
+\section{Normal dans G} % (fold)
+
+\begin{definition}
+	Un sous groupe $H<G $ de $G$ est dit \textsc{Distingue} dans $G$ ou \textsc{Normal} dans $G$, s'il est table pour conjugaison:
+	\begin{itemize}
+		\item i.e. $\forall x\in G,\ \forall h\in H:\ xhx\dmo \in H$
+		\item i.e. $xHx^{-1}\subset H$
+		\item i.e. $\forall x \in G,\ xH=Hx$
+	\end{itemize} 
+	On note alors: $H\lhd G$.
+\end{definition}
+
+\begin{remark}:
+	
+	\begin{itemize}
+		\item Si $G$ est un groupe abélien alors tout sous-group de $G$ est distingué dans $G$.
+		\item Si $H\lhd G$, on n'd paas niassaiement: $xh=hx \forall x\in G,\ \forall h\in H$.
+		\item Si $[G:H]=2$ alors $H\lhd G$.
+	\end{itemize}
+\end{remark}
+
+\begin{examplebox}
+	\begin{enumerate}
+		\item $\langle \sigma_1 \rangle=\{e,\sigma_1,\sigma_2\}$---sous-gropupe engendée pour $\sigma_1$ ans $\gS_3$. $[G:H]=2\Rightarrow \langle x\rangle\lhd\gS_3$.
+		\item $\langle \tau_1\rangle=\{e,\tau_1\}\not\lhd\gS_3$. Car $\langle \tau_1 \rangle$ n'est pas stable par conjugaison. En effet: l'element $\tau_2\tau_1\tau_2\dmo =\tau_2\tau_1\tau_2=(12)=\tau_3\not\in H$.
+		\item Le \emph{Noyau} du morphisme de grouped $f:G\rightarrow G'$ est l'ensemble $Ker f:=\{x\in G | f(x)=e'\}$, où $e'$ est l'element neutre de $G'$. C'est un sous-groupe distingué de G.
+	\end{enumerate}
+\end{examplebox}
+
+$$\emptyset,\ \{\emptyset\},\ \{\emptyset,\ \{\emptyset\}\},\ \{\emptyset,\ \{\emptyset,\ \{\emptyset\}\}\},\ ...$$
+
+$\mathbb{Z}$: $\mathbb{N}\times\mathbb{N}$:
+$(a,\ b)R(a',\ b')$ psi $a+b'=a' + b$.
+
+$$\mathbb{Z}=\faktor{\mathbb{N}\times\mathbb{N}}{R}$$
+
+\begin{definition}
+	Un group est dit simple s'il n'admet pas de sous-groupes distingués autre que lui-même et $\{e\}$.
+\end{definition}
+
+\begin{examplebox}
+	\begin{itemize}
+		\item Soit $G$ un group d'ordre premier $p$, alors $G$ est groupe simple.
+		\item Alors $G$ est un group simple. En effet, si $H$ est un sous-group de $G$ alors, par de le Théoréme de Lagrange son ordre divise $p$, donc vant 1 ou $p$ puisque $p$ est premiere. Donc $H=\{e\}$ ou $H=G$. De plus, si $x\in G\\ \{e\}$ alors, pour le Th. de Lagrange son ordre divise $p$, donc vant 1 ou $p$ poisque $p$ est premiere donc vant $p$ poisque $x\neq e$. Donc $\expval{x}=G$. Donc $G$ est cyclique (i.e engender par un élement et fini). Donc $G$ est isomorphe à $\faktor{\Z}{p\Z}$.
+	\end{itemize}
+\end{examplebox}
+
+Considious le groupe abélien $(Z, +)$. Si l'on note $n\Z=\{nk, k\in\Z\}$ l'ensemble des multiples de $n$ dans $\Z$ (pour $n\geq$) alors: $(n\Z,+)$ est un sous-groupe de $\Z$.
+
+En effet: * $n\Z=\varnothing$ car $0=n\cdot 0\in\Z$. * soient $a,b\in n\Z$ qui $a-b\in n\Z$. Réciproquement, tout sous-groupe de $\Z$ est de la forme $n\Z$ pour un certan $n\geq 0$.
+
+$n\Z$ est un sous-groupe distingué de $\Z$ (car $\Z$ est abelien). On considere l'anneau quotient: $(\faktor{\Z}{n\Z}, +, \times)$.
+$$\faktor{\Z}{n\Z}=\{\bar 0,\bar 1, \bar 2, ..., \overline{n-1}\}$$
+
+\begin{align}
+	\bar x+\bar y &= \overline{x+y}
+	\bar x \bar y &= \overline{xy}
+\end{align}
+
+\begin{theorem}
+	Tout groupe abélien de type fini $G$ s'écrit de sons la forme:
+	$$G\simeq \faktor\Z{d_1\Z} \times \faktor\Z{d_2\Z} \times ... \times \faktor\Z{d_r\Z} \times \Z^s,$$
+	avec $d_1|d_2|...|d_r$ ($d_r\geq 2$) et $s>0$. Ces de sont applé les facteurs invariantes de $G$.
+\end{theorem}
+\begin{remark}
+	$d_r = $exponent de $G = ppcm$ des ordres des élements de $G$. 
+\end{remark}
+
+\begin{examplebox}
+	\begin{enumerate}
+		\item Montrer qu'on groupe, dont tous les élémentes non neutres sont d'ordre 2, est abelien.
+		
+		\textbf{Solution} $(ab)(ab)=2 \Rightarrow a(abab)b=aeb=ab,\ a^2bab^2=ebae=ba$
+		\item Déterminer à isomporphisme prés tous les groupe.
+		
+		\textbf{Solution} 
+		\begin{itemize}
+			\item Si $G$ est d'ordre 1, alors $G$ est réduit à $\{e\}$ où $e$ est l'élementes neutre du $G$.
+			\item Si $|G|=2$ alors, puisque 2 est premier, $G$ est cyclique et donc: $G\simeq \faktor{\Z}{2\Z}$ i.e. $G\simeq (\Z/2\Z, +)$ (abélien)
+			\item Si $|G|=3$ alors la même, $G\simeq \faktor{\Z}{3\Z}$.
+			\item Si $|G|=4$, si $G$ adment élément d'ordre 4 alors $G$ est cyclique et donc $G\simeq \faktor\Z{4\Z}$, abélien. Sinon, d'appelés le Théoréme de Lagrange tous les éléments, non neutres de $G$ sont d'ordre 2. s'appelle exercice precedent on en déduit que $G$ est abélien.
+			
+			D'aprés le Th. de Classification des groupes abéliens finis, $G$ est, soit isomprphe à $G\simeq \faktor{\Z}{4\Z}$: imposible car $G$ n'adment pas d'élément d'ordre 4. Soit isomorphe à: $G\faktor{\Z}{2\Z}\times \faktor\Z{2\Z}$. Il est isomprphe au groupe de Klein. Il y a donc deux groupes s'ordre 4 à isomorphe prés: $\faktor\Z{4\Z}$ et $\faktor\Z{2\Z}\times\faktor\Z{2\Z}$ (et ils sont tous les deux abélien).
+			\item Si $|G|=5$m puisque 5 est premier, $G$ est cyclique et donc $\simeq \faktor\Z{5\Z}$--il est abélien.
+		\end{itemize}
+	\end{enumerate}
+\end{examplebox}
+
+\section{Groupes agissant sur un ensemble} % (fold)
+
+Soient $G$ est un groupe et $X$ un ensemble.
+\begin{definition}
+	On dit un groupe $G$ agit sur un ensemble $X$, si:
+	\begin{enumerate}
+		\item $\forall x\in X\ e\cdot x= x$
+		\item $\forall x\in X,\ \forall g\in G\ g\cdot(g'\cdot x)=(gg')\cdot x$
+	\end{enumerate}
+\end{definition}
+
+On peut aussi voir une action de $G$ sur $X$ comme un morphisme de $G$ dans le groupe $S_X$ des permutations de $X$:
+\begin{IEEEeqnarray}{rCl} a&=&b+c
+\\ \pi: G &\rightarrow& S_X \\ g &\mapsto & \left(\begin{IEEEeqnarraybox}[
+      \IEEEeqnarraystrutmode
+      \IEEEeqnarraystrutsizeadd{2pt}
+      {2pt}
+      ][c]{rCl}\pi_g: X &\rightarrow & X\\x &\mapsto& \pi_g(x)=g\cdot x \end{IEEEeqnarraybox}\right)
+\end{IEEEeqnarray}	
+
+\begin{definition}
+	Si un groupe $G$ agit sur un ensemble $X$, la relation sur $X$: $x, y\in X$, $x~y$ ssi $\exists g\in G, y=g\cdot x$ est une relation d'équivalence. La classe de $x$ per cette relation s'applelle \textsc{Orbite} de $x$, notée $\orb(x)$ ou $G\cdot x$: $\orb(x)=\{ y\in X, y\sim x\} = \{g\cdot x, g\in G\}$ l'ensemble des orbits constitute une partition de $X$.
+\end{definition}
+
+On dit que l'action est \emph{Transitive} en que $G$ agit transitivement s'il n'y a qu'une seule orbit, i.e. $\forall x,y\in G,\ \exists g\in G, y=g\cdot x$.
+
+Le \emph{Noyau} de l'action est le noyau du morphisme\\
+
+$\pi:\ G\rightarrow \sigma_X$\\
+$G\mapsto \pi_G$
+
+i.e l'ensemble:
+$$Ker \pi \{g\in G | \pi(g)=e_{\sigma_X}\}=\{g\in G | \pi_g = id_x\}=\{g\in G | \forall x \in X, \pi_g(x)=x\}=\{g\in G | \forall x\in X, g.x=x\}$$
+On dit que l'action est \textsc{Fidèle} si son mogau est redit à  $\{e\}$ i.e. le morphisme $\pi$ associé est injectif.
+
+\emph{Exemples}.
+\begin{enumerate}
+	\item Le group des rotation de $\mathbb{R}^3$ de centre l'origine o agit sur $\mathbb{R}^3$. $G\times\mathbb{R}^3\rightarrow{R}^3$ et $(r, x)\mapsto r.x=r(x).$
+	Les orbite sont les pphere centres en l'origine. L'action n'est donc pas transitive. Regarde rotation quelle fixe tout le monde. Évidemment l'action le fidèle. Rotation fixant tout point de $\mathbb{R}^3$ est l'idantite.
+	\item Si X est un ensemble, le groupe $\sigma_X$ agit sur $X$ par permutation:
+	$\sigma_x \times X\mapsto X$, $(\sigma, x)\mapsto \sigma.x=\sigma(x)$.
+	
+	L'action est évidemment transitive. $\sigma$ est dans le mogan du morphisme associe a cette action ssi: $\forall x\in x, \sigma(x)=x$: donc $\sigma =id_x$ et donc l'action est fidèle.
+	\item Tout groupe G agit sur même par multiplication a gauche se qua $G\times G \rightarrow G;\ (g,x)\mapsto g.x=gx$ (loi de composition dons $G$).
+	
+	Soient $x, y\in G$;
+	
+	?$g\in G:\ y=gx\therefore g=yx^{-1}$. L'action est donc transitive.
+	Soit $g$ dans le moyen de l'action ou a alors:
+	$$\forall x\in G,\ gx=x; \mbox{ d'oi } g=e$$
+	Donc l'action est fidèle.
+	\item Tout groupe $G$ agit sur lui-meme par conjugaison:
+	$$G\times G\mapsto G;\ (g,x)\mapsto g.x=gxg^{-1}$$
+	
+	En effet: (i) Si $x\in G$; on a: $e.x = exe^{-1} = x$.\\
+	(ii)  soint $g, g'\in G$ et $x\in G$ ou a:
+	$$g.(g'.x)=g(.g'xg'^{-1})=g(g'xg'^{-1})g^{-1}=(gg')x(g'^{-1}g^{-1})=(gg')x(gg')^{-1}=(gg').x$$
+	Utilise $(ab)^{-1}=b^{-1}a^{-1}$.
+	
+	* $Orb(e)=\{geg^{-1}, g\in G\}=\{e\}$ Donc l'action n'est pas transitive si $G\neq\{e\}$ \\%img 1\\
+	* Si $x\in G$ alors $Orb(x)=\{gxg^{-1}, g\in G$ donc de conjuration de x.\\
+	* Le mogan de l'action est:
+	$$\{g\in G | \forall x\in X, gxg^{-1} = x\} = \{g\in G | \forall x \in X,\ gx=xg\}=centre de G = Z(G)$$
+	est réduit â $\{e\}$.
+\end{enumerate}
+
+\begin{definition}
+	Si un groupe $G$ agit sur un ensemble $X$ et si $x\in X$, on définit le stabilisateur (ou groupe s'isotropie) de $X$ pour cette action par: $Stab(x)=\{g\in G | g.x=x\}$. (noté aussi $G_X$)
+\end{definition}
+
+\begin{proposition}
+	C'est un sous groupe de G. % it's a subgroup in G
+\end{proposition}
+
+\begin{proposition} 
+	Pour X l'application $G\rightarrow X$, $g\mapsto g.x$ définit une bijection de l'ensemble $\faktor{X}{Stab{x}}$ des classe a gauche monade $Stab(x)$ sont l'orbite de $x$.
+\end{proposition}
+
+Aussi, le cardinal de l'orbite $Orb(X)$ est égal a l'indice de stab(x) dans $G$.
+$$\#Orb(x) =[G: Stab(x)]$$
+% img 2
+
+\begin{theorem}{Formule des classe}
+	Soit G un groupe fini agsdant aensemb fini x mois:
+	\begin{enumerate}
+		\item $\#X=\sum\limits_x[G: Stab(x)]$ où 
+		\item Le moite u d'orbites est donné par la formule (théorème de Burnside):
+		$$m=\frac{1}{|G|}\sum\limits_{g\in G}\#^bX_g$$
+		où $X_g=\{x\in X | g.x=x\}$. Bernside.
+	\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+	$|G|=n$, $d | n$: $\exists H<G \text{ t.q. } |H|=d$? Cyclique, oui $\exists !$\\
+	$n=\prod\limits_n p_i^{\alpha_i},\ p_i - première$
+\end{remark}
+
+4) Les Théorèmes de Sylov
+
+Soit G un groupe fini et point p un nombre premier tel que $p^r$ divise l'ordre de $G$ mais $p^{r+1}$ ne le divise pas (avec $r\geq$).
+Alors tout sous-groupe de $G$ s'appelle un p.sous-groupe de Sylow ou p-Sylow de G.
+
+Par exemple, $G$ est un groupe d'ordre de $n=2^3\times 3^5\times 5^2 \times 7$
+alors une 3-Sylov de G est un Sylov de G d'sidu: $2^3=8$.
+
+1er theoreme de Sylov: Soit G une groupe d'ordre $p^\alpha q$ avec $p$ premier et $(p, q)= 1$ (et $\alpha \geq 1$)
+
+Pour tout entier $\beta$ tel que: $1\leq \beta \leq \alpha$, il existe un sous-groupe de $G$ d'ordre $p^\beta$. En particulier, il existe un p-Sylov de G.
+
+De plus, le nombre $n_p$ de p-Sylow de vérifie:
+$n_p = 1 mod p$ et $n_p | q$.
+
+\begin{definition}
+	Si $H$ est un sous-groupe d'un groupe $G$, les conjugues dans $G$ sont les $gHg^{-1}$, pour $g\in G$ ($\{ghg^{-1}, h\in H\}$).
+\end{definition}
+
+En particulier $H$ est distingue dans G ssi il est égal à tous des conjugués.
+
+Théorème de Sylow: Soit $G$ une groupe fini.
+Le conjugue d'un p-Sylow de G est encore un p-Sylow de G.
+
+Reciproquement, tous les p-Sylow de G sont conjugués dans G.
+
+En fin, tout sous-groupe de G ( i.e d'ordre une puse.. de p) est contenu dans un p-Sylow.
+
+\emph{Exercice}
+\begin{enumerate}
+	\item Soit G un groupe d'ordre 13. Est-il nécessairement abélien? combien admet-il d'élément d'ordre 13?
+	Puisque 13 est premier, G est niasse cyclique, donc isomorphe à $(\faktor{\mathbb{Z}{13\mathbb{Z}}},\ +)$, donc il est abélien. Il admet$\varphi(13)=12$ éléments d'ordre 13.
+	
+	De plus, le nombre $n_p$ de p-Sylow de G vérifie:
+	
+	Tous les sous-groupe d'un groupe abeille sont distende.
+	
+	Mais un groupe d'ordre 13 n'admet que deux sons-groupe (th de cagage) lui-meme et $\{e\}$. Donc $G$ est simple.
+	\item Montre qu'un grou d'ordre 15 n'est pas simple. 5|15 donc existe sylow sous-groupe. 
+	
+	Soit G un groupe d'ordre 15=3x5. G admet un 5-Sylow H. De plus le nombre $n_5$ de 5-Sylow de G vérifie: $n_5=1 mod 5$ et $n_5 | 3$ donc $n_5=1$.
+	
+	Les conjugales de H sont encore des 5-Sylow. Or, il n'y a s'un seul 5-Sylow dans $G$. conclusion. $G$ n'est pas simple.
+\end{enumerate}
+
+
+\subsection{Les Groupes symetrique} % (fold)
+\label{sec:les_groupes_symetrique}
+
+On note $\sigma_n$ les groupes des premutations sur l'ensemble $\{1, ..., n\}$.
+
+Remarque. Deux permutations à s'appontes disjoint commutent.
+Exemple: $\tau=(1, 2)\in \sigma_9$ et $\sigma=(345) \in \sigma_9$.
+Le support de $\tau$ est $\{1,2\}$. 
+$$\tau\sigma =\sigma \tau$$
+
+\begin{theorem}
+	Tout permutation s'écrit comme produit de cycles à supports disjoint - une telle décomposition est unique à l'ordre p..
+\end{theorem}
+
+Exemple: $\sigma = \left(\begin{array}{ccccccccc}1&2&3&4&5&6&7&8&9\\3&4&6&2&9&1&7&5&8\end{array}\right)\in\sigma_9$
+$\sigma=(136)(24)(598)$
+
+Par example: $Ord(\sigma)=ppcm(ord(136), ord(24), ord(598))=ppcm(3,2,3)=6$
+
+Autument dit, on a: $\sigma^6=id$ et 6 est la lus petite puissance non mille verifment cela.
+
+Calcul practique du conjugue d'une permutation $\sigma$ dans $\sigma_n$. Si $\tau\in\sigma_n$, $\tau\sigma\tau^{-1}$ est un conjugui de $\sigma$.
+
+Ou deeoupre $\sigma$ en podint de cycles: $\sigma=c_1 c_2...c_l$, $c_i$ cycles.
+D'oui: $\tau\sigma\tau^{-1} =\tau(C_1...c_r)\tau^{-1}=(\tau c_1\tau^{-1})(\tau c_2\tau^{-1})...(\tau c_r\tau^{-1})$
+
+Oi, on a: $\tau(i_1...i_m)\tau^{-1}=(\tau(i_1)...\tau(i_m))$ usur conjugue dum-cycle $(i_1, i_2, ..., i_m)$
+
+On effet, l'image par la permutation de gaushe et la permutation de droite de tout de $\tau(i_j)$, pour $j\in\{1,...,i_n\}$ et des antesentius coincide.
+
+On a $\forall\in\{1,...,m\}$, $g(\tau(i_j))=\tau(i_{j+1})$ et $f(\tau(i_j))=(\tau(i_1\ ...\ i_m))(i_j)=\tau(i_{j+1})$
+et $\forall x\in \{ 1,...,n\}\\ \{\tau(i_j), j\in\{1,...,n\}$, on a:
+$$g(x)=x=f(x)$$
+Donc $f=g$.
+
+Example:
+Sont $\sigma=(1528)\in\sigma_9$, et soit $\tau=(127)$.
+$\tau\sigma\tau^{-1}=?= (\tau(1)\tau(5)\tau(2)\tau(8))=(2578)$
+
+\begin{proposition}
+	On appele type d'une permutation $\sigma=c_1... c_r$. Ca suite $(l_1,...,l_r)$ des lougneus des cycles $c_i$ ordoners en order croissant ($l_1\leq l_2\leq ... \leq l_r$).
+	Deux permutations sont conjugues dans $\sigma_n$ ssi elle ont meme type.
+\end{proposition}
+
+Par exemple: les permutations
+$$G_1=(28)(35)(196)$$
+et
+$$G_2=(14)(79)(263)$$
+Dont conjuged dans $\sigma_9$ car elles dont touts deux de type $(2,2,3)$
+
+\begin{proposition}
+	Montre que le groupe $\sigma_n$ est engendré lar les cycles. On a également:
+\end{proposition}
+
+\begin{theorem}
+	\begin{enumerate}
+		\item 	$\sigma_n$ est engendré pas les transpositions
+		\item ...... de la forme (1 i)
+		\item .... (dits elimentaires) de la forme (i i+1)
+		\item les deux permutations (12) et (12...n)
+	\end{enumerate}
+	
+\end{theorem}
+\begin{proof}
+	exercise.
+\end{proof}
+
+Proposition: la signature $\epsilon : \sigma_n\rightarrow\{\pm 1\}$ est un morphisme de groups. En particulier deux permutations conjugues on même signature.
+Transposition est impaire i de signature gele à $-1$.
+Ainsi $\epsilon$ est un morphisme surjectif (de que $n\geq 2$), et une permutation est paire (i.e. de signature 1) ssi elle est produit d'un nombre lain de transpositons.
+
+Une cycle de longuent laire est une permutation singuie et simasfasfasafasdfasdfasdfasdfasdfasdfasdfasdfasdf;;lj;lj;lkj;lkj;lkj;lkja;lsdkjfa;lsdjfa;lsdjf
+
+Le nogan $\mathfrak{A}$ du morphisme signature $\varepsilon:\sigma_n\rightarrow\{-1, 1\}$ est un sous-group distange d'indice 2 (n>= 2) de $\sigma_n$, appelé la m=iem group alteinee = cest donc l'ensemble des permutations pains de $\sigma_n$.
+
+\begin{proposition}
+	Si $n\geq3$, le group alteiné $\mathfrak{A}_n$ et engendre par les 3-cycles.
+\end{proposition}
+
+\begin{proof}
+	exercise. Hint (1b)(1a)=(1ab)
+\end{proof}
+
+\begin{theorem}{Galois}
+	$\mathfrak{A}_n$ est un groupe simple ssi $n\neq 4$.
+\end{theorem}
+
+\begin{examplebox}
+	\begin{enumerate}
+		\item Soit $G$ un groupe d'ordre 33.	
+		\item Détermine le nombre de 3-Sylow de $G$. Le group $G$ peut'il être simple?
+		\item Déterminer le nombre de 11-Sylow de $G$. En déduire que $G$ nécessairement abélien. Est-il nécessairement cyclique?
+	\end{enumerate}
+	
+	\begin{enumerate}
+		\item D'a pas le th de sylow, le nombre $n_3$ de 3-Sylow de $G$ vérifie:
+		$$\left\{\begin{array}{r}n_3 = 1\ mod 3\\n_3 | 11\end{array}\right.$$
+		D'où: $n_3=1$. $G$ adment donc un unique 3-Sylow $H$. Od, d'apé 2nd  Th de Sylow, les conjuges d'un 3-Sylow sont encore un 3-Sylow. Donc les conjuges de H sont égaux à H. Donc $H<  G$. Le groupe g admet donc un sous-group distangé prpe: il n'est donc pas simple.
+		\item De même, le nombre $n_11$ de 11-Sylow de $G$ vérifie:
+		$$\left\{\begin{array}{r}n_11 = 1\ mod 11\\n_11 | 3\end{array}\right.$$
+		D'où: $n_11=1$
+		G adment donc un unique 11-Sylow $K$ ed, de même, il est distingué dans $G$.
+		Ou a:
+		\begin{enumerate}
+			\item $H<  G,\ K<  G$
+			\item $H\cap K=\{e\}$ car $H$ et $K$ sont d'ordres premier entre eux (si $g\in H\cap K$ alors d'apés le le th de Lagrange, on a:
+			$$\left\{\begin{array}{r}\ord(g)| |H|\\\ord(g)| |K|\end{array}\right.$$
+
+			)
+			\item $G=HK$ car $\#HK=\frac{|H|\times|K|}{|H\cap K|}=\frac{3\times 11}{1}=33=|G|$. D'où: $G\simeq H\times K$ ($G$ est isomprphe an produit direct interne de $H$ par $K$).
+			Ou: $H$ est d'ordre 3, et 3 est premier, donc H est syclique et donc $H\simeq \faktor{\Z}{3\Z}$.
+			De même: $K$ --- 11, 11 ---, --- K --- $K\simeq \faktor{\Z}{11\Z}$
+			Donc: $G\simeq \faktor{\Z}{3\Z} \faktor{\Z}{11\Z}$ donc G est abélian. Par le Théoréme des reste Chinisis prisque (3,11)=1, on a 
+			$$\faktor{\Z}{11\Z}\faktor{\Z}{11\Z}\simeq\faktor{\Z}{33\Z}$$
+			Donc $G\simeq \faktor{\Z}{33\Z}$. G est cyclique.
+		\end{enumerate}
+	\end{enumerate}
+\end{examplebox}
+
+\begin{examplebox}
+	2\\
+	On considére le groupe des inveisides $\faktor{\Z}{33}^*$ de l'anneau $\faktor{\Z}{33}$.
+	\begin{enumerate}
+		\item Ones est l'order de $(\faktor{\Z}{33})^*$?
+		\item Le groupe $(\faktor{\Z}{33})^*$ st-il cyclique?
+		\item Admet-il un élément d'ordre 4?
+	\end{enumerate}
+	\begin{enumerate}
+		\item On a: $|(\faktor{\Z}{33})^*|=\phi(33)=\phi(3\times 11)=|\text{car $(3,11)$}|=\phi(3)\times\phi(11)=2\times 10=20$
+		\begin{remark}
+			A-t-on $\bar{12}\in (\faktor{\Z}{33})^*$? (où $\bar{a}=a+33\Z$).Non car $(12, 33)\neq 1$.
+			$|(\faktor{\Z}{33})^*|$ = nombre d'enties <= 33 et premiers avec 33.
+		\end{remark}
+		
+		\item D'aprés le Th des Rests Chinois, puisque (3,11)=1, on a un isomprphisme d'anneaux 
+			$$\faktor{\Z}{11\Z}\faktor{\Z}{11\Z}\simeq\faktor{\Z}{33\Z}$$
+		qui indrit un isomporphime de groups sur les groups des inversides:
+		$$(\faktor{\Z}{11\Z})^*(\faktor{\Z}{11\Z})^*\simeq(\faktor{\Z}{33\Z})^*$$
+		\underline{Rappel}: Si p est un premier imat et si $m\geq 1$ alors: $(\faktor{\Z}{p^m\Z})^*\simeq\faktor{\Z}{(p-1)p^{m-1}\Z}$
+		D'où: $(\faktor{\Z}{33\Z})^*\simeq \faktor{\Z}{2\Z}\times \faktor{\Z}{10\Z}\not\simeq \faktor{\Z}{20\Z}$ car $(2,10)\neq 1$. Donc $(\faktor{\Z}{33\Z})^*$ n'est pas cyclique.
+		Soit $(a,b)\in \faktor{\Z}{2\Z}\times\faktor{\Z}{10\Z}$. $\ord((a,b))=ppcm(\ord(a), \ord(b))$. O'où: $\ord(a,b)=4 \leftrightarrow ppcm(\ord(a), \ord(b))=4$.
+		avec $\ord(a)|2$ et $\ord(b)|10$ imposible. Donc le groupe $(\faktor{\Z}{33\Z})^*$ n'admet pas d'élt d'ordre $4$.
+	\end{enumerate}
+\end{examplebox}
+
+\underline{Probléme}: $gA_4<gS_4$ permutations pains de $\gS_4$.
+\begin{enumerate}
+	\item On fait agir $gS_4$ sur lui-même par conjugasion: $\gS_4\times\gS_4\rightarrow\gS_4$, $(g,h)\mapsto g\cdot h=ghg^{-1}$
+	\begin{enumerate}
+		\item Montrer que cete définit bie-une action. Soit $h\in\gS_4$. A quoi conspand l'oi dite de h et le stabilisateur de $h$?
+		\begin{align}
+			\orb(h) &= \{gh, g\in\gS_4\}
+			&= \{ghg^{-1}, g\in\gS_4\}
+			&= \mbox{ classe de conjugation on de $h$ dans $\gS_4$ }.
+		\end{align}
+		\begin{align}
+			\Stab(h) &= \{g\in\gS_4, gh=h\}
+			&= \{g\in\gS_4, ghg^{-1}=h\}
+			&= \{g\in\gS_4, gh=hg\}
+			&= \mbox{centralisement de h } \neq Z(G)
+		\end{align}
+		\item Déterminu les class de conjugaison de $\gS_4$. $x,y\in \gS_4:\ x\sim y$ ssi $\exists g\in \gS_4$ t.q. $y=g\cdot x$ $y=gxg^{-1}$. 
+		$$cl(x)=\{y\in\gS_4 | \exists g\in\gS_4, y=gxg^{-1}\}=\{y=gxg^{-1} | g\in\gS_4\} = \orb(x)$$
+		\underline{Rappel}: Deux eles de $\gS_n$ sont conjuges dans $\gS_n$ ssi ils ont même type.
+		$$\gS_4=\{e\}\cup\{type\ 2: (12),(13)...(34)\}\cup\{type\ 3:(123),(124)...(243)\}\cup\{type\ 4: (1234),(1243)...(1432)\}\cup\{type\ 2,2: (12)(34),(13)(24),(14)(23)\}$$
+		$$\gS_4=conj(e)\cup conj((12))\cup conj((123))\cup conj(1234)\cup conj((12)(34))$$
+	\begin{remark}
+		Deux élements g et $g'$ de $\gS_n$ sont coujugués dans $\gS_n$ s'il existe $\sigma \in \gS_n$ tel que $g'=\sigma g \sigma^{-1}$.
+		* deux élets g et g' de $\gA_n$ sont conjugùs dans $\gA_n$. S'il existe $\sigma\in\gA_n$ tel que: $g'=\sigma g\sigma^{-1}$.
+	\end{remark}
+	\item Montrer que si $\sigma\in\gS_4$, les conjugués de $\sigma$ dans $\gS_4$ forment \underline{deux} classes de conjugasion dans $\gA_3$ s'il n'existe pas permutation impaire commutant avec $\sigma$
+	\begin{remark}
+		Le groupe $\gS_4$ agit sur l'ensemble $\gS_4$ par conjugaison.
+		--- $\gA_4$ ---
+		Si $\sigma$ appantient à l'ensemble $\gS_4$, alors: $Stab_{\gS_4}(\sigma)=\{g\in\gS_4 | g\sigma=\sigma g\}$ et $Stab_{\gA_4}(\sigma)=\{g\in\gA_4 | g\sigma=\sigma g\}$. S'il n'existe pas de permutation impaine commutant avec $\sigma$ alors:
+		$$Stab_{\gS_4}(\sigma)=Stab_{\gA_4}(\sigma)$$
+		Ov: $\#orb_{\gS_4}(\sigma)=[\gS_4: Stab_{\gS_4}(\sigma)]=[\gS_4: Stab_{\gA_4}(\sigma)]=[\gS_4:\gA_4]\times[\gA_4: Stab_{\gS_4}(\sigma)]=2\cdot \#\ord_{\gA_4}(\sigma)$. Donc les coujugús de $\sigma$ dans $\gS_4$ constituent deux class de conjugassion dans $\gA_4$.
+	\end{remark}
+	\item On considre le 3-cycle $\sigma=(123)\in\gS_4$
+		\begin{enumerate}
+			\item Quel est l'ordre du stabilisateur de $\sigma$ dans $\gS_4$?
+			\item En d*drire qu'il n'existe pas de permutation impline qui commute avec $\sigma$
+			\item En e*dies les calss de conjugasion de $\gA_4$.
+		\end{enumerate}
+		\begin{enumerate}
+			\item L'orbite de $\sigma$ dans $\gS_4$ pour l'action de est pércisément la classe de conjugaison de $G$ (dans $\gS_4$) il'sagit de l'ensemble des 3-cylces de $\gS_4$. Il y en a 8. Ou: $[\gS_4: \Stab_{\gS_4}(\sigma)]=\#orb(\sigma)=8$. D'où: $|\Stab_{\gS_4}|=\frac{|\gS_4|}{8}=\frac{24}{8}=3$.
+			\item Il u'y a que trois permutations de $\gS_4$ qui commutent avec $\sigma$: Donc $Stab_{\gS_4}(\sigma)=\{e,\sigma,\sigma^2\}$.
+			\item $\gA_4=\{e\}\cup\{3-\text{cycles}\}\cup\{type(2,2)\}$. $|\gA_4|=\frac{|\gS_4|}2=12$.
+			Dapre les qustions précédents la classe de conjugatsion $Conj_{\gS_4}(\sigma)$ de $\sigma$ dans $\gS_4$ne de. compose eu deux classed se conjugaisons dans $\gA_4$ $Con_{\gA_4}((123))=\{(123), (142), (134), (243)\}$. $Conj_{\gA_4}=\{(132), (124), (143), (234)\}$
+			\begin{remark}
+				Si $\sigma$ est un 3-cycle $(123)$ alors $\sigma$ et $\sigma^2$ ne sont pas conjugate dans $\gA_4$ car sinon il existerait un cycle $\tau$ tel que:
+				$$(123)=\sigma^2=\tau\sigma\tau^{-1}=(\tau(1)\tau(2)\tau(3)) \Rightarrow \tau=(23) \mbox{ mais } (23)\notin \gA_4.$$
+			\end{remark}
+			En revanche, les types $(2,2)$ constituent encore une classe de conjugaison dans $\gA_2$ car il existe une permutation impl qui commute avec $(12)(34)$, à savoir $(12)$. Conclusion $$\gA_4=conj_{\gA_4}(e)\cup conj_{\gA_4}((123))\cup conj_{\gA_4}((132))\cup conj_{\gA_4}((12)(34).$$
+		\end{enumerate}
+	\end{enumerate}
+	\begin{remark}
+		Considerons l'ensemble $K=\{e, (12)(23), (13)(24), (14)(23)\}$. $K$ est un sous-groupe de $\gA_4$, il est stobe par conjugasion, donc il est distingué dans $\gA_4$. Donc: $\gA_4$ n'est pas simple! $K\simeq \faktor{\Z}{2\Z}\times\faktor{\Z}{2\Z}$ (groupe de Klein).
+	\end{remark}
+	\item Si G est un groupe, on rappelle que le sous-groupe de $G$ engendre par les commutateurs i.e. par les éléments: $xyx^{-1}y^{-1}$ pour $x,y\in G$
+	\begin{enumerate}
+		\item Muter que $D(G)\vartriangleleft G$.
+		\item Montier que $H\vartriangleleft G$ et $\faktor{G}{H}$ est abélien alors $H\supset D(G)$.
+	\end{enumerate}
+	\begin{enumerate}
+		\item $D(G)$ est stadle par tout automorphisme (car l'image d'un commutatm par un automorphisme de G est encore un commutateur; en effet, on a:
+		$f(xyx^{-1}y^{-1})=f(x)f(y)f(x)^{-1}f(y)^{-1}$)
+		donc a fonction par tout automorphisme intérieur $f_h:G\rightarrow G;\ g\mapsto ghg^{-1}$. Donc $d(G)$ est un sous-groupe "caractéristique" de G a fortiri est un sous-groupe distingué de g.
+		\item Si $H\vartriangleleft G$ et $H$ abelien alors poient $x,y\in G$ Prisque $G$ est abélien, on a:
+		$$xH yH=yH xH$$
+		$\bar x \bar y=\bar y\bar x$
+		$xyH=yxH$
+		Donc $x^{-1}y^{-1}xy\in H$ D'où: $H$ contient tous les comentatens donc H contient D(G)
+	\end{enumerate}
+\end{enumerate}
