@@ -10,7 +10,7 @@ Soit $G$ un ensemble non vide ($G\neq\varnothing$).
 \begin{definition}
 	On dit que $G$ est un \textsc{Groupe} si:
 	\begin{enumerate}
-		\item associative 
+		\item associative
 		\item élimant neutre
 		\item symétrique
 	\end{enumerate}
@@ -28,7 +28,7 @@ Soit $H$ un sons-ensemble de $G$.
 	On notera $H < G$.
 \end{definition}
 
-Si $x\in G$, alors le sous-groupe \emph{engendré} par $x$ est le plus petit sous-groupe de $G$ contenant $x$. Notée $\expval{x}$. Si $G$ est \emph{fini} ($\Leftrightarrow$ cardinal $G$ est fini $\Leftrightarrow$ $\#G<\infty$). \colorwave[red]{Sont \textsc{Ordre} de $G$ est tout montant éléments.} L'ordre d'un groupe G se note $\ord(G)$, $|G|$ ou $\#G$.
+Si $x\in G$, alors le sous-groupe \emph{engendré} par $x$ est le plus petit sous-groupe de $G$ contenant $x$. Notée $\expval{x}$. Si $G$ est \emph{fini} ($\Leftrightarrow$ cardinal $G$ est fini $\Leftrightarrow$ $\#G<\infty$). Sont \textsc{Ordre} de $G$ est tout montant éléments. L'ordre d'un groupe G se note $\ord(G)$, $|G|$ ou $\#G$.
 
 Si  $x\in G$, l'ordre de $x$ est $G$ plus petit entier $n\geq 1$ que $x^n = e$. On le note $\ord(x)$. Order $x$ est $\ord(x)\overset{\text{def}}{=}|\langle x\rangle|$
 
@@ -429,82 +429,104 @@ Le noyan $\mathfrak{A}_n$ du morphisme signature $\varepsilon:\gS_n\rightarrow\{
 
 \chapter{Repésentations linéaries des groups finis}
 
-Theorie introduite par Frobenius à la fin du 19 century.
+Thèorie introduite par Frobenius à la fin du XIX siècle.
 \section{Premieres definitions, representations, yep isomorphisms et rep. iuductis)} % (fold)
 \label{sec:premieres_definitions_representations_yep_isomorphisms_et_rep_iuductis}
 
 % section premieres_definitions_representations_yep_isomorphisms_et_rep_iuductis (end)
 \begin{definition}
-	Une reprisentation linéaire d'eun group $G$ est la donue d'un $\C$-espace vactoriel $V$ muni d'une action (à gauche) de $G$ agissit de mamé linéarie:
-	$$G\times V\rightarrow V$$
-	$$(g,v)\mapsto g\circ v$$
+	Une \textsc{Représentation Linéaire} d'une groupe $G$ est la donnée d'une $\CC$-espace vectoriel $V$ muni d'une action (à gauche) de $G$ agissant de manière linéaire
+	\begin{align*}
+		G\times V & \rightarrow V \\
+		(g,v) & \mapsto g\cdot v,		
+	\end{align*}
 	telle que:
 	\begin{enumerate}
-		\item $\forall x\in V,\ e\cdot x=x \text{ où x est l'element heutu de $G$}$
+		\item $\forall x\in V,\ e\cdot x=x$ où $x$ est l'element heutu de $G$
 		\item $\forall g, g' \in G,\ \forall x\in V:\ g\cdot (g'\cdot x)=(gg\dmo)\cdot x$
-		\item $\forall g\in G,\ \forall x,x'\in V, \forall \lambda,\lambda'\in\CC:\ g\cdot(\lambda x+\lambda'x')=\lambda g\cdot x+\lambda' g\cdot x'$
+		\item $\forall g\in G,\ \forall x,x'\in V,\ \forall \lambda,\lambda'\in\CC:\ g\cdot(\lambda x+\lambda'x')=\lambda g\cdot x+\lambda' g\cdot x'$
 	\end{enumerate}
 \end{definition}
 
-Une representation lineare d'un group G est donc le donnée d'un $\CC$ espace vectoriel $V$ est d'un morphisme de groups:
-	$$\rho:G\rightarrow GL(V)$$
-	$$g\mapsto (\rho(g)=\rho_g:V\rightarrow V)$$
-où $GL(V)$ est le group des automorphisms du $\CC$-esp vect. $V$.
+Une representation linéaire d'un group G est donc le donnée d'un $\CC$-espace vectoriel $V$ est d'un morphisme de groups:
+\begin{align*}
+	\rho:G &\rightarrow GL(V)\\
+	g &\mapsto \rho(g)=\rho_g:V\rightarrow V.	
+\end{align*}                
+où $GL(V)$ est le groupe des automorphisme du $\CC$-espace vectoriel $V$.
 
 On a donc: $\forall g,g'\in G$, $\rho_{gg'}=\rho_g\circ \rho_{g'}$. Et aussi: $\rho_e=id_V$ et $\rho_{g\dmo}=(\rho_g)\dmo\ \forall g\in G$.
-Ces deux difinitions sont bien ´quivalents. En effec, si G opére sur $V$ de ma mére linéarie alors considerons l'application:
-$$\rho:G\rightarrow\ ?$$
-$$g\mapsto (\rho_g:V\rightarrow V,\ x\mapsto \rho_g(x)=g\cdot x)$$
+Ces deux définitions sont bien equivalents. En effet, si G opère sur $V$ de la manière linéaire a lois considérons l'application:
+\begin{align*}	
+	\rho:G &\rightarrow \ ? \\
+	g &\mapsto  \left(\rho_g:\begin{array}{rcl}V&\rightarrow& V \\ x&\mapsto&\rho(x)=g\cdot x\end{array}\right)
+\end{align*}
 
-$\rho_g$ est un .... vect $V$ car:
-$$\rho_g(\lambda x + \lambda' x')=\lambda\rho_g(x)+\lambda'\rho_g(x')$$
+$\rho_g$ est un endomorphisme du $\CC$-espace vectoriel $V$, car si $x,x'\in V$ et si $\lambda, \lambda'\in \CC$ on a:
+$\rho_g(\lambda x + \lambda' x')=g(\lambda x+\lambda' x')=\lambda g\cdot x+\lambda'g\cdot x'=\lambda\rho_g(x)+\lambda'\rho_g(x')$
 
-De plus, $\rho_g$ est bijectif car:
-* $\ker\rho_g=\{0\}$ en effect soit $x\in V$ on a: $\rho_g(x)=0$ => $g\cdot x=0$. D'où $g\dmo g\cdot x= \rho\dmo 0=\gho_{g\dmo}(0)=0$
-d'où $(g\dmo g)\cdot x=0$ d'où $e\cdot x=0$ => $x=0$
+De plus, $\rho_g$ est bijectif car $\ker\rho_g=\{0\}$; en effect soit $x\in V$ on a: $\rho_g(x)=0$  $\Rightarrow$  $g\cdot x=0$ d'où $g\dmo g\cdot x= \rho\dmo 0=\rho_{g\dmo}(0)=0$,
+d'où $(g\dmo g)\cdot x=0$ d'où $e\cdot x=0$  $\Rightarrow$  $x=0$
 
-Si 'onn suppose $V$ de division fini alors $\rho_g$ est bijectif et $\rho$ est à valeurs dans $GL(V)$.
+Si l'on suppose $V$ de dimension fini alors $\rho_g$ est bijectif et $\rho$ est à valeurs dans $GL(V)$.
 
 De plus, l'application $\rho$ est un morphisme de groups. En effet, si $g,g'\in G$ et si $x\in V$, on a : $f_{gg'}=(gg')\cdot x= g\cdot (g'\cdot x)=\rho_g(\rho_{g'}(x))$.
 
-Reciproquement, si $\rho G\rightarrow gL(V),\ g\mapsto\rho_g$ est un morphisme de groups, alors considerons: $G\times V\rightarrow V,\ (g,x)\mapsto g\cdot x:=\rho_g(x)$.
-Cete definit bien un action linear de $G$ sur $V$ car:
+Réciproquement, si $\begin{array}{rcl}\rho: G &\rightarrow & GL(V),\\ g &\mapsto &\rho_g\end{array}$ est un morphisme de groups, alors considérons: 
+\begin{align*}
+G\times V &\rightarrow  V\\ (g,x) &\mapsto g\cdot x:=\rho_g(x)
+\end{align*}
+Cela definit bien un action linear de $G$ sur $V$ car:
 \begin{enumerate}
-	\item si $x\in V$, $e\cdot x=\rho_e(x) =\ast id_V(x)=x$. * Car limage de l'element neutre par mprphisme de groupes est l'element neutre.
-	\item Si g,g' G x from V: $g\cdot(g'\cdot x)=...=(gg')\cdot x$
-	\item $g.(\lambda x+\lambda'x')=...=\lambda gx+lmb'g.x'$
+	\item Si $x\in V$, $e\cdot x=\rho_e(x) \overset\ast= id_V(x)=x$ (* car limage de l'element neutre par mprphisme de groupes est l'element neutre)
+	\item Si $g,g'\in G$, $x\in V: g\cdot(g'\cdot x)=\rho_g(\rho_{g'}(x))=(\rho_g\rho_{g'})(x)\overset{\rho\text{---morphisme}}{=}\rho_{gg'}(x)=(gg')\cdot x$
+	\item $g\cdot (\lambda x+\lambda'x')=\rho_g(\lambda x+\lambda' x')= \lambda p_g(x)+\lambda' p_g(x')=\lambda g\cdot x+\lambda'g\cdot x'$
 \end{enumerate}
 End.
 
-\underline{Vocabulaire}:
-Cest pas voctorel $V$ est l'espace de la up.
-La dimension de $V$ est le gegié (on la dimension) de la up.
-Loisque rho est injetif, la up est dite fidéle.
-
-Le group G de représente alors de mamine concute coume un sous-group de GL(V). Loisque $V$ est dimension fixe (ce qui c tou jous le cas pan le suite). Le choix d'une bax founit alors une reprisentation cncore plus concote couins group de matrices (ou sa dimCC=n alors GL(V) simeq GLn(CC)).
+\begin{definition}[Vocabulaire]	
+	\leavevmode
+	\begin{itemize}
+		\item L'espace vectoriel $V$ est \underline{l'espace de la representation}.
+		\item La dimension de $V$ est le \underline{degree} (ou la \underline{dimension}) de la representation.
+		\item Lorsque $\rho$ est injectif, la representation est dite \underline{fidèle}. Le group G se représente alors de manière concrète comme un sous-groupe de $GL(V)$.
+		\item Lorsque $V$ est dimension finite (ce qui cela toujours le cas par la suite). Le choix d'une base fournit alors une représentation encore plus concrete comme groupe de matrices (ou si $\dim_\CC V=n$ alors $GL(V)\simeq GL_n(\CC))$.
+	\end{itemize}	
+\end{definition}
 
 
 \begin{remark}
-	Soient G un group fini et $\rho:G\rightarrow GL(V)$ une representation (liniaire) de G.
-	Si $g\in G$ est d'ordre n alors, on a:
+	Soient G un group fini et $\rho:G\rightarrow GL(V)$ une representation (liniaire) de $G$.
+	Si $g\in G$ est d'ordre $n$ alors, on a:
 	$$(\rho_g)^n=\rho_{g^n}=\rho_e=id_v=\text{"1"}$$
-	donc l'endomorphisme $\rho_g$ est racine du polynome $x^n-1$, ina n'a pas des racinessimples (à savorir le racin n'eme de l'unite donc $\CC$, que sont: $e^{\frac{2k\pi}{n}}$, $k\in\{0,..,m\}$).
-	
-	$f\in end(V)$ $I_f=\[p(x)\in\CC[x]|P(f)=0\}$ ideal de l'anneau principal $\CC[x]$. (car $\CC$ est un corps) L'unique polynome minimale que engedu $I_f$ est appele la polynome minimale $f$.
+	Donc l'endomorphisme $\rho_g$ est racine du polynôme $x^n-1$, que n'a que des racines simples (à savoir les racines n'eme de l'unite dans $\CC$, que sont: $e^{\frac{2h\pi}{n}}$, $h\in\{0,..,m\}$).
 
-	La polinome minimal de $\rho_g$ est donc un divisor de $x^n-1$ et n'a donc lui aussi qui de racine simple. Ce la pon un l'endomorphisme roge est diagonalisable (car touts des vlaeurs props ont donc simples).
+	\begin{rappel}	
+		$f\in \End (V)$, $I_f=\{P(x)\in\CC[x]\ |\ P(f)=0\}$ ideal de l'anneau principal $\CC[x]$. (car $\CC$ est un corps) L'unique polynôme unitaire que engendre $I_f$ est appelé la polynome minimal de $f$.
+	\end{rappel}
+
+	La polynôme minimal de $\rho_g$ est donc un divisor de $x^n-1$ et n'a donc lui aussi que de racines simples. Ce la pon que l'endomorphisme $\rho_g$ est diagonalisable (car touts ses valeurs propre sont donc simples).
 \end{remark}
 
 \begin{examplebox}
 	\begin{enumerate}
-		\item La represantation triviale (on representation unite). $\rho G->GL(\CC)\simeq\CC^\ast,\ g\mapsto (\rho_g: id:\CC->\CC x\mapsto x)$
-		\item Les repesentations de degre 1: ce sont les homomorphisms $\rho:G\rightarrow \CC^\ast$ puisque si $dim V= 1$ alors $GL(V)\simeq\CC^\ast$.
-		En effet les endomorphisms de V sont les homotheties: f_\lambda: V->V x->\lambda x(\lambda\in \CC^\ast). et GL(V)-> G^\ast est un isomorphisme f_\lambda->\lambda.
-		Si G est fini, tout elements de $G$ set d'ordre fini (par le th. de Lagrange) donc, pour tout g in G, roge est un racine de l'unite dans $\CC$.
-		( Car si $g^n=e$ alors $\rho_{g^n}=(\rho_g)^n$). En particulier, ce sont des montres complens de mondle 1. $|\rho_g|=1$.
-		\item Soient $\gS_m$ considere group simetrique et (e1,..., en) la bax canonique de C^n. On definit une representation de deger n de gS_n en posant:
+		\item La represantation \underline{triviale} (on representation unité).
+		\begin{align*}
+			\rho:\ G &\rightarrow GL(\CC)\simeq\CC^\ast\\
+			g &\mapsto (\rho_g: id:\CC\rightarrow \CC\ x\mapsto x)
+		\end{align*}
+		\item Les représentation de degre 1: ce sont les \underline{homomorphisms} $\rho:G\rightarrow \CC^\ast$ puisque si $\dim V= 1$ alors $GL(V)\simeq\CC^\ast$.
+		En effet les endomorphisms de $V$ sont les \underline{homothétis}: $f_\lambda: V\rightarrow V x\rightarrow \lambda x(\lambda\in \CC^\ast)$. Et $GL(V)\rightarrow  G^\ast$ est un isomorphisme $f_\lambda\rightarrow \lambda$.
 		
-		$\rho:\gS_n->GL(C^n)$ \sigma\mapsto(\rho C^n -> C^n en\mapsto (\rho(en)=e\sigma(x)))
+		Si G est fini, tout elements du $G$ est d'ordre fini (par le th. de Lagrange) donc, pour tout $g \in G$, $\rho_g$ est un racine de l'unité dans $\CC$.
+		(Car si $g^n=e$ alors $\rho_{g^n}=(\rho_g)^n$). En particulier, ce sont des nombers complexs de mondle 1. $|\rho_g|=1$.
+		\item Soient $\gS_m$ considere group simetrique et $(e_1,..., e_n)$ la base canonique de $\CC^n$. On definit une representation de degré $n$ de $\gS_n$ en posant:
+		\begin{align*}
+			\rho:\gS_n &\rightarrow GL(\CC^n) \\
+			\sigma &\mapsto \left(
+				\begin{array}{rcl} \rho_\sigma: \CC^n &\rightarrow&  \CC^n \\ e_i &\mapsto& \rho_\sigma(e_i)=e_{\sigma(i)} \end{array}
+			\right)
+		\end{align*}
 	\end{enumerate}
 \end{examplebox}
 
