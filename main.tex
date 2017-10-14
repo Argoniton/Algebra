@@ -442,12 +442,13 @@ Thèorie introduite par Frobenius à la fin du XIX siècle.
 	\end{align*}
 	telle que:
 	\begin{enumerate}
-		\item $\forall x\in V,\ e\cdot x=x$ où $x$ est l'element heutu de $G$
+		\item $\forall x\in V,\ e\cdot x=x$ où $x$ est l'element neutre de $G$
 		\item $\forall g, g' \in G,\ \forall x\in V:\ g\cdot (g'\cdot x)=(gg\dmo)\cdot x$
 		\item $\forall g\in G,\ \forall x,x'\in V,\ \forall \lambda,\lambda'\in\CC:\ g\cdot(\lambda x+\lambda'x')=\lambda g\cdot x+\lambda' g\cdot x'$
 	\end{enumerate}
 \end{definition}
 
+\begin{definition}
 Une representation linéaire d'un group G est donc le donnée d'un $\CC$-espace vectoriel $V$ est d'un morphisme de groups:
 \begin{align*}
 	\rho:G &\rightarrow GL(V)\\
@@ -456,7 +457,11 @@ Une representation linéaire d'un group G est donc le donnée d'un $\CC$-espace 
 où $GL(V)$ est le groupe des automorphisme du $\CC$-espace vectoriel $V$.
 
 On a donc: $\forall g,g'\in G$, $\rho_{gg'}=\rho_g\circ \rho_{g'}$. Et aussi: $\rho_e=id_V$ et $\rho_{g\dmo}=(\rho_g)\dmo\ \forall g\in G$.
-Ces deux définitions sont bien equivalents. En effet, si G opère sur $V$ de la manière linéaire a lois considérons l'application:
+\end{definition}
+
+\emph{Ces deux définitions sont bien equivalents}.
+\begin{proof}
+En effet, si G opère sur $V$ de la manière linéaire a lois considérons l'application:
 \begin{align*}	
 	\rho:G &\rightarrow \ ? \\
 	g &\mapsto  \left(\rho_g:\begin{array}{rcl}V&\rightarrow& V \\ x&\mapsto&\rho(x)=g\cdot x\end{array}\right)
@@ -472,7 +477,8 @@ Si l'on suppose $V$ de dimension fini alors $\rho_g$ est bijectif et $\rho$ est 
 
 De plus, l'application $\rho$ est un morphisme de groups. En effet, si $g,g'\in G$ et si $x\in V$, on a : $f_{gg'}=(gg')\cdot x= g\cdot (g'\cdot x)=\rho_g(\rho_{g'}(x))$.
 
-Réciproquement, si $\begin{array}{rcl}\rho: G &\rightarrow & GL(V),\\ g &\mapsto &\rho_g\end{array}$ est un morphisme de groups, alors considérons: 
+Réciproquement ( $\Rightarrow$ ).
+i $\begin{array}{rcl}\rho: G &\rightarrow & GL(V),\\ g &\mapsto &\rho_g\end{array}$ est un morphisme de groups, alors considérons: 
 \begin{align*}
 G\times V &\rightarrow  V\\ (g,x) &\mapsto g\cdot x:=\rho_g(x)
 \end{align*}
@@ -482,7 +488,7 @@ Cela definit bien un action linear de $G$ sur $V$ car:
 	\item Si $g,g'\in G$, $x\in V: g\cdot(g'\cdot x)=\rho_g(\rho_{g'}(x))=(\rho_g\rho_{g'})(x)\overset{\rho\text{---morphisme}}{=}\rho_{gg'}(x)=(gg')\cdot x$
 	\item $g\cdot (\lambda x+\lambda'x')=\rho_g(\lambda x+\lambda' x')= \lambda p_g(x)+\lambda' p_g(x')=\lambda g\cdot x+\lambda'g\cdot x'$
 \end{enumerate}
-End.
+\end{proof}
 
 \begin{definition}[Vocabulaire]	
 	\leavevmode
@@ -510,24 +516,24 @@ End.
 
 \begin{examplebox}
 	\begin{enumerate}
-		\item La represantation \textdemp{triviale} (on representation unité).
+		\item La représentation \textdemp{triviale} (on representation unité).
 		\begin{align*}
 			\rho:\ G &\rightarrow GL(\CC)\simeq\CC^\ast\\
 			g &\mapsto (\rho_g: id:\CC\rightarrow \CC\ x\mapsto x)
 		\end{align*}
-		\item Les représentation de degre 1: ce sont les \textdemp{homomorphisms} $\rho:G\rightarrow \CC^\ast$ puisque si $\dim V= 1$ alors $GL(V)\simeq\CC^\ast$.
+		\item Les représentation de degré 1: ce sont les \textdemp{homomorphisms} $\rho:G\rightarrow \CC^\ast$ puisque si $\dim V= 1$ alors $GL(V)\simeq\CC^\ast$.
 		En effet les endomorphisms de $V$ sont les \textdemp{homothétis}: $f_\lambda: V\rightarrow V x\rightarrow \lambda x(\lambda\in \CC^\ast)$. Et $GL(V)\rightarrow  G^\ast$ est un isomorphisme $f_\lambda\rightarrow \lambda$.
 		
 		Si G est fini, tout elements du $G$ est d'ordre fini (par le th. de Lagrange) donc, pour tout $g \in G$, $\rho_g$ est un racine de l'unité dans $\CC$.
-		(Car si $g^n=e$ alors $\rho_{g^n}=(\rho_g)^n$). En particulier, ce sont des nombers complexs de mondle 1. $|\rho_g|=1$.
-		\item Soient $\gS_m$ considere group simetrique et $(e_1,..., e_n)$ la base canonique de $\CC^n$. On definit une representation de degré $n$ de $\gS_n$ en posant:
+		(Car si $g^n=e$ alors $\rho_{g^n}=(\rho_g)^n$). En particulier, ce sont des numbers complexs de mondle 1. $|\rho_g|=1$.
+		\item Soient $\gS_m$ considéré le group symétrique et $(e_1,..., e_n)$ la base canonique de $\CC^n$. On définit une representation de degré $n$ de $\gS_n$ en posant:
 		\begin{align*}
 			\rho:\gS_n &\rightarrow GL(\CC^n) \\
 			\sigma &\mapsto \left(
 				\begin{array}{rcl} \rho_\sigma: \CC^n &\rightarrow&  \CC^n \\ e_i &\mapsto& \rho_\sigma(e_i)=e_{\sigma(i)} \end{array}
 			\right)
 		\end{align*}
-		\item La representation de permutation c'est un généralisation l'exemple précident. Soit $G\times X\rightarrow X$ une action $(g,x)\mapsto g\cdot x$ d'un group G sur un ensembele fini x. Soit V un C esp vect de dimension egale au cardinal de X, dune base indexée par les elements de X: $\{\eps_x,\ x\in X\}$. On a donc: $V=\bigoplus_{x\in x}\expval{\eps_x}=\bigoplus_{x\in X}\C_{\eps_x}$. On définit une re linéaire
+		\item La \texttt{representation de permutation} c'est un généralisation l'exemple précédent. Soit $G\times X\rightarrow X$ une action $(g,x)\mapsto g\cdot x$ d'un group G sur un ensemble fini x. Soit V un C espace vectoriel de dimension égale au cardinal de X, dune base indexée par les elements de X: $\{\eps_x,\ x\in X\}$. On a donc: $V=\oplus_{x\in x}\expval{\eps_x}=\oplus_{x\in X}\C_{\eps_x}$. On définit une re linéaire
 		$$ \rho: G\rightarrow  GL(v)\\g\mapsto(\rho_g:V\rightarrow  V\\\eps_x\mapsto \rho_g(\eps_x)=\eps_{g\cdot x})$$
 		C'est la representation de permutation associé à l'action de G sur X.
 		\begin{remark}
@@ -541,19 +547,19 @@ End.
 \end{examplebox}
 
 \begin{definition}
-	Deux representation linier $\rho \rightarrow  GL(V)$ et $\rho':G\rightarrow  GL(V')$ d'un group $G$. Sont dites \textsc{Isomorphes} ou \textsc{Équivalents} s'il existe un isomorphisme d'espace vectoriels $f:V\rightarrow  overset \simeq V'$ tel que l'on ont: $\forall g\in G, \rho_g'\circ f= f\circ\rho_g$. On peut explie cette condition par la commutativité diagramme:
+	Deux representation linier $\rho \rightarrow  GL(V)$ et $\rho':G\rightarrow  GL(V')$ d'un group $G$. Sont dites \textsc{Isomorphes} ou \textsc{Équivalents} s'il existe un isomorphisme d'espace vectoriels $f:V\rightarrow  overset \simeq V'$ tel que l'on ont: $\forall g\in G, \rho_g'\circ f= f\circ\rho_g$. On peut exprimer cette condition par la commutativité diagramme:
 	$$G\rightarrow \rho GL(V)f asdfdiagram$$
 	où $\tilde f: GL(V)\rightarrow GL(V)$ designe l'isomorphisme suivant defini par :$\tilde f(\phi)=f\circ\phi\circ f\dmo \forall\phi\in GL(V)$
 	$$V\rightarrow V diagram$$
 	
 \end{definition}
 
-En teims de matrices, ce la signifie que les matrices associés à la premiér represantion sont semblables à lems homologus dans la recoude, via la même matrice de ppage:
+En termes de matrices, ce la signifie que les matrices associés à la premier represantion sont semblables à leurs homologués dans la seconde, via la même matrice de passage:
 $$\forall g\in G, Mat(\rho'_g)=Mat(f)\times Mat(\rho_g)\times Mat(f)\dmo$$
 
-($A,B$ Sembables si $\exists P:\ B=PAP\dmo$)
+($A,B$ Semblables si $\exists P:\ B=PAP\dmo$)
 
-Si $\rho:G\rightarrow GL(v)$ est une represantation d'un group $G$ et si $W$ est un sous-espase vectoriel de V \textsc{Stable} par les differents automprphisms $\rho_g$ pour $g\in G$ i.e $\rho_g(W)\subset W$ (i.e $\forall g\in G, \forall w\in W, \rho_g(w)\in W$)
+Si $\rho:G\rightarrow GL(v)$ est une représentation d'un group $G$ et si $W$ est un sous-espace vectoriel de V \textsc{Stable} par les différents automorphismes $\rho_g$ pour $g\in G$ i.e $\rho_g(W)\subset W$ (i.e $\forall g\in G, \forall w\in W, \rho_g(w)\in W$)
 
 Alors on peut considérer la sous-representation:
 $$\rho|_x:G\rightarrow  GL(W)\\ g\mapsto\rho_g|_W$$
@@ -563,41 +569,151 @@ $$\rho|_x:G\rightarrow  GL(W)\\ g\mapsto\rho_g|_W$$
 \end{remark}
 Cela conduit à le notion de représentation inéducable:
 \begin{definition}
-	Une représentation $\rho: G\rightarrow  GL(V)$ est dite \textsc{Irreductible} si les seuls sous-espaces stables de V sont $\{0\} $et$ V$.
+	Une représentation $\rho: G\rightarrow  GL(V)$ est dite \textsc{Irréductible} si les seuls sous-espaces stables de V sont $\{0\} $et$ V$.
 \end{definition}
 
-Ainsi les reparametrisation de \emph{degré 1} constituent des representations irréductibles particuliers.
+Ainsi les reparamétrisation de \emph{degré 1} constituent des representations irréductibles particuliers.
 
 \begin{theorem}[Théorème de Maschke]
-	On géfinit le somme directe de representation de group fini $G$. Soient $h\rho:g\rightarrow GL(V)$ et $\rho;"G_j>GL(V')$ deux representations de $G$. On definit la somme directe
-	$$\rho\bigoplus \rho'$$ comme etant:
-	La rep. d'espace vectkoriel $V\bigoplus V'$ definit par:
-	$\rho\bigoplus\rho': G+> GL(V\bigoplus V')\ g\mapsto(\rho\bigoplus')_g$ definit par $\forall n\in V, \forall v'\in V', (\rho\bigoplus \rho')_g(v+v')=\rho_g(v)=\rho'_g(v')$
+	On définit le somme directe de representation de group fini $G$. Soient $h\rho:g\rightarrow GL(V)$ et $\rho;"G_j>GL(V')$ deux representations de $G$. On définit la somme directe
+	$$\rho\oplus \rho'$$ comme étant:
+	La rep. d'espace vectkoriel $V\oplus V'$ definit par:
+	$\rho\oplus\rho': G+> GL(V\oplus V')\ g\mapsto(\rho\oplus')_g$ definit par $\forall n\in V, \forall v'\in V', (\rho\oplus \rho')_g(v+v')=\rho_g(v)=\rho'_g(v')$
 	
-	Toute représentation linéaire complexe de degre fini d'un group fini est somme directe de repr. inductives.
+	Toute représentation linéaire complexe de degré fini d'un group fini est somme directe de repr. inductives.
 \end{theorem}
 
 \begin{lemme}
-	Tout sous-espace stable d'une rep. lin. complexe de degré fini d'un groupe fini admet un sous-espacce \emph{Supplémentaire Stable}.
+	Tout sous-espace stable d'une rep. lin. complexe de degré fini d'un groupe fini admet un sous-espace \emph{Supplémentaire Stable}.
 \end{lemme}
 \begin{proof}[Lemma]
-	Il existe un produit dcalaire hermitien sur l'espace de la rep. stable sous l'action du groupe. En effect, si $\expval{\cdot,\cdot}$ désigne un produit scalaire que lonque sur V, le produit scalaire survant est stable par $\rho$:
+	Il existe un produit scalaire hermitien sur l'espace de la rep. stable sous l'action du groupe. En effect, si $\expval{\cdot,\cdot}$ désigne un produit scalaire que conque sur V, le produit scalaire suivant est stable par $\rho$:
 	Pour $x,y\in V$:
 	$$\expval{x,y}_\rho=\frac 1{|G|}\sum_{g\in G\expval\rho_g(x),\rho_g(y)}$$
 	En effet, si $h\in G$, on a;
-	$$\expval{\rho_h(x),\rho_h(y)}_\rho=\frac 1{|G|}\sum_{g\in G}\expval(\rho_h(x),\rho_g(\rho_h(g)))=\frac 1{|G|}\sum_{g\in G}\expval{\rho_{gh}(x),\rho_{gh}(y)} = \expval{x,y}_\rho$$ car $g\mapsto gh$ est une bijection de $G$ sur lui-méme.
-	Si $W$ est un sous-espace vectorie de V stable sous l'action d  alors le supement orthogonal de W est lui aussi stable sous l'action puique $x$ orthogonal a $W$ $\Leftrightarrow$ $\rho_g(x)$ orthogonal $\rho_g(W)=W$
+	$$\expval{\rho_h(x),\rho_h(y)}_\rho=\frac 1{|G|}\sum_{g\in G}\expval(\rho_h(x),\rho_g(\rho_h(g)))=\frac 1{|G|}\sum_{g\in G}\expval{\rho_{gh}(x),\rho_{gh}(y)} = \expval{x,y}_\rho$$ car $g\mapsto gh$ est une bijection de $G$ sur lui-même.
+	Si $W$ est un sous-espace vectoriel de V stable sous l'action d  alors le supplémentaire orthogonal de W est lui aussi stable sous l'action puique $x$ orthogonal a $W$ $\Leftrightarrow$ $\rho_g(x)$ orthogonal $\rho_g(W)=W$
 \end{proof}
 \begin{proof}
-	On fait une recuneuce sur la dimension de l'esp vect de la rep.
-	Si dim V=1 on si V est li ok\\
-	Si dim v \geq 2 et V est non ined alors V pose de un sous --representation W. Distincte de $\{0\}$ et V.
-	Si $\expval{\cdot, \cdot}$ est un proudit scalaire ermitian sur V invariant sous l'action de $G$, le supplémentaire orthogonal $W\perp$ de W est lui aussi stable sous l'action de G.
+	On fait une récurrence sur la dimension de l'espace vectoriel de la représentation.
+	Si dim V=1 on si V est irréductible ok\\
+	Si $\dim V \geq 2$ et V est non irréductible alors V possède de un sous--représentation W. Distincte de $\{0\}$ et V.
+	Si $\expval{\cdot, \cdot}$ est un produit scalaire hermitien sur V invariant sous l'action de $G$, le supplémentaire orthogonal $W\perp$ de W est lui aussi stable sous l'action de G.
 	
-	On a lors: $V=W\bigoplus W^\perp$ et W et $W\perp$ sont de dimensions < dim V.
-	L'hypothese de recurence permet de les décomposer comme des sommes disuctes de rep in ce que prouve gu'on peut en faire antant de V.
+	On a lors: $V=W\oplus W^\perp$ et W et $W\perp$ sont de dimensions < dim V.
+	L'hypothèse de récurrence permet de les décomposer comme des sommes directes de rep in ce que prouve qu'on peut en faire autant de V.
 \end{proof}
 
+Caractère d'ne representatioon:
+\begin{definition}
+	On appelle Caractère de la représentation $\rho:g\mapsto GL(V)$ l'application: $\chi_\rho:G\mapsto  \CC$ $g\mapsto \chi+\rho(g)=T_r(\rho_g)$ où $T_r(\rho_g)$ disque la trace de l'endomorphisme $\rho_g$.
+\end{definition}
+
+\begin{proposition}
+	Soit $\rho:G\mapsto GL(V)$ une représentation d'un groupe fini $G$ de caractère $\chi\rho$:
+	\begin{enumerate}
+		\item $\chi_\rho(x)=\dim$ V-degré de $\rho=:\text{ degré de }\chi_\rho$
+		\item $\forall g\in g, \chi_\rho(g\dmo)=\overline{\chi_\rho(g)} (conjugue complexe)$
+		\item $\forall g,h\in G, \chi\rho(ghg\dmo)=\chi_\rho(h)$ i.e $\chi_\rho$ est ne fonction centrale sur $G$
+		\item $\chi_{\rho\oplus\rho'}=\chi_\rho \chi_{\rho'}$ si $\rho':g\mapsto GL(V')$ up
+		\item Si $\rho$ et $\rho'$ sont equivalents alors $\chi_\rho=\chi_\rho'$
+	\end{enumerate}
+\end{proposition}
+
+Proof?
+\begin{enumerate}
+	\item $\chi_\rho(x)=Tr(\rho_e)=Tr(id_V)=dimV$
+	\item si G est fini et si $g\in G$, les valeurs props de l'endomorphisme $\rho_g$ sond des racines de l'unité. en particulier, elles sont de module 1 et donc $\lambda\dmo=\bar \lambda $ si $\lambda$ est un valeur pros de $\rho_g$.
+	
+	Remarquons que les valeurs props de l'endomorphisme $\rho_{g\dmo}=\rho\dmo_g$ sont les inverses de celles de $\rho_g$. En effet si $f(x)=\lambda x$ alors $x=f\dmo(f(x))=f\dmo(\lambda x)= \lambda f\dmo(x)$ donc $f\dmo(x)=\frac 1\lambda x$.
+	
+	Puisque la trace d'endomorphisme diagonalisable est égale a la somme des valeurs propres comptes avec multiplicités, on en déduit que:
+	$\chi_\rho(g\dmo)=\overline{\chi_\rho(g)},\ \forall g\in G$
+	\item Si $g,h\in G$, on a: $\chi_\rho(ghg\dmo)=Tr(\rho_{ghg\dmo})=Tr(\rho_g\circ\rho_h\circ\rho\dmo_g)=Tr(\rho_h)=| car Tr(AB)=TR(BA)|=\chi_\rho(h)$
+	$\chi_\rho$ peut la meme valeur sur tous les elts s'une clame a conjugaison.
+	\item Si $(e_1,...,e_n)$ est un base de V et $(e'_1,...,e'_n)$ est un bade de $V'$ alors
+	$(e_ ,0), (e_ ,0), (e_ ,0), (e_ ,0)$ est une base de $V\oplus V'$ et la matrice de $(\rho\oplus \rho')_g $ est (  adadfl. ) dont la trace est la somme des trace de $mat(\rho_g) et Mat(\rho'_g)$
+	\item Invariance de la trace par changement de base.
+\end{enumerate}
+
+Examples de calcules de caractères:
+\begin{enumerate}
+	\item Si G est un group operant sur un ensemble fini X, considérons la rep de permutations $\rho$ associe:
+	$$\rho:G\mapsto GL(V)\mbox{ où }V=\oplus_{x\in X}\expval{e_x}$$
+	$$g\mapsto(\rho_g:V\mapsto V, e_x\mapsto g_g\cdot x)$$
+	On a:
+	$\chi_\rho:G$ $\Rightarrow$ $\CC$
+	$$g\mapsto Tr(\rho_)$$
+	Sans la base $(e_x)_{x\in X}$ de V, pour $g\in G$ fixe, la matrice du $\rho_g$ est une matrice de permutation i.e. a exactement sur 1 par ligue et par colonne est tous les autres coefficients sont nuls.
+	
+	Da plus, si $mat_{(e_x)}(\rho_g)=(a_{ij})$ alors le terme diagonal: $a_{xx}=1$  $\Leftrightarrow$   $g\cdot x$  $\Leftrightarrow$  x est un point fixe de g; sinon $a_{xx}=0$
+	
+	On eu déduit que: $\chi_\rho(g)=Tr(\rho_g)=\#\{x\in X | g\cdot x= x\}$
+	\item Caractere de la rep. reguliere.
+	Cas particulier de la rep de permutation avec $g$ fini, $x=g$, l'action étant la multiplication: $G\cdot x=gx$ si $g,x\in G.$.
+	On a alors: $\chi_\rho(g)=Tr(\rho_g)=\#\{x\in G|gx=x\}\left\{\begin{array}{l}|G| si g=e\\0 sinon\end{array}\right.$.
+\end{enumerate}
+
+
+\begin{definition}
+	Nous qualifierons d'inductive tout caractère d'une représentation irréductible.
+\end{definition}
+	
+	La tableau des caractères (irréductible) d'une group fini G est un tableau  à clique et c colons, où c es le nombre de classes de conjugaison de $G$, dont les autres sont les valeurs ses caractères irréductibles sur les classes de conjugaison de $G$. (nous venons qu'il y a autant de class d'isomorphisme de caractère irréductible que de class de conjugaison.)
+	
+4 Orthogonalité des caractères.
+
+Soit  un group fini - On considère le $\CC$-espace vectoriel $\F (G)$ des fonctions complexes définies sur G ($f:G\mapsto  \CC$) que l'ou munit de la structure hermitien donné par le produit scalaire:
+Pur $\phi,\psi\in\F(G), \expval{\phi,\psi}=\frac 1{|G|}\sum_{g\in G}\overline{g\phi(g)}\psi(g)$. On a: $\dim_\CC\F(G)=|G|$.
+En effetSi $f\in\F(G)$ alors $f=\sum_{g\in G}\lambda INd_g$ où $\Ind_g:G\mapsto \CC$ $x\mapsto \left\{\begin{array}{l}1 si x=y\\0 sinot\end{array}\right.$.
+
+(avec $\lambda = f(g)) \mapsto  f=\sum ....$
+
+
+Proposition: les caractère irréductibles d'un group G forment un système orthonormal de fonctions de l'espace vectoriel hermitien $\F(G)$. ie si $\chi$ et $\chi'$ sont les caractères une de $G$ alrs $\expval{\chi, \chi'}=\left\{\begin{array}{l} 1 si \chi=\chi'\\0 sinon \end{array}\right.$.
+
+\begin{proof}
+	
+Dém: soient $\rho:G\mapsto GL(V)$ et $\rho':G \rightarrow GL(V')$ deux rep irred de G et soient $\chi:G \rightarrow \CC$ et $\chi':G \rightarrow \CC$ leurs cancients associés; et soient $Mat(\rho_g)=(a_{ij}(g))_{1\leq i,j\leq d}$ et $Mat(\\rho'_g)=(a'_{ij(g)})_{1\leq i,j\leq d}$
+
+(où $d=deg(ro)=dim V et d'=deg(ro')=dimV'$)
+
+On a:
+$$\chi(g)=Tr(\rho_g)=\sum_i=1^d a_{ii}(g)$$ et $$\\chi'(g)=\sum _i=1d' a'_{i'ii'}(g)$$
+
+
+
+
+D'où: $\expval{\chi,\chi'}=\frac 1{|G|}\sum_{g\in G}\overline{\chi(g)} \chi'(g)=\frac 1{|G|}\sum_{g\in G}\sum_{i,j}\overline{a_{ii}(g)a_{jj};(g)}$
+
+
+$=0 si ro et ro' sont unn isomorphismes 1 si \rho\simeq ro'$ (d'où: $ksi+ksi')$
+
+
+par le lemme de Schur (traduit en relations algébriques)
+\end{proof}
+
+
+Lemme de Schur: soient $\rho: G\mapsto GL(V)$ et $\rho':G\mapsto GL(V')$ deux rep lin irred d'un group fini T et $f:V \rightarrow  V'$ un morphisme compatible avec les deux rep (e.e. $$coadfaf diagram$$)  ie $\forall g\in G, f\circ \rho_g=\rho'_g\circ f )$
+
+S les deux re ne sont pas isomorphes alors $f=0$. Sinon f est un isomorphisme (et identifiant V et V;) on a: $f=\lambda ID \lambda\in \CC$ (i.e. f est une homothétie).
+
+\begin{remark}
+	
+	Cas particuliers des caractères (irréductible) de représentations (irréductibles) de \emph{degré 1} d'un group G:
+	$\rho:G\mapsto\CC^\ast$ le caractère $\chi$ associé à cette rep $\rho$ est: $\chi:G\mapsto \CC$ $g\mapsto \chi(g)=Tr(\rho_g)=\rho_g$. Donc: $\chi=\rho$. $\chi$ est appelé un caractére \texttt{linéaire}.
+\end{remark}
+
+
+Exercise On note $G^fa$ l'ensemble des caracteurs linéaires de G: $G^=\{morphisms \chi:G\mapsto \CC^*$ On définit le produit $$\chi\chi'$$ de deux caractères lin de G par: $\forall g in g (chi\chi'((g)=\chi(g)\chi'(g)))$
+
+\begin{enumerate}
+	\item Montrer qu $G$, muni de produit, est un group abélien.
+	\item On rappelle que le caractère trivial est défini par: $\chi_0:G \rightarrow \CC^\& g\mapsto 1$.
+	Montrer que, si G est fini, et si $\chi \in G$ alors:
+	$\frac 1{|G|}\sum g\in G\chi(g)=\left\{\begin{array}{l} 1 si \chi\chi_0 0 sinon\end{array}\right. $
+	\item E déduire les relations s'orthogonalité des caractères linéaires. Si $\chi,\chi'\in Gˆ$ alors: fasdf
+\end{enumerate}
 
 %----------------------------------------------------------------
 
