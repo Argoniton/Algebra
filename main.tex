@@ -119,7 +119,7 @@ On souhaite même l'ensemble quotient de la structure de groupe qui fasse de la 
 	\begin{enumerate}
 		\item $\langle \sigma_1 \rangle=\{e,\sigma_1,\sigma_2\}$ --- sous-gropupe engendée pour $\sigma_1$ dans $\gS_3$. $[G:H]=2\Rightarrow \langle x\rangle\lhd\gS_3$.
 		\item $\langle \tau_1\rangle=\{e,\tau_1\}\ntriangleleft\gS_3$. Car $\langle \tau_1 \rangle$ n'est pas stable par conjugaison. En effet: l'element $\tau_2\tau_1\tau_2\dmo =\tau_2\tau_1\tau_2=(12)=\tau_3\not\in H$.
-		\item Le \emph{Noyau} du morphisme de grouped $f:G\rightarrow G'$ est l'ensemble $Ker f\coloneq\{x\in G | f(x)=e'\}$, où $e'$ est l'element neutre de $G'$. C'est un sous-groupe distingué de G.
+		\item Le \emph{Noyau} du morphisme de grouped $f:G\rightarrow G'$ est l'ensemble $\ker f\coloneq\{x\in G | f(x)=e'\}$, où $e'$ est l'element neutre de $G'$. C'est un sous-groupe distingué de G.
 	\end{enumerate}
 \end{examplebox}
 
@@ -223,7 +223,7 @@ $\pi:\ G\rightarrow \sigma_X$\\
 $G\mapsto \pi_G$
 
 i.e l'ensemble:
-$$Ker \pi \{g\in G | \pi(g)=e_{\sigma_X}\}=\{g\in G | \pi_g = id_x\}=\{g\in G | \forall x \in X, \pi_g(x)=x\}=\{g\in G | \forall x\in X, g.x=x\}$$
+$$\ker \pi \{g\in G | \pi(g)=e_{\sigma_X}\}=\{g\in G | \pi_g = id_x\}=\{g\in G | \forall x \in X, \pi_g(x)=x\}=\{g\in G | \forall x\in X, g.x=x\}$$
 On dit que l'action est \textsc{Fidèle} si son mogau est redit à  $\{e\}$ i.e. le morphisme $\pi$ associé est injectif.
 
 \emph{Exemples}.
@@ -431,11 +431,11 @@ Le noyan $\mathfrak{A}_n$ du morphisme signature $\varepsilon:\gS_n\rightarrow\{
 
 Thèorie introduite par Frobenius à la fin du XIX siècle.
 
-\section{Premieres definitions, représentations, yep isomorphisms et rep. iuductis)} % (fold)
+\section{Premieres definitions, représentations, yep isomorphisms et représentation iuductis)} % (fold)
 \label{sec:premieres_definitions_représentations_yep_isomorphisms_et_rep_iuductis}
 
 \begin{definition}
-	Une \textsc{Représentation Linéaire} d'une groupe $G$ est la donnée d'une $\CC$-espace vectoriel $V$ muni d'une action (à gauche) de $G$ agissant de manière linéaire
+	Une \textsc{Représentation Linéaire} d'une groupe $G$ est la donnée d'une $\C$-espace vectoriel $V$ muni d'une action (à gauche) de $G$ agissant de manière linéaire
 	\begin{align*}
 		G\times V & \rightarrow V \\
 		(g,v) & \mapsto g\cdot v,		
@@ -444,17 +444,17 @@ Thèorie introduite par Frobenius à la fin du XIX siècle.
 	\begin{enumerate}
 		\item $\forall x\in V,\ e\cdot x=x$ où $x$ est l'element neutre de $G$
 		\item $\forall g, g' \in G,\ \forall x\in V:\ g\cdot (g'\cdot x)=(gg\dmo)\cdot x$
-		\item $\forall g\in G,\ \forall x,x'\in V,\ \forall \lambda,\lambda'\in\CC:\ g\cdot(\lambda x+\lambda'x')=\lambda g\cdot x+\lambda' g\cdot x'$
+		\item $\forall g\in G,\ \forall x,x'\in V,\ \forall \lambda,\lambda'\in\C:\ g\cdot(\lambda x+\lambda'x')=\lambda g\cdot x+\lambda' g\cdot x'$
 	\end{enumerate}
 \end{definition}
 
 \begin{definition}
-Une représentation linéaire d'un groupeG est donc le donnée d'un $\CC$-espace vectoriel $V$ est d'un morphisme de groups:
+Une représentation linéaire d'un groupe $G$ est donc le donnée d'un $\C$-espace vectoriel $V$ et d'un morphisme de groupes:
 \begin{align*}
 	\rho:G &\rightarrow GL(V)\\
 	g &\mapsto \rho(g)=\rho_g:V\rightarrow V.	
 \end{align*}                
-où $GL(V)$ est le groupe des automorphisme du $\CC$-espace vectoriel $V$.
+où $GL(V)$ est le groupe des automorphismes du $\C$-espace vectoriel $V$.
 
 On a donc: $\forall g,g'\in G$, $\rho_{gg'}=\rho_g\circ \rho_{g'}$. Et aussi: $\rho_e=id_V$ et $\rho_{g\dmo}=(\rho_g)\dmo\ \forall g\in G$.
 \end{definition}
@@ -467,7 +467,7 @@ En effet, si G opère sur $V$ de la manière linéaire a lois considérons l'app
 	g &\mapsto  \left(\rho_g:\begin{array}{rcl}V&\rightarrow& V \\ x&\mapsto&\rho(x)=g\cdot x\end{array}\right)
 \end{align*}
 
-$\rho_g$ est un endomorphisme du $\CC$-espace vectoriel $V$, car si $x,x'\in V$ et si $\lambda, \lambda'\in \CC$ on a:
+$\rho_g$ est un endomorphisme du $\C$-espace vectoriel $V$, car si $x,x'\in V$ et si $\lambda, \lambda'\in \C$ on a:
 $\rho_g(\lambda x + \lambda' x')=g(\lambda x+\lambda' x')=\lambda g\cdot x+\lambda'g\cdot x'=\lambda\rho_g(x)+\lambda'\rho_g(x')$
 
 De plus, $\rho_g$ est bijectif car $\ker\rho_g=\{0\}$; en effect soit $x\in V$ on a: $\rho_g(x)=0$  $\Rightarrow$  $g\cdot x=0$ d'où $g\dmo g\cdot x= \rho\dmo 0=\rho_{g\dmo}(0)=0$,
@@ -494,21 +494,21 @@ Cela definit bien un action linear de $G$ sur $V$ car:
 	\leavevmode
 	\begin{itemize}
 		\item L'espace vectoriel $V$ est \textdemp{l'espace de la représentation}.
-		\item La dimension de $V$ est le \textdemp{degree} (ou la \textdemp{dimension}) de la représentation.
-		\item Lorsque $\rho$ est injectif, la représentation est dite \textdemp{fidèle}. Le groupeG se représente alors de manière concrète comme un sous-groupe de $GL(V)$.
-		\item Lorsque $V$ est dimension finite (ce qui cela toujours le cas par la suite). Le choix d'une base fournit alors une représentation encore plus concrete comme groupe de matrices (ou si $\dim_\CC V=n$ alors $GL(V)\simeq GL_n(\CC))$.
+		\item La dimension de $V$ est le \textdemp{dégrée} (ou la \textdemp{dimension}) de la représentation.
+		\item Lorsque $\rho$ est injectif, la représentation est dite \textdemp{fidèle}. Le groupe $G$ se représente alors de manière concrète comme un sous-groupe de $GL(V)$. $G\simeq Im(ro)<GL(V)=C^n ro:G\rightarrow C^* g\mapsto ro_g \simeq GL_n(\C)$
+		\item Lorsque $V$ est dimension finite (ce qui cela toujours le cas par la suite). Le choix d'une base fournit alors une représentation encore plus concrete comme groupe de matrices (ou si $\dim_\C V=n$ alors $GL(V)\simeq GL_n(\C))$.
 	\end{itemize}	
 \end{definition}
 
 
 \begin{remark}
-	Soient G un groupefini et $\rho:G\rightarrow GL(V)$ une représentation (liniaire) de $G$.
+	Soient G un groupe fini et $\rho:G\rightarrow GL(V)$ une représentation (linéaire) de $G$.
 	Si $g\in G$ est d'ordre $n$ alors, on a:
 	$$(\rho_g)^n=\rho_{g^n}=\rho_e=id_v=\text{"1"}$$
-	Donc l'endomorphisme $\rho_g$ est racine du polynôme $x^n-1$, que n'a que des racines simples (à savoir les racines n'eme de l'unite dans $\CC$, que sont: $e^{\frac{2h\pi}{n}}$, $h\in\{0,..,m\}$).
+	Donc l'endomorphisme $\rho_g$ est racine du polynôme $x^n-1$, que n'a que des racines simples (à savoir les racines n'ème de l'unite dans $\C$, que sont: $e^{\frac{2h\pi}{n}}$, $h\in\{0,..,m\}$).
 
 	\begin{rappel}	
-		$f\in \End (V)$, $I_f=\{P(x)\in\CC[x]\ |\ P(f)=0\}$ ideal de l'anneau principal $\CC[x]$. (car $\CC$ est un corps) L'unique polynôme unitaire que engendre $I_f$ est appelé la polynome minimal de $f$.
+		$f\in \End (V)$, $I_f=\{P(x)\in\C[x]\ |\ P(f)=0\}$ ideal de l'anneau principal $\C[x]$. (car $\C$ est un corps) L'unique polynôme unitaire que engendre $I_f$ est appelé la polynome minimal de $f$.
 	\end{rappel}
 
 	La polynôme minimal de $\rho_g$ est donc un divisor de $x^n-1$ et n'a donc lui aussi que de racines simples. Ce la pon que l'endomorphisme $\rho_g$ est diagonalisable (car touts ses valeurs propre sont donc simples).
@@ -516,21 +516,22 @@ Cela definit bien un action linear de $G$ sur $V$ car:
 
 \begin{examplebox}
 	\begin{enumerate}
+	\leavevmode
 		\item La représentation \textdemp{triviale} (on représentation unité).
 		\begin{align*}
-			\rho:\ G &\rightarrow GL(\CC)\simeq\CC^\ast\\
-			g &\mapsto (\rho_g: id:\CC\rightarrow \CC\ x\mapsto x)
+			\rho:\ G &\rightarrow GL(\C)\simeq\C^\ast\\
+			g &\mapsto (\rho_g: id:\C\rightarrow \C\ x\mapsto x)
 		\end{align*}
-		\item Les représentation de degré 1: ce sont les \textdemp{homomorphisms} $\rho:G\rightarrow \CC^\ast$ puisque si $\dim V= 1$ alors $GL(V)\simeq\CC^\ast$.
-		En effet les endomorphisms de $V$ sont les \textdemp{homothétis}: $f_\lambda: V\rightarrow V x\rightarrow \lambda x(\lambda\in \CC^\ast)$. Et $GL(V)\rightarrow  G^\ast$ est un isomorphisme $f_\lambda\rightarrow \lambda$.
+		\item Les représentation de degré 1: ce sont les \textdemp{homomorphisms} $\rho:G\rightarrow \C^\ast$ puisque si $\dim V= 1$ alors $GL(V)\simeq\C^\ast$.
+		En effet les endomorphisms de $V$ sont les \textdemp{homothétis}: $f_\lambda: V\rightarrow V x\rightarrow \lambda x(\lambda\in \C^\ast)$. Et $GL(V)\rightarrow  G^\ast$ est un isomorphisme $f_\lambda\rightarrow \lambda$.
 		
-		Si G est fini, tout elements du $G$ est d'ordre fini (par le th. de Lagrange) donc, pour tout $g \in G$, $\rho_g$ est un racine de l'unité dans $\CC$.
+		Si G est fini, tout elements du $G$ est d'ordre fini (par le th. de Lagrange) donc, pour tout $g \in G$, $\rho_g$ est un racine de l'unité dans $\C$.
 		(Car si $g^n=e$ alors $\rho_{g^n}=(\rho_g)^n$). En particulier, ce sont des numbers complexs de mondle 1. $|\rho_g|=1$.
-		\item Soient $\gS_m$ considéré le groupesymétrique et $(e_1,...\,, e_n)$ la base canonique de $\CC^n$. On définit une représentation de degré $n$ de $\gS_n$ en posant:
+		\item Soient $\gS_m$ considéré le groupesymétrique et $(e_1,...\,, e_n)$ la base canonique de $\C^n$. On définit une représentation de degré $n$ de $\gS_n$ en posant:
 		\begin{align*}
-			\rho:\gS_n &\rightarrow GL(\CC^n) \\
+			\rho:\gS_n &\rightarrow GL(\C^n) \\
 			\sigma &\mapsto \left(
-				\begin{array}{rcl} \rho_\sigma: \CC^n &\rightarrow&  \CC^n \\ e_i &\mapsto& \rho_\sigma(e_i)=e_{\sigma(i)} \end{array}
+				\begin{array}{rcl} \rho_\sigma: \C^n &\rightarrow&  \C^n \\ e_i &\mapsto& \rho_\sigma(e_i)=e_{\sigma(i)} \end{array}
 			\right)
 		\end{align*}
 		\item La \texttt{représentation de permutation} c'est un généralisation l'exemple précédent. Soit $G\times X\rightarrow X$ une action $(g,x)\mapsto g\cdot x$ d'un groupeG sur un ensemble fini x. Soit V un C espace vectoriel de dimension égale au cardinal de X, dune base indexée par les elements de X: $\{\eps_x,\ x\in X\}$. On a donc: $V=\oplus_{x\in x}\expval{\eps_x}=\oplus_{x\in X}\C_{\eps_x}$. On définit une re linéaire
@@ -541,13 +542,13 @@ Cela definit bien un action linear de $G$ sur $V$ car:
 		\end{remark}
 		
 		\item La représentation Régulière. C'est l'exemple precedent avec $X=G$ agissant sur lui-même translation à gauche:
-		$$ \rho: G\rightarrow  GL(v)\\g\mapsto(\rho_g:V\rightarrow  V\\\eps_x\mapsto \eps_{g\cdot x}).$$
+		$$\deffunc{\rho}{G}{GL(V)}{g}{\left(\deffunc{\rho_g}{V}{V}{\eps_x}{\eps_{g\cdot x}}\right)}.$$
 		
 	\end{enumerate}
 \end{examplebox}
 
 \begin{definition}
-	Deux représentation linier $\rho \rightarrow  GL(V)$ et $\rho':G\rightarrow  GL(V')$ d'un groupe$G$. Sont dites \textsc{Isomorphes} ou \textsc{Équivalents} s'il existe un isomorphisme d'espace vectoriels $f:V\rightarrow  overset \simeq V'$ tel que l'on ont: $\forall g\in G, \rho_g'\circ f= f\circ\rho_g$.
+	Deux représentation linier $\rho \rightarrow  GL(V)$ et $\rho':G\rightarrow  GL(V')$ d'un groupe $G$. Sont dites \textsc{Isomorphes} ou \textsc{Équivalents} s'il existe un isomorphisme d'espace vectoriels $f:V\overset{\simeq}{\rightarrow} V'$ tel que l'on ont: $\forall g\in G, \rho_g'\circ f= f\circ\rho_g$.
 	
 \begin{diagram}
   V      & \rTo^f & V'      \\
@@ -574,9 +575,9 @@ G & \rTo^{\rho} & GL(V) \\ \dTo^{\rho'} & \ldTo_{\tilde f} & \\ GL(V')&&
 En termes de matrices, cela signifie que les matrices associés à la premier represantion sont semblables à leurs homologués dans la seconde, via la même matrice de passage:
 $$\forall g\in G, \mat(\rho'_g)=\mat(f)\times \mat(\rho_g)\times \mat(f)\dmo$$
 
-($A,B$ Semblables si $\exists P:\ B=PAP\dmo$)
+($A,B$ Semblables si $\exists P:\ B=PAP\dmo$).
 
-Si $\rho:G\rightarrow GL(V)$ est une représentation d'un groupe$G$. Si $W$ est un sous-espace vectoriel de $V$ \textsc{Stable} par les différents automorphismes $\rho_g$ pour $g\in G$ i.e $\rho_g(W)\subset W$ (i.e $\forall g\in G, \forall w\in W, \rho_g(w)\in W$)
+Si $\rho:G\rightarrow GL(V)$ est une représentation d'un groupe $G$. Si $W$ est un sous-espace vectoriel de $V$ \textsc{Stable} par les différents automorphismes $\rho_g$ pour $g\in G$ i.e $\rho_g(W)\subset W$ (i.e $\forall g\in G, \forall w\in W, \rho_g(w)\in W$)
 
 Alors on peut considérer la sous-représentation:
 $$\deffunc{\rho|_x}{G}{GL(W)}{g}{\rho_g|_W}$$
@@ -584,7 +585,7 @@ $$\deffunc{\rho|_x}{G}{GL(W)}{g}{\rho_g|_W}$$
 \begin{remark}
 	$\forall w\in W,\ \rho_g|_W(w)=\rho_g(w)\overset{?}{\in}W$
 \end{remark}
-Cela produit à le notion de représentation inéducable:
+Cela produit à le notion de représentation irréductible:
 \begin{definition}
 	Une représentation $\rho: G\rightarrow  GL(V)$ est dite \textsc{Irréductible} si les seules sous-espaces \emph{stables} de $V$ sont $\{0\}$ et $V$.
 \end{definition}
@@ -593,9 +594,9 @@ Ainsi les reparamétrisation de \emph{degré 1} constituent des représentations
 
 \section{Théorème de Maschke}
 \begin{definition}
-	On définit le \textsc{Somme Directe} de représentation de groupefini $G$. Soient $\rho:g\rightarrow GL(V)$ et $\rho': G\rightarrow GL(V')$ deux représentations de $G$. On définit la somme directe $\rho\oplus \rho'$ comme étant:
+	On définit le \textsc{Somme Directe} de représentation de groupe fini $G$. Soient $\rho:g\rightarrow GL(V)$ et $\rho': G\rightarrow GL(V')$ deux représentations de $G$. On définit la somme directe $\rho\oplus \rho'$ comme étant:
 	La représentation d'espace vectoriel $V\oplus V'$ definit par:
-	$$\deffunc{\rho\oplus\rho'}{G}{GL(V\oplus V')}{g}{(\rho\oplus\rho')_g}$$ definit par $\forall v\in V,\ \forall v'\in V':\  (\rho\oplus \rho')_g(v+v')=\rho_g(v)+\rho'_g(v')$
+	$$\deffunc{\rho\oplus\rho'}{G}{GL(V\oplus V')}{g}{(\rho\oplus\rho')_g}$$ definit par $\forall v\in V,\ \forall v'\in V':\  (\rho\oplus \rho')_g(v+v')=\rho_g(v)+\rho'_g(v')$.
 \end{definition}
 
 \begin{theorem}[Théorème de Maschke]	
@@ -632,12 +633,12 @@ Ainsi les reparamétrisation de \emph{degré 1} constituent des représentations
 \section{Caractère d'une représentation}
 \begin{definition}
 	On appelle \textsc{Caractère de la Représentation} $\rho:g\mapsto GL(V)$ l'application: 
-	$$\deffunc{\chi_\rho}{G}{\CC}{g}{\chi_\rho(g)=\Tr(\rho_g)}$$ 
+	$$\deffunc{\chi_\rho}{G}{\C}{g}{\chi_\rho(g)=\Tr(\rho_g)}$$ 
 	où $\Tr(\rho_g)$ --- désigne la \texttt{trace} de l'endomorphisme $\rho_g$.
 \end{definition}
 
 \begin{proposition}
-	Soit $\rho:G\mapsto GL(V)$ une représentation d'un groupe fini $G$ de caractère $\chi\rho$:
+	Soit $\rho:G\rightarrow GL(V)$ une représentation d'un groupe fini $G$ de caractère $\chi\rho$:
 	\begin{enumerate}
 		\item $\chi_\rho(x)=\dim V=\mbox{« degré de $\rho$ »}\defeq \text{« degré de $\chi_\rho$ »}$
 		\item $\forall g\in G,\ \chi_\rho(g\dmo)=\overline{\chi_\rho(g)}$ --- conjugue complexe
@@ -666,20 +667,20 @@ Ainsi les reparamétrisation de \emph{degré 1} constituent des représentations
 \end{proof}
 
 \begin{examplebox}
-	Examples de calcules de caractères:
+	Exemples de calcules de caractères:
 \begin{enumerate}
-	\item Si $G$ est un groupeopérant sur un ensemble fini $X$, considérons la représentation de permutations $\rho$ associe:
+	\item Si $G$ est un groupe opérant sur un ensemble fini $X$, considérons la représentation de permutations $\rho$ associe:
 	$$\deffunc{\rho}{G}{GL(V)}{g}{\left( \deffunc{\rho_g}{V}{V}{e_x}{e_{g\cdot x}} \right)}$$
 	où $V=\mathop{\oplus}_{\substack{x\in X}}\expval{e_x}$.
 	
-	On a: $\deffunc{\chi_\rho}{G}{\CC}{g}{\Tr(\rho_g)}$.
+	On a: $\deffunc{\chi_\rho}{G}{\C}{g}{\Tr(\rho_g)}$.
 
 	Dans la base $(e_x)_{x\in X}$ de V, pour $g\in G$ fixe, la matrice du $\rho_g$ est une matrice de permutation i.e. a exactement un 1 par ligne et par colonne est tous les autres coefficients sont nuls.
 	
 	De plus, si $\mat_{(e_x)}(\rho_g)=(a_{ij})$ alors le terme diagonal: $a_{xx}=1$  $\Leftrightarrow$   $g\cdot x=x$  $\Leftrightarrow$  $x$ est un point fixe de $g$, sinon $a_{xx}=0$.
 	
 	On en déduit que: $\chi_\rho(g)=Tr(\rho_g)=\#\{x\in X\ |\ g\cdot x= x\}$
-	\item Caractere de la représentation régulière.
+	\item Caractère de la représentation régulière.
 	Cas particulier de la rep de permutation avec $G$ fini, $X=G$, l'action étant la multiplication: $g\cdot x=gx$ si $g,x\in G$.
 	On a alors: $\chi_\rho(g)=Tr(\rho_g)=\#\{x\in G\ |\ gx=x\}=\left\{\begin{array}{cl}|G|&\mbox{si }g=e\mbox,\\0& \mbox{sinon }\end{array}\right.$.
 \end{enumerate}
@@ -687,30 +688,30 @@ Ainsi les reparamétrisation de \emph{degré 1} constituent des représentations
 
 
 \begin{definition}
-	Nous qualifierons d'irréductible tout caractère d'une représentation irréductible.
+	Nous qualifier errons \textsc{d’Irréductible} tout caractère d’une représentation irréductible.
 \end{definition}
 	
-	\texttt{Le tableau des caractères} (irréductible) d'une groupefini $G$ est un tableau  à $c$ lignes et $c$ colons, où $c$ es le nombre de classes de conjugaison de $G$, dont les entrées sont les valeurs de caractères irréductibles sur les classes de conjugaison de $G$. (nous venons qu'il y a autant de classes d'isomorphisme de caractère irréductible, que de class de conjugaison.)
+	\texttt{Le tableau des caractères} (irréductible) d'une groupefini $G$ est un tableau  à $c$ lignes et $c$ colons, où $c$ es le nombre de classes de conjugaison de $G$, dont les entrées sont les valeurs de caractères irréductibles sur les classes de conjugaison de $G$. (nous venons qu'il y a autant de classes d'isomorphisme de caractère irréductible, que de class de conjugaison.) 
 	
 \section{Orthogonalité des caractères.} % (fold)
 
-Soit $G$ un groupefini. On considère le $\CC$-espace vectoriel $\F (G)$ des fonctions complexes définies sur $G$ ($f:G\mapsto  \CC$) que l'ou munit de la structure hermitien donnée par le produit scalaire.
+Soit $G$ un groupe \emph{fini}. On considère le $\C$-espace vectoriel $\F (G)$ des fonctions complexes définies sur $G$ ($f:G\mapsto  \C$) que l'ou munit de la structure hermitien donnée par le produit scalaire.
 Pour $\varphi,\psi\in\F(G)$:
 
 $$\expval{\varphi,\psi}=\frac 1{|G|}\sum_{g\in G}\overline{\varphi(g)}\psi(g).$$
 
-On a: $\dim_\CC\F(G)=|G|$.
-En effet, si $f\in\F(G)$ alors $f=\sum\limits_{g\in G}\lambda \Ind_g$ où \scalebox{0.8}{$\begin{array}{rcl}\Ind_g:G&\mapsto& \CC\\x&\mapsto& \scalebox{1}{\mbox{$\left\{\begin{array}{cl}1&\mbox{$x=g$}\\0& \mbox{sinon}\end{array}\right.$}}\end{array}$}
+On a: $\dim_\C\F(G)=|G|$.
+En effet, si $f\in\F(G)$ alors $f=\sum\limits_{g\in G}\lambda \Ind_g$ où \scalebox{0.8}{$\begin{array}{rcl}\Ind_g:G&\mapsto& \C\\x&\mapsto& \scalebox{1}{\mbox{$\left\{\begin{array}{cl}1&\mbox{$x=g$}\\0& \mbox{sinon}\end{array}\right.$}}\end{array}$}
 
 (avec $\lambda = f(g)\Rightarrow f=∑_{g\in G}f(g)\Ind_g)$) donc $(\Ind_g)_{g\in G}$ base de $\F(G)$. 
 
 
 \begin{proposition}
-Les caractères irréductibles d'un groupe $G$ forment un système orthonormal de fonctions de l'espace vectoriel hermitien $\F(G)$. I.e. si $\chi$ et $\chi'$ sont les caractères une de $G$ alors $\expval{\chi, \chi'}=\left\{\begin{array}{cl} 1 &\mbox{si $ \chi=\chi'$}\\0 &\mbox{sinon} \end{array}\right.$.
+Les caractères irréductibles d'un groupe $G$ forment un système orthonormal de fonctions de l'espace vectoriel hermitien $\F(G)$. I.e. si $\chi$ et $\chi'$ sont les caractères représentations de $G$ alors $\expval{\chi, \chi'}=\left\{\begin{array}{cl} 1 &\mbox{si $ \chi=\chi'$}\\0 &\mbox{sinon} \end{array}\right.$.
 \end{proposition}
 
 \begin{proof}
-Soient $\rho:G\mapsto GL(V)$ et $\rho':G \rightarrow GL(V')$ deux représentation irréductible de $G$ et soient: $\chi:G \rightarrow \CC$ et $\chi':G \rightarrow \CC$ leurs caractères associés; et soit $\mat(\rho_g)=(a_{ij}(g))_{\scriptsize \substack{1\leq i\leq d \\ 1\leq j\leq d}}$ et $\mat(\rho'_g)=(a'_{ij}(g))_{\scriptsize \substack{1\leq i'\leq d' \\ 1\leq j'\leq d'}}$
+Soient $\rho:G\mapsto GL(V)$ et $\rho':G \rightarrow GL(V')$ deux représentation irréductible de $G$ et soient: $\chi:G \rightarrow \C$ et $\chi':G \rightarrow \C$ leurs caractères associés; et soit $\mat(\rho_g)=(a_{ij}(g))_{\scriptsize \substack{1\leq i\leq d \\ 1\leq j\leq d}}$ et $\mat(\rho'_g)=(a'_{ij}(g))_{\scriptsize \substack{1\leq i'\leq d' \\ 1\leq j'\leq d'}}$
 (où $d=\deg(\rho)=\dim V$ et $d'=\deg(\rho')=\dim V'$).
 
 On a:
@@ -722,6 +723,7 @@ D'où:
 &=
 \left\{\begin{array}{cl}0&\text{si $\rho$ et $\rho'$ sont non-isomorphes}\\ 1 & \text{si $\rho\simeq \rho'$ (d'où: $\chi=\chi'$)}\end{array}\right.
 \end{align*}
+\question{how do we compute this sum?}
 
 
 par le lemme de Schur (traduit en relations algébriques)
@@ -735,27 +737,195 @@ par le lemme de Schur (traduit en relations algébriques)
   V      & \rTo_f & V'
 \end{diagram}
 
-Si les deux représentations ne sont pas isomorphes alors $f=0$. Sinon $f$ est un isomorphisme et (en identifiant $V$ et $V'$) on a: $f=\lambda \id,\ \lambda\in \CC$ (i.e. $f$ est une homothétie).
+Si les deux représentations ne sont pas isomorphes alors $f=0$. Sinon $f$ est un isomorphisme et (en identifiant $V$ et $V'$) on a: $f=\lambda \id,\ \lambda\in \C$ (i.e. $f$ est une homothétie).
 \end{lemme}
 
-\begin{remark}
-	
+
+\begin{remark}	
 	Cas particuliers des caractères (irréductible) de représentations (irréductibles) de \emph{degré 1} d'un groupe $G$:
-	$$\begin{array}{rcl}\rho:G&\rightarrow&\CC^\ast\\g&\mapsto&\rho_g\end{array}$$ le caractère $\chi$ associé à cette représentation $\rho$ est $$\begin{array}{rcl}\chi:G&\rightarrow& \CC\\g&\mapsto& \chi(g)=\Tr(\rho_g)=\rho_g\end{array}.$$ Donc $\chi=\rho$; $\chi$ est appelé un caractére \texttt{linéaire}.
+	$$\begin{array}{rcl}\rho:G&\rightarrow&\C^\ast\\g&\mapsto&\rho_g\end{array}$$ le caractère $\chi$ associé à cette représentation $\rho$ est $$\begin{array}{rcl}\chi:G&\rightarrow& \C\\g&\mapsto& \chi(g)=\Tr(\rho_g)=\rho_g\end{array}.$$ Donc $\chi=\rho$; $\chi$ est appelé un caractère \texttt{linéaire}.
 \end{remark}
 
 
-Exercise.
-On note $\Hat G$ l'ensemble des caracteurs linéaires de G: $\Hat G=\{\text{morphisms }\chi:G\mapsto \CC^*\}$. On définit le produit $\chi\chi'$ de deux caractères linéaires de $G$ par: $\forall g \in G: (\chi\chi')(g)=\chi(g)\chi'(g)$.
+\begin{exercise}
+	On note $\Hat G$ l'ensemble des caracteurs linéaires de $G$: $\Hat G=\{\text{morphismes }\chi:G\mapsto \C^*\}$\question{where do those "caracteurs" come from? Don't we have to define a representation before getting to "characteurs"}. On définit le produit $\chi\chi'$ de deux caractères linéaires de $G$ par: $\forall g \in G: (\chi\chi')(g)=\chi(g)\chi'(g)$.
 
-\begin{enumerate}
-	\item Montrer que $\Hat G$, muni ce produit, est un groupe abélien.
-	\item On rappelle que le caractère trivial est défini par: $$\begin{array}{rcl}\chi_0:G &\rightarrow& \CC^\ast\\ g&\mapsto& 1\end{array}.$$
-	Montrer que, si $G$ est fini, et si $\chi \in\Hat G$ alors:
-	$\frac 1{|G|}\sum g\in G\chi(g)=\left\{\begin{array}{cl} 1 & \text{si $\chi=\chi_0$} \\ 0 & \text{sinon}\end{array}\right. $.
-	\item En déduire les relations d'orthogonalité des caractères linéaires. Si $\chi,\chi'\in\Hat G$ alors:
-	$$\expval{\chi,\chi'}=\frac 1{|G|}\sum_{g\in G}\overline{\chi(g)}\chi'(g)=\left\{ \begin{array}{cl}1&\text{si $\chi=\chi'$}\\0&\text{sinon}\end{array}\right..$$
-\end{enumerate}
+	\begin{enumerate}
+		\item Montrer que $\Hat G$, muni ce produit, est un groupe abélien.
+		\item On rappelle que le caractère trivial est défini par: $$\begin{array}{rcl}\chi_0:G &\rightarrow& \C^\ast\\ g&\mapsto& 1\end{array}.$$
+		Montrer que, si $G$ est fini, et si $\chi \in\Hat G$ alors:
+		$\frac 1{|G|}\sum g\in G\chi(g)=\left\{\begin{array}{cl} 1 & \text{si $\chi=\chi_0$} \\ 0 & \text{sinon}\end{array}\right. $.
+		\item En déduire les relations d'orthogonalité des caractères linéaires. Si $\chi,\chi'\in\Hat G$ alors:
+		$$\expval{\chi,\chi'}=\frac 1{|G|}\sum_{g\in G}\overline{\chi(g)}\chi'(g)=\left\{ \begin{array}{cl}1&\text{si $\chi=\chi'$}\\0&\text{sinon}\end{array}\right..$$!?
+	\end{enumerate}
+\end{exercise}
+
+\section{Théorème de Forbenius}
+
+Soit $G$ un groupe.
+On note $\F(G)$ le $\C$-espace vectoriel des fonctions de $G$ dans $\C$ et $\F_C(G)$ le sous-espace vectoriel de $\F(G)$ constitue des \texttt{fonctions centrales} sur $G$ ( i.e. constants sur les classes du conjugaison).
+
+Une élément de $F_C(S)$ est donc une fonction $F:G\rightarrow\C$ vérifiant: $\forall g,h\in G\ f(ghg\dmo)=f(g)$.
+
+\begin{remark}	
+	On a que les caractères $X_ρ$ des représentations $ρ$ du $G$ sont des fonctions centrales sur $G$.
+\end{remark}
+
+On rappelle qu'un \texttt{caractère irréductible} de $G$ est le caractère d'un représentation irréductible.
+
+\begin{theorem}
+	Les caractères irréductibles d'un groupe $G$ forment une base orthonormée de l'espace $\F_C(G)$ des fonctions centrales sur $G$.
+\end{theorem}
+\begin{proof}[Croquis de la preuve]
+	On a un que les caractères irréductibles forment un système libre de fonctions de $\F_C(G)$. Notons $F$ le sous-espace vectoriel de $\F(G)$ engendre par les caractères irréductibles de $G$. L'idée de la preuve est de vérifier que l'orthogonal $F^\perp$ de $F$ dans $\F_C(G)$ est réduit à $\{0\}$, en utilisant le lemme de Schur.
+\end{proof}
+
+\begin{corollaire} %1
+	Le nombre de (classes d'isomorphisme de) représentations irréductibles de $G$ est égal an nombre de classe de conjugaison de $G$.
+\end{corollaire}
+\begin{proof}
+	D'après le théorème de Frobenius, le nombre de représentations irréductibles de $G$ est égal a la dimension de l'espace $\F_C(G)$ des fonctions centrales sur $G$.
+	Or, une fonction est centrale ssi elle est constante sur chaque classe de conjugaison; une fonction centrale  $Φ:G\rightarrow\C$ peut donc s'écrire de manière unique sous la forme $Φ:∑_{C\in \conj(G)}λ_C \ind_C$, où $\conj(G)=\mbox{«classe de conjugaison de $G$»}$ et $\ind_C$ est la fonction indicatrice de $C$. $λ_c\in \C$ (on a: $λ_C=Φ(g)$ où $g$ est n'importe quel élément de $C$)
+	Les $\ind_C$, pour $C\in \conj(G)$ forment donc une base de $\F_C(G)$, qui de ce fait est de dimension égal $\#\conj(G)$.
+\end{proof}
+
+\begin{corollaire}[Décomposition canonique d'une représentation] %2
+	Si $ρ:G\rightarrow GL(V)$ est une représentation linéaire de $G$ et si $V=W_1\oplus...\oplus W_k$ est une décomposition de $V$ \question{and or of} en somme directe de représentation irréductible $ρ=ρ_1\oplus...\oplus ρ_k:G\rightarrow GL(W_1\oplus...\oplus W_k)$
+		et si $W\in \irr(G):=\{C\ | \text{class d'isomorphismes de représentation irréductible de $G$} \}$ alors le nombre $m_W$ de $W_i$ qui sont isomorphes à $W$ est égal à $\expval{χ_W,χ_V}$. En particulier, il ne dépend pas de la décomposition et:
+		$$V\simeq \oplus_{W\in \irr(G)}\expval{χ_W,χ_V} W.$$
+		i.e. $V\simeq \oplus_{W\in \irr(G)} m_W W$ avec $m_w=\expval{χ_W,χ_V}$ où $χ_W$: caractère associe à $W$, $χ_V$: caractère associe à $V$ .
+\end{corollaire}
+\begin{proof}
+	On a: $χ_V=χ_{W_1}\oplus...\oplus χ_{W_k}$ et donc:
+	$\expval{χ_W,χ_V} = \expval{χ_W,χ_{W_1}}+...+\expval{χ_W,χ_{W_k}}$
+	Or $\expval{χ_W,χ_{W_i}} = 1$ si $W_i\simeq W$; $0$ sinon. Donc $m_W=\expval{χ_W,χ_V}$.
+\end{proof}
+
+\begin{corollaire} %3
+	Deux représentations d'un même groupe fini sont isomorphes ssi elles ont même caractère.
+\end{corollaire}
+\begin{proof}
+	D'après le corollaire 2 si $ρ:G\rightarrow GL(V)$ et $ρ':G\rightarrow  GL(V')$ sont deux représentations de $G$ ayant même caractère $χ$ alors:	
+	$V$ et $V'$ peut tous les deux isomorphes à :$\oplus_{W\in \irr(G)}\expval{χ_W,χ}W$.
+	Réciproquement, si $ρ$ et $ρ'$ sont isomorphes on a déjà vu que $χ_ρ=χ_ρ'$. 
+\end{proof}
+
+\begin{corollaire}[Critère d'irréductibilité] %5
+	Une représentation $ρ:G\rightarrow  GL(V)$ de $G$ est irréductible ssi $\expval{χ_V,χ_V}=1$.
+\end{corollaire}
+\begin{proof}
+	Si $V\simeq \oplus_{W\in \irr(G)}m_WW$ alors $\expval{χ_V,χ_V}=\expval{∑_{W\in \irr(G)}m_Wχ_W,∑_{W\in \irr(G)}m_Wχ_W}=∑_{W\in \irr(G)}m^2_W$.
+	comme les $m_W\in\N$, on en déduit: $\expval{χ_V,χ_V}=1$ ssi tous les $m_W$ sont égaux à $0$ sauf un qui est égal à $1$; ssi $V\simeq W$; ssi $V\in \irr(G)$ i.e. $V$ irréductible.
+\end{proof}
+
+\begin{corollaire}[Formule de Bernside] %6
+	$G$ est un groupe fini. On a $∑_{W\in \irr(G)}(\dim W)^2=|G|$
+\end{corollaire}
+\begin{proof}
+	Considérons la représentation régulière de $G$:
+    $$\deffunc{ρ}{G}{GL(V)}{g}{\left(\deffunc{ρ_g}{V}{V}{ε_x}{ε_{g•x}}\right)}$$	
+	$\dim V=|G|, V=\oplus_{x\in G}\C_{ε_x}$
+	
+	Si $W$ et une représentation irréductible de $G$ alors $W$ apparait dans la représentation régulière avec la multiplicité $\dim W$.
+	
+	En effet, le caractère $χ$ de la représentation régulière est donne par:
+	$χ(e)=|G|$ et $χ(g)=0$ si $g\neq e$
+	(car $χ(g)=Tr(ρ_g)=\#{x\in G | gx=x}$).
+	Qr, la multiplicité de $W$ dans $V$ es, d'après le corollaire 2, égale à:
+	$\expval{χ_W,χ}=\frac 1{|G|}∑_{g\in G}\overline{χ_W(g)}χ(g)=\bar χ_W(e)=\dim W$.
+	On en déduit que: $χ=∑_{W\in \irr(G)}(\dim W)χ_W$
+	
+	En appliquant cette identité à $g=e$, on trouve: $|G|=χ(e)=∑_{W\in \irr(G)}(\dim W)χ_W(e)=∑_{W\in \irr(G)(\dim W)^2}$
+\end{proof}
+
+\section{Le cas des groupes abéliens} % (fold) 6
+\label{sec:section_name}
+
+% section section_name (end)
+\begin{theorem}
+	Si $G$ est abélien, toute représentations irréductibles de $G$ est de dimension $1$. Autrement dit, l'ensemble $\irr(G)$ des classes d'isomorphismes de représentation irréductible de G coïncide avec l'ensemble $\hat G$ des caractères linéaires de $G$.
+\end{theorem}
+\begin{proof}
+	Si G est abélien, le classes de conjugaison de G sont touts réduites à un élément ($h\in G\ g\in G ghg\dmo=hgg\dmo=h \conj(h)=\{h\}$) et donc $\#\conj(G)=|G|$. Puisque $\#\irr(G)=\#\conj(G)$ d'après le corollaire $1$, puisque $∑_{W\in \irr(G)}(\dim W)^2=|G|$, d'après le corollaire 5 et comme $\dim W≥1 \forall W\in \irr(G)$, on en déduit que: $\forall W\in \irr(G)$ on a $\dim W=1$.
+\end{proof}
+
+\begin{remark}
+	Si $ρ:G\rightarrow GL(V)$ est une représentation de $G$ de $\dim 1$ alors: $\dim_\C V=1$ i.e. $V\simeq\C$, d'où: $GL(V)\simeq\C^*$. D'où $ρ:G\rightarrow \C^*$ morphisme. C'est donc un caractère linéaire de $G$. Et le caractère $χ$ associe coïncide avec $ρ$.
+\end{remark}
+
+\begin{corollaire}
+	Si $G$ est abélien, toute fonction de $G$ dans $\C$ est combination linaire de caractères linéaires. 
+\end{corollaire}
+\begin{proof}	
+	D'après le Théorème Frobenius, toute fonction centrale (et donc toute fonction puisque G est abélien) est combination linéaire de caractères irréductibles.
+\end{proof}
+
+\begin{exercise}
+	Déterminer les représentations et les caractères irréductibles du groupe $\faktor{\Z}{n\Z}$ pour $n≥1$.
+	\begin{solution}
+		$n$ classes de conjugaison. Le groupe additif étant abélien et d'ordre $n$, il admet $n$ classes de conjugaison (touts réduits à un élément) et donc admet $n$ (classes d'isomorphismes de) représentation irréductible, et touts de dimension 1.
+		
+		car $∑_{W\in \irr(\faktor{\Z}{n\Z})}(\dim W)^2=|\faktor{\Z}{n\Z}|=n$ \question{what car?}
+		
+		correspondant donc caractère linéaire de $\faktor{\Z}{n\Z}$ i.e. aux morphismes de groupe $χ:\faktor{\Z}{n\Z}\rightarrow \C^*$
+		
+		Or, $\faktor{\Z}{n\Z}$ est un groupe cyclique, engendre par $\bar 1$ (où $\bar a=a+n\Z$)
+		Donc: les morphismes $χ:\faktor{\Z}{n\Z} \rightarrow \C$sont entièrement détermines par l'image $χ(\bar 1)$. (En effet: $χ(\bar a)=χ(\bar 1 +...+ \bar 1)=χ(\bar 1)^a$.
+		
+		De plus: $χ(\bar)^n=χ(\bar 1+\, ...\, \bar 1)=χ(\bar n)=χ(\bar 0)=1$.
+		
+		Donc $χ(\bar 1)$ est une racine $n$-ème de l'unité dans $C$.
+		Or l'ensemble $μ_n(\C)$ des racines n-ème de l'unité dans $C$ est $μ_n(\C)=\{e^\frak{2πk}{n}, k=0,1,2...\}$
+		
+		Si $χ:\faktor{\Z}{n\Z}\rightarrow\C^*$ est un caractère linaire, il existe $k\in\{0,..., n-1\}$ t.q. $χ(\bar 1)=e^\frac{2ikπ}{n}$.
+		
+		On trouve donc $n$ caractère linéaire (on représentation irréductible) de $\faktor{\Z}{n\Z}$, à savoir: $χ_0, ..., χ_{n-1}$ définis par:
+		$\deffunc{χ_k}{\faktor{\Z}{n\Z}}{C^*}{\bar a}{χ_h(\bar a)}$
+		
+		\begin{example}[$n=2$]
+			$G=\faktor{\Z}{n\Z}$ toute des caractères du $\faktor{\Z}{2\Z}$?
+			Le groupe $G/2G$ admet $2$ caractères linéaires:
+			\begin{align*}
+				χ_0:\faktor{\Z}{2\Z}&\rightarrow C^* \\
+				\bar 0&\mapsto 1\\
+				\bar 1&\mapsto 1\\
+				\\
+				χ_1:\faktor{\Z}{2\Z}&\rightarrow C^*\\
+				\bar 0&\mapsto  1\\
+				\bar 1&\mapsto -1
+			\end{align*}
+			
+			$χ_1(\bar a)=e^\frac{2iπa}{2}$\\
+			
+			$$\begin{array}{|l||c|c|}
+				&χ_0&χ_1\\
+				\hline
+				\conj(0)=\{0\} &1&1\\
+				\conj(1)=\{1\} &1&-1
+			\end{array}$$
+		
+		
+			Toute les caractères de $\faktor{\Z}{2\Z}$
+		\end{example}
+		\begin{example}[$n=3$]
+			Exemple : le groupe $\faktor{\Z}{3\Z}$ admet $3$ caractères linéaires (au représentation irréductible):
+			
+			$\deffunc{χ_0}{\faktor{\Z}{3\Z}}{\C^*}{a}{1}$
+			$\deffunc{χ_1}{\faktor{\Z}{3\Z}}{\C^*}{a}{e^\frac{2iπr}{3}}$
+			
+			$\deffunc{χ_2}{\faktor{\Z}{3\Z}}{\C^*}{a}{e^\frac{4iπr}{3}}$
+		
+		$$\begin{array}{|l||c|c|c|}
+			& χ_0 & χ_1 & χ_2\\
+			\hline
+			\conj(0) & 1 & 1 & 1 \\
+			\conj(1) & 1 & j & j^2 \\
+			\conj(2) & 1 & j^2 & j	
+		\end{array}$$
+				
+		\end{example}		
+	\end{solution}
+\end{exercise}
 
 % ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- -
 
@@ -822,7 +992,7 @@ $$\ord(\dot b) | \left(\faktor\Z{13\Z}\right)^\ast \mbox{ i.e. } \ord(\dot b) | 
 	En particulier, le groupe cyclique $G$ admet $\varphi (d)$ élements d'ordrde $d$ ($d$ etant un divisem de l'ordre de $G$).
 \end{rappel}
 
-D'où $(\ord(\tilde a),\ord(\dot b))\in \{(1,2),(2,1),(2,2)\}$. Conclusion. Il y a donc \textdemp{trois} elementes d'ordre 2 dans $\left( \faktor\Z{7\Z} \right)^\ast \times \left( \faktor\Z{13\Z} \right)^\ast$, i.e. aussi $\left(\faktor\Z{91\Z}\right)^\ast$. L'equation $x^2=1$ admet donc 4 solutions dans $\left(\faktor\Z{91\Z}\right)^\ast$.
+D'où $(\ord(\tilde a),\ord(\dot b))\in \{(1,2),(2,1),(2,2)\}$. Conclusion. Il y a donc \textdemp{trois} éléments d'ordre 2 dans $\left( \faktor\Z{7\Z} \right)^\ast \times \left( \faktor\Z{13\Z} \right)^\ast$, i.e. aussi $\left(\faktor\Z{91\Z}\right)^\ast$. L'equation $x^2=1$ admet donc 4 solutions dans $\left(\faktor\Z{91\Z}\right)^\ast$.
 
 \begin{rappel}
 	Si $G$ est un groupecyclique d'ordre $n$ engendré par $g$ alors:
@@ -935,11 +1105,6 @@ Alors	 $\left(\faktor{\Z}{33\Z}\right)^*\simeq (\faktor{\Z}{2\Z})\times (\faktor
 \end{examplebox}
 
 
-
-
-
-
-
 \section{$\gS_4$ et $\gA_4$}
 
 $\gA_4<\gS_4$ ---  permutations paris de $\gS_4$.
@@ -977,7 +1142,7 @@ On fait agir $\gS_4$ sur lui-même par conjugaison:
 		\begin{multline*}
 			\gS_4=\{e\}\cup\{type\ 2: (12),(13)...(34)\}\cup\{type\ 3:(123),(124)...(243)\} \\ \cup\{type\ 4: (1234),(1243)...(1432)\}\cup\{type\ 2,2: (12)(34),(13)(24),(14)(23)\}
 		\end{multline*}
-		$$\gS_4=\conj(e)\cup \conj((12))\cup \conj((123))\cup \conj(1234)\cup \conj((12)(34))$$
+		$$\gS_4=\\conj(e)\cup \\conj((12))\cup \\conj((123))\cup \\conj(1234)\cup \\conj((12)(34))$$
 
 		\begin{remark}
 			\leavevmode
@@ -1061,4 +1226,50 @@ On fait agir $\gS_4$ sur lui-même par conjugaison:
 	\end{enumerate}
 
 \end{exercise}
+% $$\deffunc{G\times\cH}{\cH}{(g, H)}{g•H=gHg\dmo}$$
+\begin{exercise}
+	$|G|=112=2^7\times 7$
+	On suppose $G$ simple.
+	
+	1. $\cH={\text{2-sylow de $G$}}$
+	Par le 1er Théorème de Sylow si $n$ est le nombre de 2-Sylow de G:
+	$n=1 \mod 2$ et $n_2|7$ et $n_2|7$ => $n_2\in \{1,7\}$
+	Si $n_2 = 1$ alois let donc distingue dans $G$.
+	Or, $G$ est suppose simple, il n'admet donc pas de sous-groupe distingue propre. Donc $n_2=7$ i.e. $\#\cH = 7$.
 
+	2. % $\deffunc{G\times\cH}{\cH}{(g, H)}{g•H=gHg\dmo}$
+	
+	2.1)
+		i) Soit $H\in\cH$, on a: $e•H$
+		ii) Soient $g,g'\in G, h\in \cH$; on a $g•(g'•H)=g•(g'H{g'}\dmo)=g(g'Hg')g\dmo=gg'Hg{g'}\dmo g'=(gg')H(gg')\dmo=(gg')H$.
+	2.2)D'après le 2ème Théorème de Sylow, si $H$ et $H'$ sont deux 2-Sylow de $G$, alors ils sont conjugues dans $G$. $\exists g\in G$ tel que $H'=gHg\dmo$ i.e. tel que $H'=g•H$; donc $H$ et $H'$ sont dans le même orbite. Il ñ'y a donc qu'une seule orbite: l'action est donc \texttt{transitive}.
+	
+	2.3) Fidèle? Considérons le morphisme $π$ associe à cette action:
+	$\deffunc{π}{G}{\gS_\cH}{g}{\deffunc{π_g}{\cH}{\cH}{H}{gHg\dmo}}$
+	
+	Le noyau $\ker π$ et tant que noyau d'un morphisme de groupe, est une sous-groupe distingué de $G$. Or $G$ est suppose simple. Donc $\ker π=\{e\}$.
+	
+	Mais $\ker π=G$ signifie que $\forall g\in G$, $\forall H\in\cH$ on a: $gHg\dmo=H$. Donc, tout les orbites sont réduites à une élément. Or l'action est transitive, il ñ'y a qu'une seule orbite. (et non pas 7). Donc $\ker π\neq g$. conclusion: $\ker π={e}$ i.e. $π$ est injectif i.e. l'action est fidèle.
+	
+	2.4) D'après le 1ère Théorème d'isomorphisme on a: $\faktor{G}{\ker π} \simeq \im(π)$
+	Mais $\ker π={e}$ donc $\faktor{G}{\ker π}\simeq G$. Donc $G\simeq \im(π)<\gS_\cH\simeq \gS_7$. Donc $G$ est isomorphe à une sous groupe de $\gS_7$.
+	
+	3) $G\rightarrow (π)\gS_7\rightarrow (ε) \{1,-1\}$ --- $εºπ$
+	3.1) Si $εºπ$ est surjective alors $Im(εºπ)=\{1,-1\}\simeq \faktor{\Z}{2\Z}$
+	Le noyau $\ker (εºπ)$ de $εºπ$ est une sous-groupe de $G$ et, d'après le 1 Th d'isomorphisme, on a:
+	$\faktor{G}{\ker(εºπ)}\simeq \im(εºπ)=\{1,-1\}$
+	d'où : $[G:\ker(εºπ)]=|\faktor{G}{\ker(εºπ)}| = |Im(εºπ)| =2$
+	
+	Donc $\ker(εºπ)$ est un sous-groupe de $G$ d'indice $2$.	
+	
+	3.2) Puisque $G$ est supposé simple, il ne peut admette de sous-groupe d'indice 2 car un tel sous groupe serait un sous-groupe distingue propre de $G$. Donc $εºπ$ n'est pas surjective
+	or $εºπ(e)=1$ donc $1\in Im(εºπ)$. Donc: $Im(εºπ)=\{1\}$. 
+	On en déduit que $\im(π)\subset \gA_7$ (permutations pairs de $\gS_7$). 
+	or: $G\simeq \im(π)$ car $π$ est injectif.
+	Donc G est isomorphisme à un sous-groupe de $\gA_7$.
+	
+	3.3) Par le Théorème de Lagrange, ou doit avoir que l'ordre de $G$ doit
+	divise l'ordre de $\gA_7$
+	or: $|G|=2^4 7$ et $|\gA_7|=2^3 7 3^2 5$ et $2^4 7\not| 2^3 7 3^2 5.$
+	on obtient donc une contradiction. Conclusion: $G$ n'est pas simple.
+\end{exercise}
