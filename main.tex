@@ -183,7 +183,7 @@ $$\faktor{\Z}{n\Z}=\{\bar 0,\bar 1, \bar 2, ...\,, \overline{n-1}\}$$
 			\item Si $G$ est d'ordre 1, alors $G$ est réduit à $\{e\}$ où $e$ est l'éléments neutre du $G$.
 			\item Si $|G|=2$ alors, puisque 2 est premier, $G$ est cyclique et donc: $G\simeq \faktor{\Z}{2\Z}$ i.e. $G\simeq (\Z/2\Z, +)$ (abélien)
 			\item Si $|G|=3$ alors la même, $G\simeq \faktor{\Z}{3\Z}$.
-			\item Si $|G|=4$, si $G$ admet élément d'ordre 4 alors $G$ est cyclique et donc $G\simeq \faktor\Z{4\Z}$, abélien. Sinon, d'appelés le Théorème de Lagrange tous les éléments, non neutres de $G$ sont d'ordre 2. s'appelle exercice precedent on en déduit que $G$ est abélien.
+			\item Si $|G|=4$, si $G$ admet élément d'ordre 4 alors $G$ est cyclique et donc $G\simeq \faktor\Z{4\Z}$, abélien. Sinon, d'appelés le Théorème de Lagrange tous les éléments, non neutres de $G$ sont d'ordre 2. s'appelle exercice précédent on en déduit que $G$ est abélien.
 			
 			D'après le Th. de Classification des groupes abéliens finis, $G$ est, soit isomorphe à $G\simeq \faktor{\Z}{4\Z}$: impossible car $G$ n'admet pas d'élément d'ordre 4. Soit isomorphe à: $G=\faktor{\Z}{2\Z}\times \faktor\Z{2\Z}$. Il est isomorphe au groupe de Klein. Il y a donc deux groupes s'ordre 4 à isomorphe prés: $\faktor\Z{4\Z}$ et $\faktor\Z{2\Z}\times\faktor\Z{2\Z}$ (et ils sont tous les deux abélien).
 			\item Si $|G|=5$ puisque 5 est premier, $G$ est cyclique et donc $G \simeq \faktor\Z{5\Z}$ --- il est abélien.
@@ -429,10 +429,9 @@ Le noyau $\mathfrak{A}_n$ du morphisme signature $\varepsilon:\gS_n\rightarrow\{
 
 \chapter{Représentations linéaires des groupes finis}
 
-Thèorie introduite par Frobenius à la fin du XIX siècle.
+Théorie introduite par Frobenius à la fin du XIX siècle.
 
-\section{Premières définitions, représentations isomorphes et représentation irreductibles)} % (fold)
-\label{sec:premieres_definitions_représentations_yep_isomorphisms_et_rep_iuductis}
+\section{Premières définitions, représentations isomorphes et représentation irréductibles)}
 
 \begin{definition}
 	Une \textsc{Représentation Linéaire} d'une groupe $G$ est la donnée d'une $\C$-espace vectoriel $V$ muni d'une action (à gauche) de $G$ agissant de manière linéaire
@@ -459,7 +458,7 @@ où $GL(V)$ est le groupe des automorphismes du $\C$-espace vectoriel $V$.
 On a donc: $\forall g,g'\in G$, $\rho_{gg'}=\rho_g\circ \rho_{g'}$. Et aussi: $\rho_e=id_V$ et $\rho_{g\dmo}=(\rho_g)\dmo\ \forall g\in G$.
 \end{definition}
 
-\emph{Ces deux définitions sont bien equivalents}.
+\emph{Ces deux définitions sont bien équivalents}.
 \begin{proof}
 En effet, si G opère sur $V$ de la manière linéaire a lois considérons l'application:
 \begin{align*}	
@@ -484,7 +483,7 @@ G\times V &\rightarrow  V\\ (g,x) &\mapsto g\cdot x\coloneq\rho_g(x)
 \end{align*}
 Cela definit bien un action linear de $G$ sur $V$ car:
 \begin{enumerate}
-	\item Si $x\in V$, $e\cdot x=\rho_e(x) \overset\ast= id_V(x)=x$ (* car limage de l'element neutre par mprphisme de groupes est l'element neutre)
+	\item Si $x\in V$, $e\cdot x=\rho_e(x) \overset\ast= id_V(x)=x$ (* car limage de l'élément neutre par morphisme de groupes est l'élément neutre)
 	\item Si $g,g'\in G$, $x\in V: g\cdot(g'\cdot x)=\rho_g(\rho_{g'}(x))=(\rho_g\rho_{g'})(x)\overset{\rho\text{ --- morphisme}}{=}\rho_{gg'}(x)=(gg')\cdot x$
 	\item $g\cdot (\lambda x+\lambda'x')=\rho_g(\lambda x+\lambda' x')= \lambda p_g(x)+\lambda' p_g(x')=\lambda g\cdot x+\lambda'g\cdot x'$
 \end{enumerate}
@@ -509,7 +508,7 @@ Cela definit bien un action linear de $G$ sur $V$ car:
 	Donc l'endomorphisme $\rho_g$ est racine du polynôme $x^n-1$, que n'a que des racines simples (à savoir les racines n'ème de l'unite dans $\C$, que sont: $e^{\frac{2h\pi}{n}}$, $h\in\{0,..,m\}$).
 
 	\begin{rappel}	
-		$f\in \End (V)$, $I_f=\{P(x)\in\C[x]\ |\ P(f)=0\}$ ideal de l'anneau principal $\C[x]$. (car $\C$ est un corps) L'unique polynôme unitaire que engendre $I_f$ est appelé la polynome minimal de $f$.
+		$f\in \End (V)$, $I_f=\{P(x)\in\C[x]\ |\ P(f)=0\}$ ideal de l'anneau principal $\C[x]$. (car $\C$ est un corps) L'unique polynôme unitaire que engendre $I_f$ est appelé la polynôme minimal de $f$.
 	\end{rappel}
 
 	La polynôme minimal de $\rho_g$ est donc un divisor de $x^n-1$ et n'a donc lui aussi que de racines simples. Ce la pon que l'endomorphisme $\rho_g$ est diagonalisable (car touts ses valeurs propre sont donc simples).
@@ -524,11 +523,11 @@ Cela definit bien un action linear de $G$ sur $V$ car:
 			g &\mapsto (\rho_g: id:\C\rightarrow \C\ x\mapsto x)
 		\end{align*}
 		\item Les représentation de degré 1: ce sont les \textdemp{homomorphisms} $\rho:G\rightarrow \C^\ast$ puisque si $\dim V= 1$ alors $GL(V)\simeq\C^\ast$.
-		En effet les endomorphisms de $V$ sont les \textdemp{homothétis}: $f_\lambda: V\rightarrow V x\rightarrow \lambda x(\lambda\in \C^\ast)$. Et $GL(V)\rightarrow  G^\ast$ est un isomorphisme $f_\lambda\rightarrow \lambda$.
+		En effet les endomorphismes de $V$ sont les \textdemp{homothéties}: $f_\lambda: V\rightarrow V x\rightarrow \lambda x(\lambda\in \C^\ast)$. Et $GL(V)\rightarrow  G^\ast$ est un isomorphisme $f_\lambda\rightarrow \lambda$.
 		
-		Si G est fini, tout elements du $G$ est d'ordre fini (par le th. de Lagrange) donc, pour tout $g \in G$, $\rho_g$ est un racine de l'unité dans $\C$.
-		(Car si $g^n=e$ alors $\rho_{g^n}=(\rho_g)^n$). En particulier, ce sont des numbers complexs de mondle 1. $|\rho_g|=1$.
-		\item Soient $\gS_m$ considéré le groupesymétrique et $(e_1,...\,, e_n)$ la base canonique de $\C^n$. On définit une représentation de degré $n$ de $\gS_n$ en posant:
+		Si G est fini, tout éléments du $G$ est d'ordre fini (par le th. de Lagrange) donc, pour tout $g \in G$, $\rho_g$ est un racine de l'unité dans $\C$.
+		(Car si $g^n=e$ alors $\rho_{g^n}=(\rho_g)^n$). En particulier, ce sont des numbers complexes de mondule 1. $|\rho_g|=1$.
+		\item Soient $\gS_m$ considéré le groupe symétrique et $(e_1,...\,, e_n)$ la base canonique de $\C^n$. On définit une représentation de degré $n$ de $\gS_n$ en posant:
 		\begin{align*}
 			\rho:\gS_n &\rightarrow GL(\C^n) \\
 			\sigma &\mapsto \left(
@@ -1347,7 +1346,7 @@ On fait agir $\gS_4$ sur lui-même par conjugaison:
 
 	\begin{enumerate}
 
-		\item L'orbite de $\sigma$ dans $\gS_4$ pour l'action de est pércisément la classe de conjugaison de $G$ (dans $\gS_4$) il'sagit de l'ensemble des 3-cylces de $\gS_4$. Il y en a 8. Ou: $[\gS_4: \Stab_{\gS_4}(\sigma)]=\#orb(\sigma)=8$. D'où: $|\Stab_{\gS_4}|=\frac{|\gS_4|}{8}=\frac{24}{8}=3$.
+		\item L'orbite de $\sigma$ dans $\gS_4$ pour l'action de est précisément la classe de conjugaison de $G$ (dans $\gS_4$) il'sagit de l'ensemble des 3-cylces de $\gS_4$. Il y en a 8. Ou: $[\gS_4: \Stab_{\gS_4}(\sigma)]=\#orb(\sigma)=8$. D'où: $|\Stab_{\gS_4}|=\frac{|\gS_4|}{8}=\frac{24}{8}=3$.
 
 		\item Il u'y a que trois permutations de $\gS_4$ qui commutent avec $\sigma$: Donc $\stab_{\gS_4}(\sigma)=\{e,\sigma,\sigma^2\}$, $\sigma^2=(132)$ --- permutation pairs. Il n'existe donc pas de permutation impaire qui commute avec $\sigma$.
 
