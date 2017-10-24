@@ -6,41 +6,41 @@
 \label{sub:groupe_et_sous_groupe}
 
 % subsection groupe_et_sous_groupe (end)
-Soit $G$ un ensemble non vide ($G\neq\varnothing$).
+Soit $G$ un ensemble non vide ($G eq\varnothing$).
 \begin{definition}
-	On dit que $G$ est un \textsc{Groupe} si:
+	Un ensemble $G$ avec une loi de composition interne est un \textsc{Groupe} si:
 	\begin{enumerate}
-		\item $\forall a,b,c\in G:\ a(bc)=(ab)c$ (associative)
-		\item $\exists e\in G:\ \forall g\in G:\ ge=eg=g$ (élimant neutre)
-		\item $\forall g\in G\ \exists g\dmo \in G:\ g\dmo g=gg\dmo=e$ (symétrique)
+		\item La loi est associative: $\forall a,b,c\in G:\ a(bc)=(ab)c$ 
+		\item Il existe un élément neutre: $\exists e\in G:\ \forall g\in G:\ ge=eg=g$
+		\item Tout éléments admet un \emph{symétrique}: $\forall g\in G\ \exists g\dmo \in G:\ g\dmo g=gg\dmo=e$
 	\end{enumerate}
 \end{definition}
 
-Si commutative -- abélien. Groupes: $(R, +)$, $(S_n, \circ)$, etc.
+Si commutative -- \texttt{abélien}. Groupes: $(R, +)$, $(S_n, \circ)$, etc. Le symétrique de $x$ est appelé l'inverse de $x$.
 
 Soit $H$ un sons-ensemble de $G$.
 \begin{definition}
 	$H$ est un \textsc{Sous-Groupe} de $G$ si:
 	\begin{enumerate}
-		\item $H\neq\varnothing$
+		\item $H eq\varnothing$
 		\item $\forall x,\ y \in H:\ xy^{-1}\in H$
 	\end{enumerate}
 	On notera $H < G$.
 \end{definition}
 
-Si $x\in G$, alors le sous-groupe \emph{engendré} par $x$ est le plus petit sous-groupe de $G$ contenant $x$. Notée $\expval{x}$. Si $G$ est \emph{fini} ($\Leftrightarrow$ cardinal $G$ est fini $\Leftrightarrow$ $\#G<\infty$). Sont \textsc{Ordre} de $G$ est tout montant éléments. L'ordre d'un groupe G se note $\ord(G)$, $|G|$ ou $\#G$.
+Si $x\in G$, alors le sous-groupe \texttt{engendré} par $x$ est le plus petit sous-groupe de $G$ contenant $x$. Notée $\expval{x}$. Si $G$ est \emph{fini} ($\Leftrightarrow$ cardinal $G$ est fini $\Leftrightarrow$ $\#G<\infty$). Sont \texttt{ordre} de $G$ est tout montant éléments. L'ordre d'un groupe $G$ se note $\ord(G)$, $|G|$ ou $\#G$.
 
 Si  $x\in G$, l'ordre de $x$ est $G$ plus petit entier $n\geq 1$ que $x^n = e$. On le note $\ord(x)$. Ordre $x$ est $\ord(x)\overset{\text{def}}{=}|\langle x\rangle|$
 
-\begin{examplebox}
+\begin{exercise}
 	$S_3$.
-\end{examplebox}
+\end{exercise}
 
 \subsection{La classe d'équivalence} 
 
 \begin{definition}
-	Soit $G$ un groupe et $H$ -- un sous-groupe de $G$. On définit sur $G$ la \textsc{Relation d'Équivalence} dite à gauche modulo $H$. Pour $x,\ y\in G$: 
-	\[ \color{red} x\equiv_g y\ \mod\ H \mbox{ sii } x^{-1}y\in H \]
+	Soit $G$ un groupe et $H$ -- un sous-groupe de $G$. On définit sur $G$ la \textsc{Relation d'Équivalence} dite à \emph{gauche} modulo $H$. Pour $x,\ y\in G$: 
+	\[ \color{red} x\equiv_g y \mod\ H \mbox{ sii } x^{-1}y\in H \]
 	\vspace{-8mm}
 \end{definition}
 
@@ -53,7 +53,7 @@ Si $x\in G$ la classe d'équivalence de $x$ pour cette relation dite \textsc{Cla
 	???
 
 \begin{remark}
-	Les class d'équivalence constituée une \underline{partition} de $G$.
+	Les class d'équivalence constituée une \emph{partition} de $G$.
 	\includegraphics[width=0.25\textwidth]{ce}
 	L'ensemble les classes d'équivalence est appelé \textsc{Ensemble Quotient}, et est noté:
 	$$ \color{red}\left(	\faktor{G}{H}	\right)_g$$
@@ -115,13 +115,23 @@ On souhaite même l'ensemble quotient de la structure de groupe qui fasse de la 
 	\end{itemize}
 \end{remark}
 
-\begin{examplebox}
+\begin{rappel}
+Un \texttt{morphisme de groupes} ou \texttt{homomorphisme de groupes} est une application entre deux groupes qui respecte la structure de groupe.
+
+Plus précisément, c'est un morphisme de magmas d'un groupe 
+$(G,•)$  dans un groupe $(G',\ast)$, c'est-à-dire une application 
+$f:G\rightarrow G'$ telle que
+$$\forall x,y\in G\quad f(x•y)=f(x)\ast f(y).$$
+
+\end{rappel}
+
+\begin{exercise}
 	\begin{enumerate}
 		\item $\langle \sigma_1 \rangle=\{e,\sigma_1,\sigma_2\}$ --- sous-groupe engendrée pour $\sigma_1$ dans $\gS_3$. $[G:H]=2\Rightarrow \langle x\rangle\lhd\gS_3$.
-		\item $\langle \tau_1\rangle=\{e,\tau_1\}\ntriangleleft\gS_3$. Car $\langle \tau_1 \rangle$ n'est pas stable par conjugaison. En effet: l'élément $\tau_2\tau_1\tau_2\dmo =\tau_2\tau_1\tau_2=(12)=\tau_3\not\in H$.
-		\item Le \emph{Noyau} du morphisme de groupe $f:G\rightarrow G'$ est l'ensemble $\ker f\coloneq\{x\in G | f(x)=e'\}$, où $e'$ est l'élément neutre de $G'$. C'est un sous-groupe distingué de G.
+		\item $\langle \tau_1\rangle=\{e,\tau_1\} \not\lhd \gS_3$. Car $\langle \tau_1 \rangle$ n'est pas stable par conjugaison. En effet: l'élément $\tau_2\tau_1\tau_2\dmo =\tau_2\tau_1\tau_2=(12)=\tau_3 \not\in H$.
+		\item Le \texttt{noyau} du morphisme de groupe $f:G\rightarrow G'$ est l'ensemble $\ker f\coloneq\{x\in G | f(x)=e'\}$, où $e'$ est l'élément neutre de $G'$. C'est un sous-groupe distingué de G.
 	\end{enumerate}
-\end{examplebox}
+\end{exercise}
 
 \ifcomment
 $$\emptyset,\ \{\emptyset\},\ \{\emptyset,\ \{\emptyset\}\},\ \{\emptyset,\ \{\emptyset,\ \{\emptyset\}\}\},\ ...$$
@@ -137,12 +147,10 @@ $$\mathbb{Z}=\faktor{\mathbb{N}\times\mathbb{N}}{R}$$
 	Un groupeest dit \textsc{Simple} s'il n'admet pas de sous-groupes distingués autre que lui-même et $\{e\}$.
 \end{definition}
 
-\begin{examplebox}
-	\begin{itemize}
-		\item Soit $G$ un groupe d'ordre premier $p$, alors $G$ est groupe simple.
-		\item Alors $G$ est un groupe simple. En effet, si $H$ est un sous-groupe $G$ alors, par de le Théorème de Lagrange son ordre divise $p$, donc vaut 1 ou $p$ puisque $p$ est première. Donc $H=\{e\}$ ou $H=G$. De plus, si $x\in G\\ \{e\}$ alors, pour le Th. de Lagrange son ordre divise $p$, donc vaut 1 ou $p$ puisque $p$ est première donc vaut $p$ puisque $x\neq e$. Donc $\expval{x}=G$. Donc $G$ est cyclique (i.e engendre par un élément et fini). Donc $G$ est isomorphe à $\faktor{\Z}{p\Z}$.
-	\end{itemize}
-\end{examplebox}
+\begin{exercise}
+Soit $G$ un groupe d'ordre premier $p$.
+		Alors $G$ est un groupe simple. En effet, si $H$ est un sous-groupe $G$ alors, par de le Théorème de Lagrange son ordre divise $p$, donc vaut 1 ou $p$ puisque $p$ est première. Donc $H=\{e\}$ ou $H=G$. De plus, si $x\in G\\ \{e\}$ alors, pour le Th. de Lagrange son ordre divise $p$, donc vaut 1 ou $p$ puisque $p$ est première donc vaut $p$ puisque $x eq e$. Donc $\expval{x}=G$. Donc $G$ est cyclique (i.e engendre par un élément et fini). Donc $G$ est isomorphe à $\faktor{\Z}{p\Z}$.
+\end{exercise}
 
 Considérons le groupe abélien $(\Z, +)$. Si l'on note $n\Z=\{nk, k\in\Z\}$ l'ensemble des multiples de $n$ dans $\Z$ (pour $n\geq$) alors: $(n\Z,+)$ est un sous-groupe de $\Z$.
 
@@ -168,10 +176,11 @@ $$\faktor{\Z}{n\Z}=\{\bar 0,\bar 1, \bar 2, ...\,, \overline{n-1}\}$$
 	avec $d_1|d_2|...|d_r$ ($d_r\geq 2$) et $s>0$. Ces de sont appelé les facteurs invariantes de $G$.
 \end{theorem}
 \begin{remark}
-	$d_r = $ exponent de $G = \ppcm$ des ordres des éléments de $G$. 
+	$d_r = \text{« exponent de $G$} » = \text{« $\ppcm$ des ordres des éléments de $G$ »}$. 
 \end{remark}
 
-\begin{examplebox}
+\begin{exercise}
+\leavevmode
 	\begin{enumerate}
 		\item Montrer qu'on groupe, dont tous les éléments non neutres sont d'ordre 2, est abélien.
 		
@@ -189,7 +198,7 @@ $$\faktor{\Z}{n\Z}=\{\bar 0,\bar 1, \bar 2, ...\,, \overline{n-1}\}$$
 			\item Si $|G|=5$ puisque 5 est premier, $G$ est cyclique et donc $G \simeq \faktor\Z{5\Z}$ --- il est abélien.
 		\end{itemize}
 	\end{enumerate}
-\end{examplebox}
+\end{exercise}
 
 \section{Groupes agissant sur un ensemble} % (fold)
 
@@ -226,7 +235,7 @@ i.e l'ensemble:
 $$\ker \pi \{g\in G | \pi(g)=e_{\sigma_X}\}=\{g\in G | \pi_g = id_x\}=\{g\in G | \forall x \in X, \pi_g(x)=x\}=\{g\in G | \forall x\in X, g.x=x\}$$
 On dit que l'action est \textsc{Fidèle} si son noyau est redit à  $\{e\}$ i.e. le morphisme $\pi$ associé est injectif.
 
-\emph{Exemples}.
+\begin{examplebox}
 \begin{enumerate}
 	\item Le groupedes rotation de $\mathbb{R}^3$ de centre l'origine o agit sur $\mathbb{R}^3$. $G\times\mathbb{R}^3\rightarrow{R}^3$ et $(r, x)\mapsto r\cdot x=r(x).$
 	Les orbite sont les pphere centres en l'origine. L'action n'est donc pas transitive. Regarde rotation quelle fixe tout le monde. Évidemment l'action le fidèle. Rotation fixant tout point de $\mathbb{R}^3$ est l'identité.
@@ -234,7 +243,7 @@ On dit que l'action est \textsc{Fidèle} si son noyau est redit à  $\{e\}$ i.e.
 	$\sigma_x \times X\mapsto X$, $(\sigma, x)\mapsto \sigma\cdot x=\sigma(x)$.
 	
 	L'action est évidemment transitive. $\sigma$ est dans le noyau du morphisme associe a cette action ssi: $\forall x\in X, \sigma(x)=x$: donc $\sigma =id_x$ et donc l'action est fidèle.
-	\item Tout groupe G agit sur même par multiplication a gauche se qua $G\times G \rightarrow G;\ (g,x)\mapsto g\cdot x=gx$ (loi de composition dons $G$).
+	\item Tout groupe $G$ agit sur même par multiplication a gauche se qua $G\times G \rightarrow G;\ (g,x)\mapsto g\cdot x=gx$ (loi de composition dons $G$).
 	
 	Soient $x, y\in G$; on a $y=gx$, avec $g=yx\dmo$. L'action est donc transitive.
 	Soit $g$ dans le moyen de l'action ou a alors:
@@ -248,7 +257,7 @@ On dit que l'action est \textsc{Fidèle} si son noyau est redit à  $\{e\}$ i.e.
 	$$g\cdot (g'\cdot x)=g\cdot (g'xg'^{-1})=g(g'xg'^{-1})g^{-1}=(gg')x(g'^{-1}g^{-1})=(gg')x(gg')^{-1}=(gg')\cdot x$$
 	Utilise $(ab)^{-1}=b^{-1}a^{-1}$.
 	\begin{itemize} 
-	\item $\orb(e)=\{geg^{-1}, g\in G\}=\{e\}$ Donc l'action n'est pas transitive si $G\neq\{e\}$ \\%img 1\\
+	\item $\orb(e)=\{geg^{-1}, g\in G\}=\{e\}$ Donc l'action n'est pas transitive si $G eq\{e\}$ \\%img 1\\
 	\item Si $x\in G$ alors $\orb(x)=\{gxg^{-1}, g\in G\}$ donc de conjuration de x.\\
 	\item Le noyau de l'action est:	
 
@@ -256,6 +265,7 @@ On dit que l'action est \textsc{Fidèle} si son noyau est redit à  $\{e\}$ i.e.
 	est réduit â $\{e\}$.
 	\end{itemize}
 \end{enumerate}
+\end{examplebox}
 
 \begin{definition}
 	Si un groupe $G$ agit sur un ensemble $X$ et si $x\in X$, on définit le stabilisateur (ou groupe s'isotropie) de $X$ pour cette action par: $\stab(x)=\{g\in G | g\cdot x=x\}$. (noté aussi $G_X$)
@@ -276,10 +286,10 @@ $$\#\orb(x) =[G: \stab(x)]$$
 \begin{theorem}{Formule des classe}
 	Soit $G$ un groupe fini agissant sur un ensemble fini $X$. Alors:
 	\begin{enumerate}
-		\item $\#X=\sum\limits_x[G: \stab(x)]$ où 
-		\item Le moite u d'orbites est donné par la formule (théorème de Burnside):
-		$$m=\frac{1}{|G|}\sum\limits_{g\in G}\#X_g$$
-		où $X_g=\{x\in X | g.x=x\}$. Burnside.
+		\item $\#X=\sum\limits_x[G: \stab(x)]$ où $x$ est une orbite représentative
+		\item Le nombre $n$ d'orbites est donné par la formule (théorème de \emph{Burnside}):
+		$$n=\frac{1}{|G|}\sum\limits_{g\in G}\#X_g$$
+		où $X_g=\{x\in X | g.x=x\}$.
 	\end{enumerate}
 \end{theorem}
 
@@ -290,13 +300,13 @@ $$\#\orb(x) =[G: \stab(x)]$$
 
 \section{Les Théorèmes de Sylow}
 
-Soit G un groupe fini et point p un nombre premier tel que $p^r$ divise l'ordre de $G$ mais $p^{r+1}$ ne le divise pas (avec $r\geq$).
-Alors tout sous-groupe de $G$ s'appelle un p.sous-groupe de Sylow ou p-Sylow de G.
+Soit $G$ un groupe fini et point $p$ un nombre premier tel que $p^r$ divise l'ordre de $G$ mais $p^{r+1}$ ne le divise pas (avec $r\geq 1$).
+Alors tout sous-groupe de $G$ s'appelle un p-sous-groupe de Sylow ou p-Sylow de $G$.
 
 Par exemple, $G$ est un groupe d'ordre de $n=2^3\times 3^5\times 5^2 \times 7$
 alors une 3-Sylow de $G$ est un Sylow de $G$ d'ordre: $2^3=8$.
 
-\begin{theorem}[1\textsuperscript{er} théorème de Sylow] Soit G une groupe d'ordre $p^\alpha q$ avec $p$ premier et $(p, q)= 1$ (et $\alpha \geq 1$)
+\begin{theorem}[1\textsuperscript{er} théorème de Sylow] Soit $G$ une groupe d'ordre $p^\alpha q$ avec $p$ premier et $(p, q)= 1$ (et $\alpha \geq 1$)
 
 Pour tout entier $\beta$ tel que: $1\leq \beta \leq \alpha$, il existe un sous-groupe de $G$ d'ordre $p^\beta$. En particulier, il existe un p-Sylow de G.
 
@@ -309,23 +319,23 @@ $n_p = 1 \mod p$ et $n_p | q$.
 	Si $H$ est un sous-groupe d'un groupe $G$, les conjugues dans $G$ sont les $gHg^{-1}$, pour $g\in G$ ($\{ghg^{-1}, h\in H\}$).
 \end{definition}
 
-En particulier $H$ est distingue dans G ssi il est égal à tous des conjugués.
+En particulier $H$ est distingue dans $G$ ssi il est égal à tous des conjugués.
 
 \begin{theorem}[2\textsuperscript{ème} Théorème de Sylow]
 Soit $G$ une groupe fini.
-Le conjugue d'un p-Sylow de G est encore un p-Sylow de G.
+Le conjugue d'un p-Sylow de $G$ est encore un p-Sylow de $G$.
 
-Réciproquement, tous les p-Sylow de G sont conjugués dans G.
+Réciproquement, tous les p-Sylow de $G$ sont conjugués dans $G$.
 
-En fin, tout sous-groupe de G ( i.e d'ordre une puse.. de p) est contenu dans un p-Sylow.
+En fin, tout p-sous-groupe de $G$ ( i.e d'ordre une puissance de $p$) est contenu dans un p-Sylow.
 \end{theorem}
 
-\emph{Exercice}
+\begin{exercise}
 \begin{enumerate}
-	\item Soit G un groupe d'ordre 13. Est-il nécessairement abélien? combien admet-il d'élément d'ordre 13?
-	Puisque 13 est premier, G est niasse cyclique, donc isomorphe à $(\faktor{\mathbb{Z}}{13\mathbb{Z}},+)$, donc il est abélien. Il admet $\varphi(13)=12$ éléments d'ordre 13.
+	\item Soit $G$ un groupe d'ordre 13. Est-il nécessairement abélien? combien admet-il d'élément d'ordre 13?
+	Puisque 13 est premier, $G$ est niasse cyclique, donc isomorphe à $(\faktor{\mathbb{Z}}{13\mathbb{Z}},+)$, donc il est abélien. Il admet $\varphi(13)=12$ éléments d'ordre 13.
 	
-	De plus, le nombre $n_p$ de p-Sylow de G vérifie:
+	De plus, le nombre $n_p$ de p-Sylow de $G$ vérifie:
 	
 	\begin{align*}
 		n_5  &\equiv  \mod 5\\ n_5 &| 3
@@ -336,10 +346,11 @@ En fin, tout sous-groupe de G ( i.e d'ordre une puse.. de p) est contenu dans un
 	Mais un groupe d'ordre 13 n'admet que deux sons-groupe (th de Lagrange) lui-meme et $\{e\}$. Donc $G$ est simple.
 	\item Montre qu'un groupe d'ordre 15 n'est pas simple. $5|15$ donc existe sylow sous-groupe. 
 	
-	Soit G un groupe d'ordre $15=3x5$. G admet un 5-Sylow $H$. De plus le nombre $n_5$ de 5-Sylow de G vérifie: $n_5=1 \mod 5$ et $n_5 | 3$ donc $n_5=1$.
+	Soit $G$ un groupe d'ordre $15=3x5$. $G$ admet un 5-Sylow $H$. De plus le nombre $n_5$ de 5-Sylow de $G$ vérifie: $n_5=1 \mod 5$ et $n_5 | 3$ donc $n_5=1$.
 	
 	Les conjugales de H sont encore des 5-Sylow. Or, il n'y a s'un seul 5-Sylow dans $G$. conclusion. $G$ n'est pas simple.
 \end{enumerate}
+\end{exercise}
 
 
 \section{Les Groupes symétrique} % (fold)
@@ -424,7 +435,7 @@ Le noyau $\mathfrak{A}_n$ du morphisme signature $\varepsilon:\gS_n\rightarrow\{
 \end{proof}
 
 \begin{theorem}[Galois]
-	$\mathfrak{A}_n$ est un groupe simple ssi $n\neq 4$.
+	$\mathfrak{A}_n$ est un groupe simple ssi $n eq 4$.
 \end{theorem}
 
 \chapter{Représentations linéaires des groupes finis}
@@ -448,7 +459,7 @@ Théorie introduite par Frobenius à la fin du XIX siècle.
 \end{definition}
 
 \begin{definition}
-Une représentation linéaire d'un groupe $G$ est donc le donnée d'un $\C$-espace vectoriel $V$ et d'un morphisme de groupes:
+Une \textsc{Représentation Linéaire} d'un groupe $G$ est donc le donnée d'un $\C$-espace vectoriel $V$ et d'un morphisme de groupes:
 \begin{align*}
 	\rho:G &\rightarrow GL(V)\\
 	g &\mapsto \rho(g)=\rho_g:V\rightarrow V.	
@@ -460,7 +471,7 @@ On a donc: $\forall g,g'\in G$, $\rho_{gg'}=\rho_g\circ \rho_{g'}$. Et aussi: $\
 
 \emph{Ces deux définitions sont bien équivalents}.
 \begin{proof}
-En effet, si G opère sur $V$ de la manière linéaire a lois considérons l'application:
+En effet, si $G$ opère sur $V$ de la manière linéaire a lois considérons l'application:
 \begin{align*}	
 	\rho:G &\rightarrow \ ? \\
 	g &\mapsto  \left(\rho_g:\begin{array}{rcl}V&\rightarrow& V \\ x&\mapsto&\rho(x)=g\cdot x\end{array}\right)
@@ -502,7 +513,7 @@ Cela definit bien un action linear de $G$ sur $V$ car:
 
 
 \begin{remark}
-	Soient G un groupe fini et $\rho:G\rightarrow GL(V)$ une représentation (linéaire) de $G$.
+	Soient $G$ un groupe fini et $\rho:G\rightarrow GL(V)$ une représentation (linéaire) de $G$.
 	Si $g\in G$ est d'ordre $n$ alors, on a:
 	$$(\rho_g)^n=\rho_{g^n}=\rho_e=id_v=\text{"1"}$$
 	Donc l'endomorphisme $\rho_g$ est racine du polynôme $x^n-1$, que n'a que des racines simples (à savoir les racines n'ème de l'unite dans $\C$, que sont: $e^{\frac{2h\pi}{n}}$, $h\in\{0,..,m\}$).
@@ -514,7 +525,7 @@ Cela definit bien un action linear de $G$ sur $V$ car:
 	La polynôme minimal de $\rho_g$ est donc un divisor de $x^n-1$ et n'a donc lui aussi que de racines simples. Ce la pon que l'endomorphisme $\rho_g$ est diagonalisable (car touts ses valeurs propre sont donc simples).
 \end{remark}
 
-\begin{examplebox}
+\begin{exercise}
 	\begin{enumerate}
 	\leavevmode
 		\item La représentation \textdemp{triviale} (on représentation unité).
@@ -525,7 +536,7 @@ Cela definit bien un action linear de $G$ sur $V$ car:
 		\item Les représentation de degré 1: ce sont les \textdemp{homomorphisms} $\rho:G\rightarrow \C^\ast$ puisque si $\dim V= 1$ alors $GL(V)\simeq\C^\ast$.
 		En effet les endomorphismes de $V$ sont les \textdemp{homothéties}: $f_\lambda: V\rightarrow V x\rightarrow \lambda x(\lambda\in \C^\ast)$. Et $GL(V)\rightarrow  G^\ast$ est un isomorphisme $f_\lambda\rightarrow \lambda$.
 		
-		Si G est fini, tout éléments du $G$ est d'ordre fini (par le th. de Lagrange) donc, pour tout $g \in G$, $\rho_g$ est un racine de l'unité dans $\C$.
+		Si $G$ est fini, tout éléments du $G$ est d'ordre fini (par le th. de Lagrange) donc, pour tout $g \in G$, $\rho_g$ est un racine de l'unité dans $\C$.
 		(Car si $g^n=e$ alors $\rho_{g^n}=(\rho_g)^n$). En particulier, ce sont des numbers complexes de mondule 1. $|\rho_g|=1$.
 		\item Soient $\gS_m$ considéré le groupe symétrique et $(e_1,...\,, e_n)$ la base canonique de $\C^n$. On définit une représentation de degré $n$ de $\gS_n$ en posant:
 		\begin{align*}
@@ -541,14 +552,14 @@ Cela definit bien un action linear de $G$ sur $V$ car:
 		\end{align*}
 		C'est la représentation de permutation associé à l'action de $G$ sur $X$.
 		\begin{remark}
-			On peut voir $V$ comme l'espace vectoriel complexe des fonctions d'finies sur $X$ et à valeurs dans $\C$, le fonction $\eps_x$ étant l'indicatrice de $x\in X$: $e_x(y)=1 si x=y 0 si x\neq y,\ y\in X$
+			On peut voir $V$ comme l'espace vectoriel complexe des fonctions d'finies sur $X$ et à valeurs dans $\C$, le fonction $\eps_x$ étant l'indicatrice de $x\in X$: $e_x(y)=1 si x=y 0 si x eq y,\ y\in X$
 		\end{remark}
 		
 		\item La représentation Régulière. C'est l'exemple precedent avec $X=G$ agissant sur lui-même translation à gauche:
 		$$\deffunc{\rho}{G}{GL(V)}{g}{\left(\deffunc{\rho_g}{V}{V}{\eps_x}{\eps_{g\cdot x}}\right)}.$$
 		
 	\end{enumerate}
-\end{examplebox}
+\end{exercise}
 
 \begin{definition}
 	Deux représentation linier $\rho \rightarrow  GL(V)$ et $\rho':G\rightarrow  GL(V')$ d'un groupe $G$. Sont dites \textsc{Isomorphes} ou \textsc{Équivalents} s'il existe un isomorphisme d'espace vectoriels $f:V\overset{\simeq}{\rightarrow} V'$ tel que l'on ont: $\forall g\in G, \rho_g'\circ f= f\circ\rho_g$.
@@ -670,7 +681,7 @@ Ainsi les reparamétrisation de \emph{degré 1} constituent des représentations
 \end{enumerate}
 \end{proof}
 
-\begin{examplebox}
+\begin{exercise}
 	Exemples de calcules de caractères:
 \begin{enumerate}
 	\item Si $G$ est un groupe opérant sur un ensemble fini $X$, considérons la représentation de permutations $\rho$ associe:
@@ -688,7 +699,7 @@ Ainsi les reparamétrisation de \emph{degré 1} constituent des représentations
 	Cas particulier de la rep de permutation avec $G$ fini, $X=G$, l'action étant la multiplication: $g\cdot x=gx$ si $g,x\in G$.
 	On a alors: $\chi_\rho(g)=Tr(\rho_g)=\#\{x\in G\ |\ gx=x\}=\left\{\begin{array}{cl}|G|&\mbox{si }g=e\mbox,\\0& \mbox{sinon }\end{array}\right.$.
 \end{enumerate}
-\end{examplebox}
+\end{exercise}
 
 
 \begin{definition}
@@ -832,7 +843,7 @@ On rappelle qu'un \texttt{caractère irréductible} de $G$ est le caractère d'u
 	Si $W$ et une représentation irréductible de $G$ alors $W$ apparait dans la représentation régulière avec la multiplicité $\dim W$.
 	
 	En effet, le caractère $χ$ de la représentation régulière est donne par:
-	$χ(e)=|G|$ et $χ(g)=0$ si $g\neq e$
+	$χ(e)=|G|$ et $χ(g)=0$ si $g eq e$
 	(car $χ(g)=Tr(ρ_g)=\#\{x\in G | gx=x\}$).
 	Or, la multiplicité de $W$ dans $V$ es, d'après le corollaire 2, égale à:
 	$\expval{χ_W,χ}=\frac 1{|G|}∑_{g\in G}\overline{χ_W(g)}χ(g)=\bar χ_W(e)=\dim W$.
@@ -846,10 +857,10 @@ On rappelle qu'un \texttt{caractère irréductible} de $G$ est le caractère d'u
 
 % section section_name (end)
 \begin{theorem}
-	Si $G$ est abélien, toute représentations irréductibles de $G$ est de dimension $1$. Autrement dit, l'ensemble $\irr(G)$ des classes d'isomorphismes de représentation irréductible de G coïncide avec l'ensemble $\hat G$ des caractères linéaires de $G$.
+	Si $G$ est abélien, toute représentations irréductibles de $G$ est de dimension $1$. Autrement dit, l'ensemble $\irr(G)$ des classes d'isomorphismes de représentation irréductible de $G$ coïncide avec l'ensemble $\hat G$ des caractères linéaires de $G$.
 \end{theorem}
 \begin{proof}
-	Si G est abélien, le classes de conjugaison de G sont touts réduites à un élément ($h\in G\ g\in G ghg\dmo=hgg\dmo=h \conj(h)=\{h\}$) et donc $\#\conj(G)=|G|$. Puisque $\#\irr(G)=\#\conj(G)$ d'après le corollaire $1$, puisque $∑_{W\in \irr(G)}(\dim W)^2=|G|$, d'après le corollaire 5 et comme $\dim W≥1 \forall W\in \irr(G)$, on en déduit que: $\forall W\in \irr(G)$ on a $\dim W=1$.
+	Si $G$ est abélien, le classes de conjugaison de $G$ sont touts réduites à un élément ($h\in G\ g\in G ghg\dmo=hgg\dmo=h \conj(h)=\{h\}$) et donc $\#\conj(G)=|G|$. Puisque $\#\irr(G)=\#\conj(G)$ d'après le corollaire $1$, puisque $∑_{W\in \irr(G)}(\dim W)^2=|G|$, d'après le corollaire 5 et comme $\dim W≥1 \forall W\in \irr(G)$, on en déduit que: $\forall W\in \irr(G)$ on a $\dim W=1$.
 \end{proof}
 
 \begin{remark}
@@ -860,7 +871,7 @@ On rappelle qu'un \texttt{caractère irréductible} de $G$ est le caractère d'u
 	Si $G$ est abélien, toute fonction de $G$ dans $\C$ est combination linaire de caractères linéaires. 
 \end{corollaire}
 \begin{proof}	
-	D'après le Théorème Frobenius, toute fonction centrale (et donc toute fonction puisque G est abélien) est combination linéaire de caractères irréductibles.
+	D'après le Théorème Frobenius, toute fonction centrale (et donc toute fonction puisque $G$ est abélien) est combination linéaire de caractères irréductibles.
 \end{proof}
 
 \begin{exercise}
@@ -972,17 +983,17 @@ $\dim 1$
 		
 		Or d'après le 1er Th. d'isomorphisme:
 		$$\faktor{G}{\ker χ}\simeq \image χ = χ(G)$$
-		Donc $G/\ker χ$ est abélien.
+		Donc $\faktor{G}{\ker χ}$ est abélien.
 		
 		On en déduit d'après le lemme:
 		$\ker χ\supset D(G)$.
 		
-		D'après Rappel "Factorisation", le morphisme $χ$ se factorise par $G/D(G)$:
-		il existe un morphisme $\check χ:G/D(G)\rightarrow \C^*$ tel que: $χ=\check χºπ$.
+		D'après Rappel "Factorisation", le morphisme $χ$ se factorise par $\faktor{G}{D(G)}$:
+		il existe un morphisme $\check χ:\faktor{G}{D(G)}\rightarrow \C^*$ tel que: $χ=\check χºπ$.
 			$$G\overset{χ}{\rightarrow}\C^*$$
 			$$G\overset{π}{\rightarrow}\faktor{G}{D(G)}\overset{\check χ}{\rightarrow}\C^*$$	
 					
-		Il y a donc une bijection entre l'ensemble des représentation irréductible de $\dim 1$ de $G$ et l'ensemble des représentation irréductible de $\dim 1$ de $G/D(G)$. Or, $G/D(G)$ est abélien, donc touts ses représentation irréductible sont de $\dim 1$ et il y en autant que son ordre, à savoir : $|G/D(G)|=[G:D(G)]$.
+		Il y a donc une bijection entre l'ensemble des représentation irréductible de $\dim 1$ de $G$ et l'ensemble des représentation irréductible de $\dim 1$ de $\faktor{G}{D(G)}$. Or, $\faktor{G}{D(G)}$ est abélien, donc touts ses représentation irréductible sont de $\dim 1$ et il y en autant que son ordre, à savoir : $|\faktor{G}{D(G)}|=[G:D(G)]$.
 \end{proof}
 
 \begin{remark}	
@@ -1002,11 +1013,11 @@ $\dim 1$
 
 		On a $D(\gS_3)\lhd  \gS_3$. D'où $D(\gS_3)={e}$ ou $\gS_3$ ou $\gA_3$.
 		Si $D(\gS_3)=\{e\}$ alors $\gS_3$ serait abélien, ce qui n'est pas le cas!
-		Donc $D(\gS_3)\neq \{e\}$.
+		Donc $D(\gS_3) eq \{e\}$.
 		
 		On a : $|\gS_3/\gA_3|=[\gS_3:\gA_3]=2$ donc $\gS_3/\gA_3\simeq \faktor{\Z}{2\Z}$ donc est abélien.
 
-		D'où: $D(\gS_3)\subset \gA_3$ Donc $D(\gS_3)\neq \gS_3$.
+		D'où: $D(\gS_3)\subset \gA_3$ Donc $D(\gS_3) eq \gS_3$.
 
 		Conclusion: $D(\gS_3)=\gA_3$.
 
@@ -1093,6 +1104,9 @@ $\dim 1$
 	\end{enumerate}
 \end{exercise}
 
+\begin{rappel}
+$Z(G)=\{g\in G\ | \ \forall h\in G: gh=hg\}$
+\end{rappel} 
 
 
 % ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- -
@@ -1194,12 +1208,12 @@ D'où $(\ord(\tilde a),\ord(\dot b))\in \{(1,2),(2,1),(2,2)\}$. Conclusion. Il y
 \end{rappel}
 
 \begin{remark}
-	On a: $\left(\faktor\Z{91\Z}\right)\overbrace{\simeq}^{\mbox{\tiny Th. de rests chinois car $(7,13)=1$}} \left(\faktor\Z{7\Z}\right)^\ast\times \left(\faktor\Z{13\Z}\right)^\ast\simeq \left(\faktor\Z{6\Z}\right)\times \left(\faktor\Z{12\Z}\right)^\ast\not\simeq \left(\faktor\Z{72\Z}\right)^\ast$ car $(6,12)\neq 1$. Conclusion: le groupe $\left(\faktor\Z{91\Z}\right)^\ast$ n'est pas cyclique.
+	On a: $\left(\faktor\Z{91\Z}\right)\overbrace{\simeq}^{\mbox{\tiny Th. de rests chinois car $(7,13)=1$}} \left(\faktor\Z{7\Z}\right)^\ast\times \left(\faktor\Z{13\Z}\right)^\ast\simeq \left(\faktor\Z{6\Z}\right)\times \left(\faktor\Z{12\Z}\right)^\ast ot\simeq \left(\faktor\Z{72\Z}\right)^\ast$ car $(6,12) eq 1$. Conclusion: le groupe $\left(\faktor\Z{91\Z}\right)^\ast$ n'est pas cyclique.
 \end{remark}
 
 \section{Sylow}
 
-\begin{examplebox}
+\begin{exercise}
 	\begin{enumerate}
 		\item Soit $G$ un groupe d'ordre 33.	
 		\item Détermine le nombre de 3-Sylow de $G$. Le groupe$G$ peut'l être simple?
@@ -1209,11 +1223,11 @@ D'où $(\ord(\tilde a),\ord(\dot b))\in \{(1,2),(2,1),(2,2)\}$. Conclusion. Il y
 
 	\begin{enumerate}
 		\item D'apris le 1\textsuperscript{er} Th. de Sylow, le nombre $n_3$ de 3-Sylow de $G$ vérifie:
-		$$\left\{\begin{array}{r}n_3 = 1\mod 3\\n_3 | 11\end{array}\right.$$
+		$$\left\{\begin{array}{r}n_3 = 1\mod 3\ _3 | 11\end{array}\right.$$
 		D'où: $n_3=1$. $G$ admet donc un unique 3-Sylow $H$. Or, d'apis 2\textsuperscript{ème} Th de Sylow, les conjugues d'un 3-Sylow sont encore un 3-Sylow. Donc les conjugues de $H$ sont égaux à $H$. Donc $H\lhd G$. Le groupe $G$ admet donc un sous-groupe distingué n'est pas simple.
 		
 		\item De même, le nombre $n_{11}$ de 11-Sylow de $G$ vérifie:
-		$$\left\{\begin{array}{r}n_{11} = 1\mod 11\\n_{11} | 3\end{array}\right.$$
+		$$\left\{\begin{array}{r}n_{11} = 1\mod 11\ _{11} | 3\end{array}\right.$$
 		D'où: $n_{11}=1$.
 		$G$ admet donc un unique 11-Sylow $K$ et, de même, il est distingué dans $G$.
 		Ou a:
@@ -1234,9 +1248,9 @@ D'où $(\ord(\tilde a),\ord(\dot b))\in \{(1,2),(2,1),(2,2)\}$. Conclusion. Il y
 		
 		Donc $G\simeq \faktor{\Z}{33\Z}$. $G$ est cyclique.
 	\end{enumerate}
-\end{examplebox}
+\end{exercise}
 
-\begin{examplebox}
+\begin{exercise}
 	On considère le groupe des inversibles $\left(\faktor{\Z}{33}\right)^{\ast}$ de l'anneau $\faktor{\Z}{33}$.
 	\begin{enumerate}
 		\item Ones est l'ordre de $(\faktor{\Z}{33})^{\ast}$?
@@ -1248,7 +1262,7 @@ D'où $(\ord(\tilde a),\ord(\dot b))\in \{(1,2),(2,1),(2,2)\}$. Conclusion. Il y
 		
 		
 		\begin{remark}
-			A-t-on $\overline{12}\in \left(\faktor{\Z}{33}\right)^{\ast}$? (où $\bar{a}=a+33\Z$). Non car $(12, 33)\neq 1$.
+			A-t-on $\overline{12}\in \left(\faktor{\Z}{33}\right)^{\ast}$? (où $\bar{a}=a+33\Z$). Non car $(12, 33) eq 1$.
 			
 			$|\left(\faktor{\Z}{33}\right)^{\ast}| = \text{nombre d'éléments $\leq 33$ et premiers avec $33$}$.
 		\end{remark}
@@ -1266,11 +1280,11 @@ $$\left(\faktor{\Z}{p^m\Z}\right)^{\ast}\simeq\faktor{\Z}{(p-1)p^{m-1}\Z}$$
 $$\left(\faktor{\Z}{2^m\Z}\right)^{\ast}\simeq \faktor{\Z}{2\Z}\times \faktor{\Z}{2^{m-2}\Z}$$
 \end{rappel}
 
-Alors	 $\left(\faktor{\Z}{33\Z}\right)^*\simeq (\faktor{\Z}{2\Z})\times (\faktor{\Z}{10\Z})\not\simeq \faktor{\Z}{20\Z}$ car $(2,10)\neq 1$. Donc $\left(\faktor{\Z}{33\Z}\right)^{\ast}$ n'est pas cyclique.
+Alors	 $\left(\faktor{\Z}{33\Z}\right)^*\simeq (\faktor{\Z}{2\Z})\times (\faktor{\Z}{10\Z}) ot\simeq \faktor{\Z}{20\Z}$ car $(2,10) eq 1$. Donc $\left(\faktor{\Z}{33\Z}\right)^{\ast}$ n'est pas cyclique.
 		
 \item Soit $(a,b)\in \faktor{\Z}{2\Z}\times\faktor{\Z}{10\Z}$. $\ord((a,b))=\ppcm(\ord(a), \ord(b))$. O'où: $\ord(a,b)=4 \leftrightarrow \ppcm(\ord(a), \ord(b))=4$, avec $\ord(a)|2$ et $\ord(b)|10$ --- impossible. Donc le groupe $(\faktor{\Z}{33\Z})^{\ast}$ n'admet pas d'élément d'ordre $4$.
 	\end{enumerate}
-\end{examplebox}
+\end{exercise}
 
 
 \section{$\gS_4$ et $\gA_4$}
@@ -1297,7 +1311,7 @@ On fait agir $\gS_4$ sur lui-même par conjugaison:
 			\stab(h) &= \{g\in\gS_4,\ gh=h\}\\
 			&= \{g\in\gS_4,\ ghg^{-1}=h\}\\
 			&= \{g\in\gS_4,\ gh=hg\}\\
-			&= \mbox{"centre de $h$"} \neq Z(G).
+			&= \mbox{"centre de $h$"}  eq Z(G).
 		\end{align*}
 
 		\item Determiner les \textbf{classes de conjugaison} de $\gS_4$. $x,y\in \gS_4:\ x\sim y$ ssi $\exists g\in \gS_4$ t.q. $y=g\cdot x=gxg^{-1}$. 
@@ -1356,7 +1370,7 @@ On fait agir $\gS_4$ sur lui-même par conjugaison:
 
 		\begin{remark}
 			Si $\sigma$ est un 3-cycle $(123)$ alors $\sigma$ et $\sigma^2$ ne sont pas conjugate dans $\gA_4$ car sinon il existerait un cycle $\tau$ tel que:
-			$$(132)=\sigma^2=\tau\sigma\tau^{-1}=(\tau(1)\tau(2)\tau(3)) \Rightarrow \tau=(23) \mbox{ mais } (23)\notin \gA_4.$$
+			$$(132)=\sigma^2=\tau\sigma\tau^{-1}=(\tau(1)\tau(2)\tau(3)) \Rightarrow \tau=(23) \mbox{ mais } (23) otin \gA_4.$$
 		\end{remark}
 
 
@@ -1373,7 +1387,7 @@ On fait agir $\gS_4$ sur lui-même par conjugaison:
 
 \begin{exercise}
 
-	Si $G$ est un groupe, on rappelle que le sous-groupe $D(G)$ de $G$ engendre par les commutateurs i.e. par les éléments: $xyx^{-1}y^{-1}$ pour $x,y\in G$
+	Si $G$ est un groupe, on rappelle que le \texttt{sous-groupe dérivé} $D(G)$ de $G$ engendre par les commutateurs i.e. par les éléments: $xyx^{-1}y^{-1}$ pour $x,y\in G$
 
 	\begin{enumerate}
 		\item Muter que $D(G)\vartriangleleft G$.
@@ -1385,7 +1399,7 @@ On fait agir $\gS_4$ sur lui-même par conjugaison:
 	\begin{enumerate}
 		\item $D(G)$ est stable par tout automorphisme (car l'image d'un commutant par un automorphisme de $G$ est encore un commutateur; en effet, on a:
 		$f(xyx^{-1}y^{-1})=f(x)f(y)f(x)^{-1}f(y)^{-1}$)
-		donc a fonction par tout automorphisme intérieur $f_h:G\rightarrow G;\ g\mapsto ghg^{-1}$. Donc $D(G)$ est un sous-groupe "caractéristique" de G a fortiori est un sous-groupe distingué de $G$.
+		donc a fonction par tout automorphisme intérieur $f_h:G\rightarrow G;\ g\mapsto ghg^{-1}$. Donc $D(G)$ est un sous-groupe "caractéristique" de $G$ a fortiori est un sous-groupe distingué de $G$.
 		\item Si $H\vartriangleleft G$ et $H$ abélien alors poient $x,y\in G$ Puisque $G$ est abélien, on a:
 		$$xH yH=yH xH$$
 		$$\bar x \bar y=\bar y\bar x$$
@@ -1417,7 +1431,7 @@ On fait agir $\gS_4$ sur lui-même par conjugaison:
 	
 	Le noyau $\ker π$ et tant que noyau d'un morphisme de groupe, est une sous-groupe distingué de $G$. Or $G$ est suppose simple. Donc $\ker π=\{e\}$.
 	
-	Mais $\ker π=G$ signifie que $\forall g\in G$, $\forall H\in\cH$ on a: $gHg\dmo=H$. Donc, tout les orbites sont réduites à une élément. Or l'action est transitive, il ñ'y a qu'une seule orbite. (et non pas 7). Donc $\ker π\neq g$. conclusion: $\ker π={e}$ i.e. $π$ est injectif i.e. l'action est fidèle.
+	Mais $\ker π=G$ signifie que $\forall g\in G$, $\forall H\in\cH$ on a: $gHg\dmo=H$. Donc, tout les orbites sont réduites à une élément. Or l'action est transitive, il ñ'y a qu'une seule orbite. (et non pas 7). Donc $\ker π eq g$. conclusion: $\ker π={e}$ i.e. $π$ est injectif i.e. l'action est fidèle.
 	
 	2.4) D'après le 1ère Théorème d'isomorphisme on a: $\faktor{G}{\ker π} \simeq \image(π)$
 	Mais $\ker π={e}$ donc $\faktor{G}{\ker π}\simeq G$. Donc $G\simeq \image(π)<\gS_\cH\simeq \gS_7$. Donc $G$ est isomorphe à une sous groupe de $\gS_7$.
@@ -1434,11 +1448,11 @@ On fait agir $\gS_4$ sur lui-même par conjugaison:
 	or $εºπ(e)=1$ donc $1\in Im(εºπ)$. Donc: $Im(εºπ)=\{1\}$. 
 	On en déduit que $\image(π)\subset \gA_7$ (permutations pairs de $\gS_7$). 
 	or: $G\simeq \image(π)$ car $π$ est injectif.
-	Donc G est isomorphisme à un sous-groupe de $\gA_7$.
+	Donc $G$ est isomorphisme à un sous-groupe de $\gA_7$.
 	
 	3.3) Par le Théorème de Lagrange, ou doit avoir que l'ordre de $G$ doit
 	divise l'ordre de $\gA_7$
-	or: $|G|=2^4 7$ et $|\gA_7|=2^3 7 3^2 5$ et $2^4 7\not| \ 2^3 7 3^2 5.$
+	or: $|G|=2^4 7$ et $|\gA_7|=2^3 7 3^2 5$ et $2^4 7 ot| \ 2^3 7 3^2 5.$
 	on obtient donc une contradiction. Conclusion: $G$ n'est pas simple.
 \end{exercise}
 
