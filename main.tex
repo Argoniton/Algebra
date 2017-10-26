@@ -6,7 +6,7 @@
 \label{sub:groupe_et_sous_groupe}
 
 % subsection groupe_et_sous_groupe (end)
-Soit $G$ un ensemble non vide ($G eq\varnothing$).
+Soit $G$ un ensemble non vide ($G \neq\varnothing$).
 \begin{definition}
 	Un ensemble $G$ avec une loi de composition interne est un \textsc{Groupe} si:
 	\begin{enumerate}
@@ -22,7 +22,7 @@ Soit $H$ un sons-ensemble de $G$.
 \begin{definition}
 	$H$ est un \textsc{Sous-Groupe} de $G$ si:
 	\begin{enumerate}
-		\item $H eq\varnothing$
+		\item $H \neq\varnothing$
 		\item $\forall x,\ y \in H:\ xy^{-1}\in H$
 	\end{enumerate}
 	On notera $H < G$.
@@ -49,8 +49,6 @@ Si $x\in G$ la classe d'équivalence de $x$ pour cette relation dite \textsc{Cla
 	\bar{x} & =\{y\in G\ |\ y\equiv_g x\  \mod\ H\}=\{y\in G\ |\ y^{-1}x\in H\}=\{x h\ |\ \exists h\in H\}\\
 	& =xH
 \end{align*} 
-
-	???
 
 \begin{remark}
 	Les class d'équivalence constituée une \emph{partition} de $G$.
@@ -128,7 +126,7 @@ $$\forall x,y\in G\quad f(x•y)=f(x)\ast f(y).$$
 \begin{exercise}
 	\begin{enumerate}
 		\item $\langle \sigma_1 \rangle=\{e,\sigma_1,\sigma_2\}$ --- sous-groupe engendrée pour $\sigma_1$ dans $\gS_3$. $[G:H]=2\Rightarrow \langle x\rangle\lhd\gS_3$.
-		\item $\langle \tau_1\rangle=\{e,\tau_1\} \not\lhd \gS_3$. Car $\langle \tau_1 \rangle$ n'est pas stable par conjugaison. En effet: l'élément $\tau_2\tau_1\tau_2\dmo =\tau_2\tau_1\tau_2=(12)=\tau_3 \not\in H$.
+		\item $\langle \tau_1\rangle=\{e,\tau_1\} \ntriangleleft \gS_3$. Car $\langle \tau_1 \rangle$ n'est pas stable par conjugaison. En effet: l'élément $\tau_2\tau_1\tau_2\dmo =\tau_2\tau_1\tau_2=(12)=\tau_3 \not\in H$.
 		\item Le \texttt{noyau} du morphisme de groupe $f:G\rightarrow G'$ est l'ensemble $\ker f\coloneq\{x\in G | f(x)=e'\}$, où $e'$ est l'élément neutre de $G'$. C'est un sous-groupe distingué de G.
 	\end{enumerate}
 \end{exercise}
@@ -149,7 +147,7 @@ $$\mathbb{Z}=\faktor{\mathbb{N}\times\mathbb{N}}{R}$$
 
 \begin{exercise}
 Soit $G$ un groupe d'ordre premier $p$.
-		Alors $G$ est un groupe simple. En effet, si $H$ est un sous-groupe $G$ alors, par de le Théorème de Lagrange son ordre divise $p$, donc vaut 1 ou $p$ puisque $p$ est première. Donc $H=\{e\}$ ou $H=G$. De plus, si $x\in G\\ \{e\}$ alors, pour le Th. de Lagrange son ordre divise $p$, donc vaut 1 ou $p$ puisque $p$ est première donc vaut $p$ puisque $x eq e$. Donc $\expval{x}=G$. Donc $G$ est cyclique (i.e engendre par un élément et fini). Donc $G$ est isomorphe à $\faktor{\Z}{p\Z}$.
+		Alors $G$ est un groupe simple. En effet, si $H$ est un sous-groupe $G$ alors, par de le Théorème de Lagrange son ordre divise $p$, donc vaut 1 ou $p$ puisque $p$ est première. Donc $H=\{e\}$ ou $H=G$. De plus, si $x\in G\diagdown  \{e\}$ alors, pour le Th. de Lagrange son ordre divise $p$, donc vaut 1 ou $p$ puisque $p$ est première donc vaut $p$ puisque $x \neq e$. Donc $\expval{x}=G$. Donc $G$ est cyclique (i.e engendre par un élément et fini). Donc $G$ est isomorphe à $\faktor{\Z}{p\Z}$.
 \end{exercise}
 
 Considérons le groupe abélien $(\Z, +)$. Si l'on note $n\Z=\{nk, k\in\Z\}$ l'ensemble des multiples de $n$ dans $\Z$ (pour $n\geq$) alors: $(n\Z,+)$ est un sous-groupe de $\Z$.
@@ -160,13 +158,13 @@ En effet: \\
 
 Réciproquement, tout sous-groupe de $\Z$ est de la forme $n\Z$ pour un certain $n\geq 0$.
 
-$n\Z$ est un sous-groupe distingué de $\Z$ (car $\Z$ est abélien). On considère l'anneau quotient: $(\faktor{\Z}{n\Z}, +, \times)$.
+$n\Z$ est un sous-groupe distingué de $\Z$ (car $\Z$ est abélien). On considère \texttt{l'anneau} quotient: $(\faktor{\Z}{n\Z}, +, \times)$.
 $$\faktor{\Z}{n\Z}=\{\bar 0,\bar 1, \bar 2, ...\,, \overline{n-1}\}$$
 
-\begin{align}
+\begin{align*}
 	\bar x+\bar y &= \overline{x+y}\\
 	\bar x \bar y &= \overline{xy}
-\end{align}
+\end{align*}
 
 \section{Groupes abéliens finis}
 
@@ -212,35 +210,36 @@ Soient $G$ est un groupe et $X$ un ensemble.
 \end{definition}
 
 On peut aussi voir une action de $G$ sur $X$ comme un morphisme de $G$ dans le groupe $S_X$ des permutations de $X$:
-\begin{IEEEeqnarray}{rCl} a&=&b+c
-\\ \pi: G &\rightarrow& S_X \\ g &\mapsto & \left(\begin{IEEEeqnarraybox}[
+\begin{IEEEeqnarray*}{rCl}
+\pi: G &\rightarrow& S_X \\
+      g &\mapsto     & \left(\begin{IEEEeqnarraybox}[
       \IEEEeqnarraystrutmode
       \IEEEeqnarraystrutsizeadd{2pt}
       {2pt}
       ][c]{rCl}\pi_g: X &\rightarrow & X\\x &\mapsto& \pi_g(x)=g\cdot x \end{IEEEeqnarraybox}\right)
-\end{IEEEeqnarray}	
+\end{IEEEeqnarray*}	
 
 \begin{definition}
-	Si un groupe $G$ agit sur un ensemble $X$, la relation sur $X$: $x, y\in X$, $x~y$ ssi $\exists g\in G, y=g\cdot x$ est une relation d'équivalence. La classe de $x$ per cette relation s'applelle \textsc{Orbite} de $x$, notée $\orb(x)$ ou $G\cdot x$: $\orb(x)=\{ y\in X, y\sim x\} = \{g\cdot x, g\in G\}$ l'ensemble des orbits constitute une partition de $X$.
+	Si un groupe $G$ agit sur un ensemble $X$, la relation sur $X$: $x, y\in X$, $x~y$ ssi $\exists g\in G, y=g\cdot x$ est une relation d'équivalence. La classe de $x$ per cette relation s'appelle \textsc{Orbite} de $x$, notée $\orb(x)$ ou $G\cdot x$: $\orb(x)=\{ y\in X, y\sim x\} = \{g\cdot x, g\in G\}$ l'ensemble des orbites constituée une partition de $X$.
 \end{definition}
 
 On dit que l'action est \emph{Transitive} en que $G$ agit transitivement s'il n'y a qu'une seule orbite, i.e. $\forall x,y\in G,\ \exists g\in G, y=g\cdot x$.
 
 Le \emph{Noyau} de l'action est le noyau du morphisme\\
 
-$\pi:\ G\rightarrow \sigma_X$\\
+$\pi:\ G\rightarrow \gS_X$\\
 $G\mapsto \pi_G$
 
 i.e l'ensemble:
-$$\ker \pi \{g\in G | \pi(g)=e_{\sigma_X}\}=\{g\in G | \pi_g = id_x\}=\{g\in G | \forall x \in X, \pi_g(x)=x\}=\{g\in G | \forall x\in X, g.x=x\}$$
+$$\ker \pi \{g\in G | \pi(g)=e_{\gS_X}\}=\{g\in G | \pi_g = id_x\}=\{g\in G | \forall x \in X, \pi_g(x)=x\}=\{g\in G | \forall x\in X, g.x=x\}$$
 On dit que l'action est \textsc{Fidèle} si son noyau est redit à  $\{e\}$ i.e. le morphisme $\pi$ associé est injectif.
 
 \begin{examplebox}
 \begin{enumerate}
 	\item Le groupedes rotation de $\mathbb{R}^3$ de centre l'origine o agit sur $\mathbb{R}^3$. $G\times\mathbb{R}^3\rightarrow{R}^3$ et $(r, x)\mapsto r\cdot x=r(x).$
 	Les orbite sont les pphere centres en l'origine. L'action n'est donc pas transitive. Regarde rotation quelle fixe tout le monde. Évidemment l'action le fidèle. Rotation fixant tout point de $\mathbb{R}^3$ est l'identité.
-	\item Si X est un ensemble, le groupe $\sigma_X$ agit sur $X$ par permutation:
-	$\sigma_x \times X\mapsto X$, $(\sigma, x)\mapsto \sigma\cdot x=\sigma(x)$.
+	\item Si X est un ensemble, le groupe $\gS_X$ agit sur $X$ par permutation:
+	$\gS_x \times X\mapsto X$, $(\sigma, x)\mapsto \sigma\cdot x=\sigma(x)$.
 	
 	L'action est évidemment transitive. $\sigma$ est dans le noyau du morphisme associe a cette action ssi: $\forall x\in X, \sigma(x)=x$: donc $\sigma =id_x$ et donc l'action est fidèle.
 	\item Tout groupe $G$ agit sur même par multiplication a gauche se qua $G\times G \rightarrow G;\ (g,x)\mapsto g\cdot x=gx$ (loi de composition dons $G$).
@@ -254,29 +253,30 @@ On dit que l'action est \textsc{Fidèle} si son noyau est redit à  $\{e\}$ i.e.
 	
 	En effet: (i) Si $x\in G$; on a: $e\cdot x = exe^{-1} = x$.\\
 	(ii)  soint $g, g'\in G$ et $x\in G$ ou a:
-	$$g\cdot (g'\cdot x)=g\cdot (g'xg'^{-1})=g(g'xg'^{-1})g^{-1}=(gg')x(g'^{-1}g^{-1})=(gg')x(gg')^{-1}=(gg')\cdot x$$
+	$$g\cdot (g'\cdot x)=g\cdot (g'xg'^{-1})=g(g'xg'^{-1})g^{-1}=(gg')x(g'^{-1}g^{-1})$$
+	$$=(gg')x(gg')^{-1}=(gg')\cdot x$$
 	Utilise $(ab)^{-1}=b^{-1}a^{-1}$.
 	\begin{itemize} 
-	\item $\orb(e)=\{geg^{-1}, g\in G\}=\{e\}$ Donc l'action n'est pas transitive si $G eq\{e\}$ \\%img 1\\
+	\item $\orb(e)=\{geg^{-1}, g\in G\}=\{e\}$ Donc l'action n'est pas transitive si $G \neq\{e\}$ \\%img 1\\
 	\item Si $x\in G$ alors $\orb(x)=\{gxg^{-1}, g\in G\}$ donc de conjuration de x.\\
 	\item Le noyau de l'action est:	
-
-	$$\{g\in G | \forall x\in X, gxg^{-1} = x\} = \{g\in G | \forall x \in X,\ gx=xg\}\overset{\text{def}}{=}\text{"centre de $G$"}\overset{\text{def}}{=} Z(G)$$
+	$$\{g\in G | \forall x\in X, gxg^{-1} = x\} = \{g\in G | \forall x \in X,\ gx=xg\}$$
+	$$\overset{\text{def}}{=}\text{"centre de $G$"}\overset{\text{def}}{=} Z(G)$$
 	est réduit â $\{e\}$.
 	\end{itemize}
 \end{enumerate}
 \end{examplebox}
 
 \begin{definition}
-	Si un groupe $G$ agit sur un ensemble $X$ et si $x\in X$, on définit le stabilisateur (ou groupe s'isotropie) de $X$ pour cette action par: $\stab(x)=\{g\in G | g\cdot x=x\}$. (noté aussi $G_X$)
+	Si un groupe $G$ agit sur un ensemble $X$ et si $x\in X$, on définit le stabilisateur (ou groupe s'isotropie) de $X$ pour cette action par: $\stab(x)=\{g\in G\ |\ g\cdot x=x\}$. (noté aussi $G_x$)
 \end{definition}
 
 \begin{proposition}
-	C'est un sous groupe de G. % it's a subgroupein G
+	C'est un sous groupe de G. 
 \end{proposition}
 
 \begin{proposition} 
-	Pour X l'application $G\rightarrow X$, $g\mapsto g.x$ définit une bijection de l'ensemble $\faktor{X}{\stab{x}}$ des classe a gauche monade $\stab(x)$ sont l'orbite de $x$.
+	Pour X l'application $G\rightarrow X$, $g\mapsto g•x$ définit une bijection de l'ensemble $\faktor{X}{\stab{x}}$ des classe a gauche monade $\stab(x)$ sont l'orbite de $x$.
 \end{proposition}
 
 Aussi, le cardinal de l'orbite $\orb(X)$ est égal a l'indice de $\stab(x)$ dans $G$.
@@ -289,7 +289,7 @@ $$\#\orb(x) =[G: \stab(x)]$$
 		\item $\#X=\sum\limits_x[G: \stab(x)]$ où $x$ est une orbite représentative
 		\item Le nombre $n$ d'orbites est donné par la formule (théorème de \emph{Burnside}):
 		$$n=\frac{1}{|G|}\sum\limits_{g\in G}\#X_g$$
-		où $X_g=\{x\in X | g.x=x\}$.
+		où $X_g=\{x\in X | g•x=x\}$.
 	\end{enumerate}
 \end{theorem}
 
@@ -319,7 +319,7 @@ $n_p = 1 \mod p$ et $n_p | q$.
 	Si $H$ est un sous-groupe d'un groupe $G$, les conjugues dans $G$ sont les $gHg^{-1}$, pour $g\in G$ ($\{ghg^{-1}, h\in H\}$).
 \end{definition}
 
-En particulier $H$ est distingue dans $G$ ssi il est égal à tous des conjugués.
+En particulier $H$ est distingue dans $G$ \emph{ssi} il est égal à tous des conjugués.
 
 \begin{theorem}[2\textsuperscript{ème} Théorème de Sylow]
 Soit $G$ une groupe fini.
@@ -338,7 +338,7 @@ En fin, tout p-sous-groupe de $G$ ( i.e d'ordre une puissance de $p$) est conten
 	De plus, le nombre $n_p$ de p-Sylow de $G$ vérifie:
 	
 	\begin{align*}
-		n_5  &\equiv  \mod 5\\ n_5 &| 3
+		n_5  &\equiv 1  \mod 5\\ n_5 &| 3
 	\end{align*}
 	$\Rightarrow\ n_5 = 1$.
 	Tous les sous-groupe d'un groupe abeille sont distende.
@@ -346,19 +346,19 @@ En fin, tout p-sous-groupe de $G$ ( i.e d'ordre une puissance de $p$) est conten
 	Mais un groupe d'ordre 13 n'admet que deux sons-groupe (th de Lagrange) lui-meme et $\{e\}$. Donc $G$ est simple.
 	\item Montre qu'un groupe d'ordre 15 n'est pas simple. $5|15$ donc existe sylow sous-groupe. 
 	
-	Soit $G$ un groupe d'ordre $15=3x5$. $G$ admet un 5-Sylow $H$. De plus le nombre $n_5$ de 5-Sylow de $G$ vérifie: $n_5=1 \mod 5$ et $n_5 | 3$ donc $n_5=1$.
+	Soit $G$ un groupe d'ordre $15=3\times 5$. $G$ admet un 5-Sylow $H$. De plus le nombre $n_5$ de 5-Sylow de $G$ vérifie: $n_5=1 \mod 5$ et $n_5 | 3$ donc $n_5=1$.
 	
-	Les conjugales de H sont encore des 5-Sylow. Or, il n'y a s'un seul 5-Sylow dans $G$. conclusion. $G$ n'est pas simple.
+	Les conjugales de H sont encore des 5-Sylow. Or, il n'y a s'un seul 5-Sylow dans $G$. Conclusion: $G$ n'est pas simple.
 \end{enumerate}
 \end{exercise}
 
 
 \section{Les Groupes symétrique} % (fold)
 
-On note $\sigma_n$ les groupes des permutations sur l'ensemble $\{1, ...\,, n\}$.
+On note $\gS_n$ les groupes des permutations sur l'ensemble $\{1, ...\,, n\}$.
 
 Remarque. Deux permutations à s'appontes disjoint commutent.
-Exemple: $\tau=(1, 2)\in \sigma_9$ et $\sigma=(345) \in \sigma_9$.
+Exemple: $\tau=(1, 2)\in \gS_9$ et $\sigma=(345) \in \gS_9$.
 Le support de $\tau$ est $\{1,2\}$. 
 $$\tau\sigma =\sigma \tau$$
 
@@ -366,14 +366,14 @@ $$\tau\sigma =\sigma \tau$$
 	Tout permutation s'écrit comme produit de cycles à supports disjoint - une telle décomposition est unique à l'ordre p..
 \end{theorem}
 
-Exemple: $\sigma = \left(\begin{array}{ccccccccc}1&2&3&4&5&6&7&8&9\\3&4&6&2&9&1&7&5&8\end{array}\right)\in\sigma_9$
+Exemple: $\sigma = \left(\begin{array}{ccccccccc}1&2&3&4&5&6&7&8&9\\3&4&6&2&9&1&7&5&8\end{array}\right)\in\gS_9$
 $\sigma=(136)(24)(598)$
 
 Par exemple: $\ord(\sigma)=\ppcm(\ord(136), \ord(24), \ord(598))=\ppcm(3,2,3)=6$
 
 Autrement dit, on a: $\sigma^6=id$ et 6 est la lus petite puissance non nulle vérifiant cela.
 
-Calcul pratique du conjugue d'une permutation $\sigma$ dans $\sigma_n$. Si $\tau\in\sigma_n$, $\tau\sigma\tau^{-1}$ est un conjugue de $\sigma$.
+Calcul pratique du conjugue d'une permutation $\sigma$ dans $\gS_n$. Si $\tau\in\gS_n$, $\tau\sigma\tau^{-1}$ est un conjugue de $\sigma$.
 
 Ou décompose $\sigma$ en produit de cycles: $\sigma=c_1 c_2...c_l$, $c_i$ cycles.
 D'oui: $\tau\sigma\tau^{-1} =\tau(C_1...c_r)\tau^{-1}=(\tau c_1\tau^{-1})(\tau c_2\tau^{-1})...(\tau c_r\tau^{-1})$
@@ -388,29 +388,30 @@ $$g(x)=x=f(x)$$
 Donc $f=g$.
 
 Exemple:
-Sont $\sigma=(1528)\in\sigma_9$, et soit $\tau=(127)$.
+Sont $\sigma=(1528)\in\gS_9$, et soit $\tau=(127)$.
 $\tau\sigma\tau^{-1}=?= (\tau(1)\tau(5)\tau(2)\tau(8))=(2578)$
 
 \begin{proposition}
 	On appelle type d'une permutation $\sigma=c_1... c_r$. Ca suite $(l_1,...\,,l_r)$ des longueur des cycles $c_i$ ordonnés en ordre croissant ($l_1\leq l_2\leq ... \leq l_r$).
-	Deux permutations sont conjugues dans $\sigma_n$ ssi elle ont même type.
+	Deux permutations sont conjugues dans $\gS_n$ ssi elle ont même type.
 \end{proposition}
 
 Par exemple: les permutations
 $$G_1=(28)(35)(196)$$
 et
 $$G_2=(14)(79)(263)$$
-Sont conjugues dans $\sigma_9$ car elles dont touts deux de type $(2,2,3)$
+Sont conjugues dans $\gS_9$ car elles dont touts deux de type $(2,2,3)$
 
 
-La proposition précédente montre que le groupe $\sigma_n$ est engendré par les cycles. On a également:
+La proposition précédente montre que le groupe $\gS_n$ est engendré par les cycles. On a également:
 
 \begin{theorem}
+	\leavevmode
 	\begin{enumerate}
-		\item $\sigma_n$ est engendré pas les transpositions (2-cycles)
-		\item $\sigma_n$ est engendré pas les transpositions de la forme $(1 i)$
-		\item $\sigma_n$ est engendré pas les transpositions (dits alimentaires) de la forme $(i\ i+1)$
-		\item $\sigma_n$ est engendré pas les les deux permutations $(12)$ et $(12...n)$
+		\item $\gS_n$ est engendré pas les transpositions (2-cycles)
+		\item $\gS_n$ est engendré pas les transpositions de la forme $(1 i)$
+		\item $\gS_n$ est engendré pas les transpositions (dits alimentaires) de la forme $(i\ i+1)$
+		\item $\gS_n$ est engendré pas les les deux permutations $(12)$ et $(12...n)$
 	\end{enumerate}
 	
 \end{theorem}
@@ -418,13 +419,13 @@ La proposition précédente montre que le groupe $\sigma_n$ est engendré par le
 	exercise
 \end{proof}
 
-Proposition: la signature $\varepsilon : \sigma_n\rightarrow\{\pm 1\}$ est un morphisme de groupes. En particulier deux permutations conjugues on même signature.
+Proposition: la signature $\varepsilon : \gS_n\rightarrow\{\pm 1\}$ est un morphisme de groupes. En particulier deux permutations conjugues on même signature.
 Transposition est impaire, i.e. de signature égale à $-1$.
 Ainsi $\varepsilon$ est un morphisme surjectif (de que $n\geq 2$), et une permutation est paire (i.e. de signature 1) ssi elle est produit d'un nombre par de transpositions.
 
 Une cycle de longueur paire est une permutation impaire et .... impaire .... paire.
 
-Le noyau $\mathfrak{A}_n$ du morphisme signature $\varepsilon:\gS_n\rightarrow\{-1, 1\}$ est un sous-groupe distingué d'indice 2 ($n\geq2$) de $\gS_n$, appelé la n=i ème groupe alterné = c'est donc l'ensemble des permutations pairs de $\sigma_n$.
+Le noyau $\mathfrak{A}_n$ du morphisme signature $\varepsilon:\gS_n\rightarrow\{-1, 1\}$ est un sous-groupe distingué d'indice 2 ($n\geq2$) de $\gS_n$, appelé la n=i ème groupe alterné = c'est donc l'ensemble des permutations pairs de $\gS_n$.
 
 \begin{proposition}
 	Si $n\geq 3$, le groupe alterné $\mathfrak{A}_n$ et engendre par les 3-cycles.
@@ -435,7 +436,7 @@ Le noyau $\mathfrak{A}_n$ du morphisme signature $\varepsilon:\gS_n\rightarrow\{
 \end{proof}
 
 \begin{theorem}[Galois]
-	$\mathfrak{A}_n$ est un groupe simple ssi $n eq 4$.
+	$\mathfrak{A}_n$ est un groupe \emph{simple} ssi $n \neq 4$.
 \end{theorem}
 
 \chapter{Représentations linéaires des groupes finis}
@@ -786,7 +787,7 @@ Une élément de $\F_C(S)$ est donc une fonction $F:G\rightarrow\C$ vérifiant: 
 
 On rappelle qu'un \texttt{caractère irréductible} de $G$ est le caractère d'un représentation irréductible.
 
-\begin{theorem}
+\begin{theorem}[Frobenius]
 	Les caractères irréductibles d'un groupe $G$ forment une base orthonormée de l'espace $\F_C(G)$ des fonctions centrales sur $G$.
 \end{theorem}
 \begin{proof}[Croquis de la preuve]
@@ -833,7 +834,7 @@ On rappelle qu'un \texttt{caractère irréductible} de $G$ est le caractère d'u
 \end{proof}
 
 \begin{corollaire}[Formule de Burnside] %6
-	$G$ est un groupe fini. On a $∑_{W\in \irr(G)}(\dim W)^2=|G|$
+	$G$ est un groupe fini. On a $$∑_{W\in \irr(G)}(\dim W)^2=|G|$$
 \end{corollaire}
 \begin{proof}
 	Considérons la représentation régulière de $G$:
@@ -1013,7 +1014,7 @@ $\dim 1$
 
 		On a $D(\gS_3)\lhd  \gS_3$. D'où $D(\gS_3)={e}$ ou $\gS_3$ ou $\gA_3$.
 		Si $D(\gS_3)=\{e\}$ alors $\gS_3$ serait abélien, ce qui n'est pas le cas!
-		Donc $D(\gS_3) eq \{e\}$.
+		Donc $D(\gS_3) \neq \{e\}$.
 		
 		On a : $|\gS_3/\gA_3|=[\gS_3:\gA_3]=2$ donc $\gS_3/\gA_3\simeq \faktor{\Z}{2\Z}$ donc est abélien.
 
@@ -1068,9 +1069,9 @@ $\dim 1$
 			 $e\mapsto \tr (1 0\\ 0 1)=2$ $\conj 12\mapsto \tr \mqty(0 &1\\ 1& 0)=0$ $\conj 123\mapsto \tr \mqty(j& 0\\ j^2& 0)=j+j^2=-1$
 
 			Pour vérifier que $ρ$ est irréductible montrons que $\expval{χ,χ}=1$. 
-			On a $\expval{χ,χ}=\frac{1}{|\gS_3|}∑_{g\in\gS_3}\overline{χ(g)}x(g)=\frac 16(2^2+3\times 0^2+2\times (-1)^2)=1$
+			On a:\\ $\expval{χ,χ}=\frac{1}{|\gS_3|}∑_{g\in\gS_3}\overline{χ(g)}x(g)=\frac 16(2^2+3\times 0^2+2\times (-1)^2)=1$
 			
-			$$\begin{array}{|l|ccc|}
+			$$\begin{array}{|l||ccc|}
 				\hline
 				&χ_0=ρ_0& χ_ε=ε &χ\\
 				\hline
@@ -1099,7 +1100,7 @@ $\dim 1$
 
 		S'est un groupe d'ordre $6$ non abélien.
 
-		Or, il n'y a que deux groupes d'ordre 6 à isomorphismes  pas: $\faktor{Z}{6Z}$ et $\gS_3$. (exercice!) D'où $D_3\simeq\gS_3$. Ca totale des caractères de $D_3$ est donc la même que cette de $\gS_3$.
+		Or, il n'y a que deux groupes d'ordre 6 à isomorphismes  pas: $\faktor{\Z}{6\Z}$ et $\gS_3$. (exercice!) D'où $D_3\simeq\gS_3$. Ca totale des caractères de $D_3$ est donc la même que cette de $\gS_3$.
 
 	\end{enumerate}
 \end{exercise}
